@@ -93,13 +93,14 @@ class Node:
         return self.applied_force
 
     def apply_forces(self):
+        print(self.applied_force)
         self.move(self.applied_force)
 
 
 class Connector:
 
     def __init__(self, power, nodes):
-        self.power = power * 5
+        self.power = power/5
         self.nodes = nodes
         self.warping = 1.0
         self.relaxing = False
@@ -115,12 +116,8 @@ class Connector:
         if not self.relaxing:
             self.warping = .75
             ratio = find_ratio(self.nodes[0].cords, self.nodes[1].cords)
-            # self.nodes[0].move([ratio[0][1] * self.power, -ratio[0][1] * self.power])
-            # self.nodes[1].move([-ratio[1][1] * self.power, -ratio[1][1] * self.power])
-            self.nodes[0].applied_force[0] += ratio[0][1] * self.power
-            self.nodes[0].applied_force[1] += -ratio[0][1] * self.power
-            self.nodes[1].applied_force[0] += -ratio[1][1] * self.power
-            self.nodes[0].applied_force[1] += -ratio[1][1] * self.power
+            self.nodes[0].move([ratio[0][1] * self.power, -ratio[0][1] * self.power])
+            self.nodes[1].move([-ratio[1][1] * self.power, -ratio[1][1] * self.power])
 
         else:
             self.relax()
@@ -132,12 +129,8 @@ class Connector:
         multiply = 1
         if self.nodes[0].cords[0] < self.nodes[1].cords[0]:
             multiply = -1
-        # self.nodes[0].move([ratio[0][1] * multiply * self.power, ratio[0][1] * self.power])
-        # self.nodes[1].move([ratio[1][1] * multiply * self.power, ratio[1][1] * self.power])
-        self.nodes[0].applied_force[0] += ratio[0][1] * self.power * multiply
-        self.nodes[0].applied_force[1] += -ratio[0][1] * self.power
-        self.nodes[1].applied_force[0] += -ratio[1][1] * self.power * multiply
-        self.nodes[1].applied_force[1] += -ratio[1][1] * self.power
+        self.nodes[0].move([ratio[0][1] * multiply * self.power, ratio[0][1] * self.power])
+        self.nodes[1].move([ratio[1][1] * multiply * self.power, ratio[1][1] * self.power])
 
     def draw(self):
         node1_thickness = int(self.nodes[0].size/5 * self.warping)
@@ -194,7 +187,7 @@ while running:
     draw()
     c.expand(3, moment)
     for n in all_nodes:
-        n.fek_gravity(blank)
+        #n.fek_gravity(blank)
         n.apply_forces()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
