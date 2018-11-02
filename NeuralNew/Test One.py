@@ -100,7 +100,7 @@ class Node:
 class Connector:
 
     def __init__(self, power, nodes):
-        self.power = power/5
+        self.power = power * 5
         self.nodes = nodes
         self.warping = 1.0
         self.relaxing = False
@@ -116,8 +116,8 @@ class Connector:
         if not self.relaxing:
             self.warping = .75
             ratio = find_ratio(self.nodes[0].cords, self.nodes[1].cords)
-            self.nodes[0].move([ratio[0][1] * self.power, -ratio[0][1] * self.power])
-            self.nodes[1].move([-ratio[1][1] * self.power, -ratio[1][1] * self.power])
+            self.nodes[0].move([-ratio[0][1] * self.power, -ratio[0][1] * self.power])
+            self.nodes[1].move([ratio[1][1] * self.power, -ratio[1][1] * self.power])
 
         else:
             self.relax()
@@ -130,7 +130,7 @@ class Connector:
         if self.nodes[0].cords[0] < self.nodes[1].cords[0]:
             multiply = -1
         self.nodes[0].move([ratio[0][1] * multiply * self.power, ratio[0][1] * self.power])
-        self.nodes[1].move([ratio[1][1] * multiply * self.power, ratio[1][1] * self.power])
+        self.nodes[1].move([-ratio[1][1] * multiply * self.power, ratio[1][1] * self.power])
 
     def draw(self):
         node1_thickness = int(self.nodes[0].size/5 * self.warping)
@@ -176,8 +176,8 @@ def draw():
     pygame.display.update()
 
 
-all_nodes = [Node(.75, 5, 10, [display_size/2 + 60, display_size]),
-             Node(1.6, 3, 10, [display_size/2, display_size])]
+all_nodes = [Node(.75, 5, 10, [display_size/2 + 50, display_size]),
+             Node(1.6, 3, 10, [display_size/2 - 50, display_size])]
 
 c = Connector(50, [all_nodes[0], all_nodes[1]])
 running = True
