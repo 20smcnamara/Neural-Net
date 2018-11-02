@@ -88,6 +88,7 @@ class Node:
                 add = no.fek_gravity(self)
                 force_on[0] += add[0]
                 force_on[1] += add[1]
+                print(no.cords[1], self.cords[1])
         self.applied_force = [force_on[0] + total_force[0], force_on[1] + total_force[1]]
         return self.applied_force
 
@@ -103,7 +104,7 @@ class Connector:
         self.warping = 1.0
         self.relaxing = False
         self.last_time = 0
-        self.minLength = nodes[0].get_long(nodes[1])  # Todo make this matter
+        self.minLength = nodes[0].get_long(nodes[1])
         nodes[0].connectors.append(self)
         nodes[1].connectors.append(self)
 
@@ -114,8 +115,13 @@ class Connector:
         if not self.relaxing:
             self.warping = .75
             ratio = find_ratio(self.nodes[0].cords, self.nodes[1].cords)
-            self.nodes[0].move([ratio[0][1] * self.power, -ratio[0][1] * self.power])
-            self.nodes[1].move([-ratio[1][1] * self.power, -ratio[1][1] * self.power])
+            # self.nodes[0].move([ratio[0][1] * self.power, -ratio[0][1] * self.power])
+            # self.nodes[1].move([-ratio[1][1] * self.power, -ratio[1][1] * self.power])
+            self.nodes[0].applied_force[0] += ratio[0][1] * self.power
+            self.nodes[0].applied_force[1] += -ratio[0][1] * self.power
+            self.nodes[1].applied_force[0] += -ratio[1][1] * self.power
+            self.nodes[0].applied_force[1] += -ratio[1][1] * self.power
+
         else:
             self.relax()
         draw()
@@ -126,8 +132,12 @@ class Connector:
         multiply = 1
         if self.nodes[0].cords[0] < self.nodes[1].cords[0]:
             multiply = -1
-        self.nodes[0].move([ratio[0][1] * multiply * self.power, ratio[0][1] * self.power])
-        self.nodes[1].move([ratio[1][1] * multiply * self.power, ratio[1][1] * self.power])
+        # self.nodes[0].move([ratio[0][1] * multiply * self.power, ratio[0][1] * self.power])
+        # self.nodes[1].move([ratio[1][1] * multiply * self.power, ratio[1][1] * self.power])
+        self.nodes[0].applied_force[0] += ratio[0][1] * self.power * multiply
+        self.nodes[0].applied_force[1] += -ratio[0][1] * self.power
+        self.nodes[1].applied_force[0] += -ratio[1][1] * self.power * multiply
+        self.nodes[1].applied_force[1] += -ratio[1][1] * self.power
 
     def draw(self):
         node1_thickness = int(self.nodes[0].size/5 * self.warping)
@@ -155,6 +165,10 @@ def find_angle(node1, node2):
     x = round(math.fabs(node1.cords[1] - node2.cords[1]))
     y = round(math.fabs(node1.cords[0] - node2.cords[0]))
     z = round((x**2 + y**2) ** .5)
+    if x == 0:
+        x = 1
+    if z == 0:
+        z = 1
     return math.acos((-y**2 + x**2 + z**2)/(2*x*z))
 
 
@@ -169,18 +183,19 @@ def draw():
     pygame.display.update()
 
 
-all_nodes = [Node(.75, 5, 10, [display_size/2 + 50, display_size/2]),
-             Node(1.6, 3, 10, [display_size/2, display_size/2])]
+all_nodes = [Node(.75, 5, 10, [display_size/2 + 60, display_size]),
+             Node(1.6, 3, 10, [display_size/2, display_size])]
 
 c = Connector(50, [all_nodes[0], all_nodes[1]])
 running = True
+blank = Node(0, 0, 0, [0, 0])
 while running:
     moment = time.time()
     draw()
     c.expand(3, moment)
     for n in all_nodes:
-        n.fek_gravity(Node(0, 0, 0, [0, 0]))
-        #n.apply_forces()
+        n.fek_gravity(blank)
+        n.apply_forces()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
