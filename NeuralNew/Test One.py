@@ -39,7 +39,10 @@ class Node:
         yadd = adds[1]
         if self.touching_ground and yadd < 0:
             yadd = 0
-        self.cords = [self.cords[0]+xadd/(self.friction*self.mass), self.cords[1]+yadd/self.mass]
+        friction = self.friction
+        if not self.touching_ground:
+            friction = 1
+        self.cords = [self.cords[0]+xadd/(friction*self.mass), self.cords[1]+yadd/self.mass]
         if self.cords[1] + self.size >= base:
             self.cords[1] = base-self.size
             self.touching_ground = True
@@ -88,12 +91,10 @@ class Node:
                 add = no.fek_gravity(self)
                 force_on[0] += add[0]
                 force_on[1] += add[1]
-                print(no.cords[1], self.cords[1])
         self.applied_force = [force_on[0] + total_force[0], force_on[1] + total_force[1]]
         return self.applied_force
 
     def apply_forces(self):
-        print(self.applied_force)
         self.move(self.applied_force)
 
 
@@ -106,6 +107,7 @@ class Connector:
         self.relaxing = False
         self.last_time = 0
         self.minLength = nodes[0].get_long(nodes[1])
+        self.touching = False
         nodes[0].connectors.append(self)
         nodes[1].connectors.append(self)
 
@@ -116,21 +118,37 @@ class Connector:
         if not self.relaxing:
             self.warping = .75
             ratio = find_ratio(self.nodes[0].cords, self.nodes[1].cords)
-            self.nodes[0].move([-ratio[0][1] * self.power, -ratio[0][1] * self.power])
-            self.nodes[1].move([ratio[1][1] * self.power, -ratio[1][1] * self.power])
-
+            self.nodes[0].move([-ratio[0][0] * self.power, -ratio[0][1] * self.power])
+            self.nodes[1].move([ratio[1][0] * self.power, -ratio[1][1] * self.power])
+            self.touching = False
         else:
             self.relax()
         draw()
 
     def relax(self):
-        self.warping = 1
-        ratio = find_ratio(self.nodes[0].cords, self.nodes[1].cords)
-        multiply = 1
-        if self.nodes[0].cords[0] < self.nodes[1].cords[0]:
-            multiply = -1
-        self.nodes[0].move([ratio[0][1] * multiply * self.power, ratio[0][1] * self.power])
-        self.nodes[1].move([-ratio[1][1] * multiply * self.power, ratio[1][1] * self.power])
+        if not self.touching:
+            self.warping = 1
+            ratio = find_ratio(self.nodes[0].cords, self.nodes[1].cords)
+            multiply = 1
+            if self.nodes[0].cords[0] < self.nodes[1].cords[0]:
+                multiply = -1
+                first_on_left = True
+            else:
+                first_on_left = False
+            self.nodes[0].move([ratio[0][0] * multiply * self.power, ratio[0][1] * self.power])
+            self.nodes[1].move([-ratio[1][0] * multiply * self.power, ratio[1][1] * self.power])
+            if self.nodes[0].cords[0] < self.nodes[1].cords[0]:
+                if first_on_left:
+                    middle = self.nodes[1].cords[0] - (self.nodes[1].cords[0] - self.nodes[0].cords[0])/2  # TODO correct placement
+                    self.nodes[0].cords[0] = middle + self.nodes[0].size
+                    self.nodes[1].cords[0] = middle - self.nodes[1].size
+                    self.touching = True
+            else:
+                if not first_on_left:
+                    self.touching = True
+                    middle = self.nodes[1].cords[0] - (self.nodes[1].cords[0] - self.nodes[0].cords[0])/2  # TODO correct placement
+                    self.nodes[0].cords[0] = middle - self.nodes[0].size
+                    self.nodes[1].cords[0] = middle + self.nodes[1].size
 
     def draw(self):
         node1_thickness = int(self.nodes[0].size/5 * self.warping)
@@ -176,14 +194,15 @@ def draw():
     pygame.display.update()
 
 
-all_nodes = [Node(.75, 5, 10, [display_size/2 + 50, display_size]),
-             Node(1.6, 3, 10, [display_size/2 - 50, display_size])]
+all_nodes = [Node(.75, 5, 10, [display_size/2 + 50, display_size/2]),
+             Node(1.6, 3, 10, [display_size/2 - 50, display_size/2])]
 
 c = Connector(50, [all_nodes[0], all_nodes[1]])
 running = True
 blank = Node(0, 0, 0, [0, 0])
+init_time = time.time()
 while running:
-    moment = time.time()
+    moment = init_time - time.time()
     draw()
     c.expand(3, moment)
     for n in all_nodes:
@@ -193,4 +212,4 @@ while running:
         if event.type == pygame.QUIT:
             pygame.quit()
             quit(0)
-    time.sleep(.1)
+    time.sleep(.01)
