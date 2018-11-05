@@ -205,7 +205,7 @@ while running:
     draw()
     c.expand(3, moment)
     for n in all_nodes:
-        #n.fek_gravity(blank)
+        n.fek_gravity(blank)
         n.apply_forces()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
