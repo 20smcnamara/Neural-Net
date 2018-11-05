@@ -55,7 +55,7 @@ class Node:
     def draw(self):
         pygame.draw.circle(screen, self.color, [int(self.cords[0]), int(self.cords[1])], self.size)
 
-    def fek_gravity(self, to):
+    def sum_forces(self, to):
         if to.size != 0:
             boolean = True
             ratio = find_ratio(self.cords, to.cords)
@@ -88,7 +88,7 @@ class Node:
             else:
                 no = con.nodes[1]
             if no.cords[1] > self.cords[1] and not no.touching_ground:
-                add = no.fek_gravity(self)
+                add = no.sum_forces(self)
                 force_on[0] += add[0]
                 force_on[1] += add[1]
         self.applied_force = [force_on[0] + total_force[0], force_on[1] + total_force[1]]
@@ -96,6 +96,7 @@ class Node:
 
     def apply_forces(self):
         self.move(self.applied_force)
+        self.applied_force = 0
 
 
 class Connector:
@@ -118,8 +119,10 @@ class Connector:
         if not self.relaxing:
             self.warping = .75
             ratio = find_ratio(self.nodes[0].cords, self.nodes[1].cords)
-            self.nodes[0].move([ratio[0][0] * self.power, -ratio[0][1] * self.power])
+            self.nodes[0].move([ratio[0][0] * self.power, ratio[0][1] * self.power])
             self.nodes[1].move([-ratio[1][0] * self.power, -ratio[1][1] * self.power])
+            # self.nodes[0].add_force([ratio[0][0] * self.power, ratio[0][1] * self.power])
+            # self.nodes[2].add_force([-ratio[1][0] * self.power, -ratio[1][1] * self.power])
             self.touching = False
         else:
             self.relax()
@@ -138,12 +141,12 @@ class Connector:
             self.nodes[0].move([ratio[0][0] * multiply * self.power, ratio[0][1] * self.power])
             self.nodes[1].move([-ratio[1][0] * multiply * self.power, ratio[1][1] * self.power])
             if self.nodes[0].cords[0] < self.nodes[1].cords[0]:
-                if first_on_left:
+                if not first_on_left:
                     middle = self.nodes[1].cords[0] - math.fabs(self.nodes[1].cords[0] - self.nodes[0].cords[0])/2
                     self.nodes[0].cords[0] = middle - self.nodes[0].size
                     self.nodes[1].cords[0] = middle + self.nodes[1].size
                     self.touching = True
-            elif not first_on_left:
+            elif first_on_left:
                 self.touching = True
                 middle = self.nodes[1].cords[0] - (self.nodes[1].cords[0] - self.nodes[0].cords[0])/2
                 self.nodes[0].cords[0] = middle + self.nodes[0].size
@@ -198,14 +201,14 @@ all_nodes = [Node(.75, 5, 10, [display_size/2 - 50, display_size/2]),
 
 c = Connector(50, [all_nodes[0], all_nodes[1]])
 running = True
-blank = Node(0, 0, 0, [0, 0])
+blank_node = Node(0, 0, 0, [0, 0])
 init_time = time.time()
 while running:
     moment = init_time - time.time()
     draw()
     c.expand(3, moment)
     for n in all_nodes:
-        n.fek_gravity(blank)
+        n.sum_forces(blank_node)
         n.apply_forces()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
