@@ -101,7 +101,7 @@ class Node:
 class Connector:
 
     def __init__(self, power, nodes):
-        self.power = power * 5
+        self.power = power/3
         self.nodes = nodes
         self.warping = 1.0
         self.relaxing = False
@@ -118,8 +118,8 @@ class Connector:
         if not self.relaxing:
             self.warping = .75
             ratio = find_ratio(self.nodes[0].cords, self.nodes[1].cords)
-            self.nodes[0].move([-ratio[0][0] * self.power, -ratio[0][1] * self.power])
-            self.nodes[1].move([ratio[1][0] * self.power, -ratio[1][1] * self.power])
+            self.nodes[0].move([ratio[0][0] * self.power, -ratio[0][1] * self.power])
+            self.nodes[1].move([-ratio[1][0] * self.power, -ratio[1][1] * self.power])
             self.touching = False
         else:
             self.relax()
@@ -139,16 +139,15 @@ class Connector:
             self.nodes[1].move([-ratio[1][0] * multiply * self.power, ratio[1][1] * self.power])
             if self.nodes[0].cords[0] < self.nodes[1].cords[0]:
                 if first_on_left:
-                    middle = self.nodes[1].cords[0] - (self.nodes[1].cords[0] - self.nodes[0].cords[0])/2  # TODO correct placement
-                    self.nodes[0].cords[0] = middle + self.nodes[0].size
-                    self.nodes[1].cords[0] = middle - self.nodes[1].size
-                    self.touching = True
-            else:
-                if not first_on_left:
-                    self.touching = True
-                    middle = self.nodes[1].cords[0] - (self.nodes[1].cords[0] - self.nodes[0].cords[0])/2  # TODO correct placement
+                    middle = self.nodes[1].cords[0] - math.fabs(self.nodes[1].cords[0] - self.nodes[0].cords[0])/2
                     self.nodes[0].cords[0] = middle - self.nodes[0].size
                     self.nodes[1].cords[0] = middle + self.nodes[1].size
+                    self.touching = True
+            elif not first_on_left:
+                self.touching = True
+                middle = self.nodes[1].cords[0] - (self.nodes[1].cords[0] - self.nodes[0].cords[0])/2
+                self.nodes[0].cords[0] = middle + self.nodes[0].size
+                self.nodes[1].cords[0] = middle - self.nodes[1].size
 
     def draw(self):
         node1_thickness = int(self.nodes[0].size/5 * self.warping)
@@ -194,8 +193,8 @@ def draw():
     pygame.display.update()
 
 
-all_nodes = [Node(.75, 5, 10, [display_size/2 + 50, display_size/2]),
-             Node(1.6, 3, 10, [display_size/2 - 50, display_size/2])]
+all_nodes = [Node(.75, 5, 10, [display_size/2 - 50, display_size/2]),
+             Node(1.6, 3, 10, [display_size/2 + 50, display_size/2])]
 
 c = Connector(50, [all_nodes[0], all_nodes[1]])
 running = True
