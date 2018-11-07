@@ -91,12 +91,15 @@ class Node:
                 add = no.sum_forces(self)
                 force_on[0] += add[0]
                 force_on[1] += add[1]
-        self.applied_force = [force_on[0] + total_force[0], force_on[1] + total_force[1]]
+        self.applied_force = [self.applied_force[0] + force_on[0] + total_force[0], self.applied_force[1] + force_on[1] + total_force[1]]
         return self.applied_force
 
     def apply_forces(self):
         self.move(self.applied_force)
-        self.applied_force = 0
+        self.applied_force = [0, 0]
+
+    def add_force(self, adds):
+        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
 
 
 class Connector:
@@ -119,10 +122,8 @@ class Connector:
         if not self.relaxing:
             self.warping = .75
             ratio = find_ratio(self.nodes[0].cords, self.nodes[1].cords)
-            self.nodes[0].move([ratio[0][0] * self.power, ratio[0][1] * self.power])
-            self.nodes[1].move([-ratio[1][0] * self.power, -ratio[1][1] * self.power])
-            # self.nodes[0].add_force([ratio[0][0] * self.power, ratio[0][1] * self.power])
-            # self.nodes[2].add_force([-ratio[1][0] * self.power, -ratio[1][1] * self.power])
+            self.nodes[0].add_force([ratio[0][0] * self.power, ratio[0][1] * self.power])
+            self.nodes[1].add_force([-ratio[1][0] * self.power, -ratio[1][1] * self.power])
             self.touching = False
         else:
             self.relax()
@@ -138,14 +139,26 @@ class Connector:
                 first_on_left = True
             else:
                 first_on_left = False
-            self.nodes[0].move([ratio[0][0] * multiply * self.power, ratio[0][1] * self.power])
-            self.nodes[1].move([-ratio[1][0] * multiply * self.power, ratio[1][1] * self.power])
-            if self.nodes[0].cords[0] < self.nodes[1].cords[0]:
+            self.nodes[0].add_force([ratio[0][0] * multiply * self.power, ratio[0][1] * self.power])
+            self.nodes[1].add_force([-ratio[0][0] * multiply * self.power, -ratio[0][1] * self.power])
+
+            if self.nodes[0].cords[0] == self.nodes[1].cords[0]:  # TODO find correct midpoint
+                middle = self.nodes[1].cords[0] - (self.nodes[1].cords[0] - self.nodes[0].cords[0]) / 2
+                if first_on_left:
+                    self.nodes[0].cords[0] = middle - self.nodes[0].size
+                    self.nodes[1].cords[0] = middle + self.nodes[1].size
+                else:
+                    self.nodes[0].cords[0] = middle + self.nodes[0].size
+                    self.nodes[1].cords[0] = middle - self.nodes[1].size
+                self.touching = True
+
+            elif self.nodes[0].cords[0] < self.nodes[1].cords[0]:
                 if not first_on_left:
                     middle = self.nodes[1].cords[0] - math.fabs(self.nodes[1].cords[0] - self.nodes[0].cords[0])/2
                     self.nodes[0].cords[0] = middle - self.nodes[0].size
                     self.nodes[1].cords[0] = middle + self.nodes[1].size
                     self.touching = True
+
             elif first_on_left:
                 self.touching = True
                 middle = self.nodes[1].cords[0] - (self.nodes[1].cords[0] - self.nodes[0].cords[0])/2
@@ -196,10 +209,11 @@ def draw():
     pygame.display.update()
 
 
-all_nodes = [Node(.75, 5, 10, [display_size/2 - 50, display_size/2]),
-             Node(1.6, 3, 10, [display_size/2 + 50, display_size/2])]
+all_nodes = [Node(.75, 5, 10, [display_size/2 - 50, display_size]),
+             Node(1.6, 3, 10, [display_size/2 + 50, display_size]),
+             Node(1.6, 4, 10, [display_size/2, display_size/2])]
 
-c = Connector(50, [all_nodes[0], all_nodes[1]])
+c = Connector(25, [all_nodes[0], all_nodes[1]])
 running = True
 blank_node = Node(0, 0, 0, [0, 0])
 init_time = time.time()
