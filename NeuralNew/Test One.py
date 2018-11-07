@@ -228,13 +228,13 @@ all_nodes = [Node(.75, 5, [display_size/2 - 100, display_size]),
              Node(1.6, 3, [display_size/2 + 100, display_size]),
              Node(1.6, 4, [display_size/2, display_size/2])]
 
-all_connectors = [Connector(25, [all_nodes[0], all_nodes[1]], 2),  # Between the OG 2 has the most power
-                  Connector(25, [all_nodes[1], all_nodes[2]], 2),  # Between the 1, and 2 has the middlest power
-                  Connector(25, [all_nodes[0], all_nodes[2]], 2)]  # Between the 0, and 2 has the least power
+all_connectors = [Connector(10, [all_nodes[0], all_nodes[1]], 0),  # Between the OG 2 has the most power
+                  Connector(10, [all_nodes[1], all_nodes[2]], 0),  # Between the 1, and 2 has the middlest power
+                  Connector(10, [all_nodes[0], all_nodes[2]], 0)]  # Between the 0, and 2 has the least power
 running = True
 blank_node = Node(0, 0, [0, 0])
 init_time = time.time()
-organisms = [Organism(all_nodes, all_connectors, 3)]
+organisms = [Organism(all_nodes, all_connectors, 1)]
 while running:
     moment = init_time - time.time()
     draw()
