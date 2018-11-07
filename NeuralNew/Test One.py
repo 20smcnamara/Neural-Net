@@ -55,7 +55,7 @@ class Node:
     def draw(self):
         pygame.draw.circle(screen, self.color, [int(self.cords[0]), int(self.cords[1])], self.size)
 
-    def sum_forces(self, to):
+    def sum_forces(self, to):  # TODO Decide ridged or jelly joints (Please do ridged)
         if to.size != 0:
             boolean = True
             ratio = find_ratio(self.cords, to.cords)
