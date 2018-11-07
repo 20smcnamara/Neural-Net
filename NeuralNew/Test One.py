@@ -135,11 +135,6 @@ class Connector:
             self.warping = 1
             ratio = find_ratio(self.nodes[0].cords, self.nodes[1].cords)
             multiply = 1
-            if self.nodes[0].cords[0] < self.nodes[1].cords[0]:
-                multiply = -1
-                first_on_left = True
-            else:
-                first_on_left = False
             self.nodes[0].add_force([ratio[0][0] * multiply * self.power, ratio[0][1] * self.power])
             self.nodes[1].add_force([-ratio[0][0] * multiply * self.power, -ratio[0][1] * self.power])
 
