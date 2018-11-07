@@ -157,7 +157,6 @@ class Connector:
         node2_thickness = int(self.nodes[1].size/5 * self.warping)
         node1 = self.nodes[0].cords
         node2 = self.nodes[1].cords
-        color = (155, 155, 155)
         color = (75, 15, 15)
         if self.relaxing == 1:
             color = (15, 75, 15)
@@ -229,7 +228,7 @@ all_nodes = [Node(.75, 5, [display_size/2 - 100, display_size]),
              Node(1.6, 3, [display_size/2 + 100, display_size]),
              Node(1.6, 4, [display_size/2, display_size/2])]
 
-all_connectors = [Connector(25, [all_nodes[0], all_nodes[1]], 1),  # Between the OG 2 has the most power
+all_connectors = [Connector(25, [all_nodes[0], all_nodes[1]], 2),  # Between the OG 2 has the most power
                   Connector(25, [all_nodes[1], all_nodes[2]], 2),  # Between the 1, and 2 has the middlest power
                   Connector(25, [all_nodes[0], all_nodes[2]], 2)]  # Between the 0, and 2 has the least power
 running = True
