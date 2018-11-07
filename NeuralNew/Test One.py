@@ -93,7 +93,7 @@ class Node:
                 add = no.sum_forces(self)
                 force_on[0] += add[0]
                 force_on[1] += add[1]
-            else:
+            elif not self.touching_ground:
                 add = no.sum_forces(self)
                 other.add_force(add)
 
@@ -117,7 +117,7 @@ class Node:
 class Connector:
 
     def __init__(self, power, nodes, relaxing):
-        self.power = power/3
+        self.power = power/2*3
         self.nodes = nodes
         self.warping = 1.0
         self.relaxing = relaxing
@@ -137,8 +137,8 @@ class Connector:
         if self.relaxing == 1:
             self.warping = .75
             ratio = find_ratio(self.nodes[0].cords, self.nodes[1].cords)
-            self.nodes[0].add_force([ratio[0][0] * self.power, ratio[0][1] * self.power])
-            self.nodes[1].add_force([-ratio[1][0] * self.power, -ratio[1][1] * self.power])
+            self.nodes[0].add_force([-ratio[0][0] * self.power, -ratio[0][1] * self.power])
+            self.nodes[1].add_force([ratio[1][0] * self.power, ratio[1][1] * self.power])
             self.touching = False
         elif self.relaxing == 0:
             self.relax()
@@ -234,7 +234,7 @@ all_connectors = [Connector(10, [all_nodes[0], all_nodes[1]], 0),  # Between the
 running = True
 blank_node = Node(0, 0, [0, 0])
 init_time = time.time()
-organisms = [Organism(all_nodes, all_connectors, 1)]
+organisms = [Organism(all_nodes, all_connectors, 2)]
 while running:
     moment = init_time - time.time()
     draw()
