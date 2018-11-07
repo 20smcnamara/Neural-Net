@@ -95,7 +95,6 @@ class Node:
         return self.applied_force
 
     def apply_forces(self):
-        print(self.size, self.applied_force)
         self.move(self.applied_force)
         self.applied_force = [0, 0]
 
@@ -172,7 +171,10 @@ class Connector:
         node2_thickness = int(self.nodes[1].size/5 * self.warping)
         node1 = self.nodes[0].cords
         node2 = self.nodes[1].cords
-        pygame.draw.polygon(screen, (75, 75, 75), ([node1[0], node1[1] + node1_thickness],
+        color = (75 * self.power, 15 * self.power, 15 * self.power)
+        if self.relaxing:
+            color = (15 * self.power, 75 * self.power, 15 * self.power)
+        pygame.draw.polygon(screen, color, ([node1[0], node1[1] + node1_thickness],
                                                    [node1[0], node1[1] - node1_thickness],
                                                    [node2[0], node2[1] - node2_thickness],
                                                    [node2[0], node2[1] + node2_thickness]))
@@ -196,7 +198,6 @@ class Organism:
     def take_action(self):
         for c in self.connectors:
             c.expand(self.sleep)
-            print(c.relaxing)
 
     def draw(self):
         for c in self.connectors:
@@ -235,13 +236,13 @@ def draw():
     pygame.display.update()
 
 
-all_nodes = [Node(.75, 5, 10, [display_size/2 - 50, display_size]),
-             Node(1.6, 3, 10, [display_size/2 + 50, display_size]),
+all_nodes = [Node(.75, 5, 10, [display_size/2 - 100, display_size]),
+             Node(1.6, 3, 10, [display_size/2 + 100, display_size]),
              Node(1.6, 4, 10, [display_size/2, display_size/2])]
 
-all_connectors = [Connector(25, [all_nodes[0], all_nodes[1]], False),
-                  Connector(25, [all_nodes[1], all_nodes[2]], True),
-                  Connector(25, [all_nodes[0], all_nodes[2]], True)]
+all_connectors = [Connector(7, [all_nodes[0], all_nodes[1]], True),  # Between the OG 2 has the most power
+                  Connector(5, [all_nodes[1], all_nodes[2]], False),  # Between the 1, and 2 has the middlest power
+                  Connector(3, [all_nodes[0], all_nodes[2]], False)]  # Between the 0, and 2 has the least power
 running = True
 blank_node = Node(0, 0, 0, [0, 0])
 init_time = time.time()
