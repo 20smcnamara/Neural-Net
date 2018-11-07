@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29e1a184-8550-4697-b7a5-70de2c288622" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test One.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test One.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,12 +51,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="1057" />
+          <entry key="py" value="1630" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="1057" />
+          <entry key="Python" value="1630" />
         </counts>
       </usages-collector>
     </session>
@@ -67,22 +66,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Test One.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="214" />
+            <state relative-caret-position="172">
+              <caret line="231" column="11" selection-start-line="231" selection-start-column="11" selection-end-line="231" selection-end-column="11" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <marker date="1541595005000" expanded="true" signature="288:294" ph="..." />
-                <marker date="1541595005000" expanded="true" signature="849:858" ph="..." />
-                <marker date="1541595005000" expanded="true" signature="849:922" ph="..." />
-                <marker date="1541595005000" expanded="true" signature="1373:1601" ph="..." />
-                <marker date="1541595005000" expanded="true" signature="1410:1601" ph="..." />
-                <marker date="1541595005000" expanded="true" signature="3684:3685" ph="..." />
-                <marker date="1541595005000" expanded="true" signature="3684:3690" ph="..." />
-                <marker date="1541595005000" expanded="true" signature="4678:6504" ph="..." />
-                <marker date="1541595005000" expanded="true" signature="7182:7398" ph="..." />
-                <marker date="1541595005000" expanded="true" signature="7427:7432" ph="..." />
-                <marker date="1541595005000" expanded="true" signature="7427:7691" ph="..." />
-                <marker date="1541595005000" expanded="true" signature="7893:7896" ph="..." />
+                <marker date="1541599105000" expanded="true" signature="7200:7670" ph="..." />
+                <marker date="1541599105000" expanded="true" signature="7401:7502" ph="..." />
               </folding>
             </state>
           </provider>
@@ -260,22 +249,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Test One.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="214" />
+        <state relative-caret-position="172">
+          <caret line="231" column="11" selection-start-line="231" selection-start-column="11" selection-end-line="231" selection-end-column="11" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1541595005000" expanded="true" signature="288:294" ph="..." />
-            <marker date="1541595005000" expanded="true" signature="849:858" ph="..." />
-            <marker date="1541595005000" expanded="true" signature="849:922" ph="..." />
-            <marker date="1541595005000" expanded="true" signature="1373:1601" ph="..." />
-            <marker date="1541595005000" expanded="true" signature="1410:1601" ph="..." />
-            <marker date="1541595005000" expanded="true" signature="3684:3685" ph="..." />
-            <marker date="1541595005000" expanded="true" signature="3684:3690" ph="..." />
-            <marker date="1541595005000" expanded="true" signature="4678:6504" ph="..." />
-            <marker date="1541595005000" expanded="true" signature="7182:7398" ph="..." />
-            <marker date="1541595005000" expanded="true" signature="7427:7432" ph="..." />
-            <marker date="1541595005000" expanded="true" signature="7427:7691" ph="..." />
-            <marker date="1541595005000" expanded="true" signature="7893:7896" ph="..." />
+            <marker date="1541599105000" expanded="true" signature="7200:7670" ph="..." />
+            <marker date="1541599105000" expanded="true" signature="7401:7502" ph="..." />
           </folding>
         </state>
       </provider>

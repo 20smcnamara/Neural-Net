@@ -95,6 +95,7 @@ class Node:
         return self.applied_force
 
     def apply_forces(self):
+        print(self.size, self.applied_force)
         self.move(self.applied_force)
         self.applied_force = [0, 0]
 
@@ -104,18 +105,19 @@ class Node:
 
 class Connector:
 
-    def __init__(self, power, nodes):
+    def __init__(self, power, nodes, relaxing):
         self.power = power/3
         self.nodes = nodes
         self.warping = 1.0
-        self.relaxing = False
+        self.relaxing = relaxing
         self.last_time = 0
         self.minLength = nodes[0].get_long(nodes[1])
         self.touching = False
         nodes[0].connectors.append(self)
         nodes[1].connectors.append(self)
 
-    def expand(self, sleep, step):
+    def expand(self, sleep):
+        step = time.time()
         if round(step) % sleep == 0 and round(step) != self.last_time:
             self.last_time = round(step)
             self.relaxing = not self.relaxing
@@ -178,6 +180,29 @@ class Connector:
         self.nodes[1].draw()
 
 
+class Organism:
+
+    def __init__(self, nodes, connectors, sleep):
+        self.connectors = connectors
+        self.nodes = nodes
+        self.last_time = -1
+        self.sleep = sleep
+
+    def control_forces(self):
+        for n in self.nodes:
+            n.sum_forces(blank_node)
+            n.apply_forces()
+
+    def take_action(self):
+        for c in self.connectors:
+            c.expand(self.sleep)
+            print(c.relaxing)
+
+    def draw(self):
+        for c in self.connectors:
+            c.draw()
+
+
 def find_ratio(cords1, cords2):
     wide = cords1[0] - cords2[0]
     high = cords1[1] - cords2[1]
@@ -205,7 +230,8 @@ def draw_back():
 
 def draw():
     draw_back()
-    c.draw()
+    for org in organisms:
+        org.draw()
     pygame.display.update()
 
 
@@ -213,17 +239,19 @@ all_nodes = [Node(.75, 5, 10, [display_size/2 - 50, display_size]),
              Node(1.6, 3, 10, [display_size/2 + 50, display_size]),
              Node(1.6, 4, 10, [display_size/2, display_size/2])]
 
-c = Connector(25, [all_nodes[0], all_nodes[1]])
+all_connectors = [Connector(25, [all_nodes[0], all_nodes[1]], False),
+                  Connector(25, [all_nodes[1], all_nodes[2]], True),
+                  Connector(25, [all_nodes[0], all_nodes[2]], True)]
 running = True
 blank_node = Node(0, 0, 0, [0, 0])
 init_time = time.time()
+organisms = [Organism(all_nodes, all_connectors, 3)]
 while running:
     moment = init_time - time.time()
     draw()
-    c.expand(3, moment)
-    for n in all_nodes:
-        n.sum_forces(blank_node)
-        n.apply_forces()
+    for o in organisms:
+        o.take_action()
+        o.control_forces()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
