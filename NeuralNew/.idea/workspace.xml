@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29e1a184-8550-4697-b7a5-70de2c288622" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/20smcnamara.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/20smcnamara.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test One.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test One.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,12 +51,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="1895" />
+          <entry key="py" value="1903" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="1895" />
+          <entry key="Python" value="1903" />
         </counts>
       </usages-collector>
     </session>
@@ -67,12 +66,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Test One.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-700">
-              <caret line="176" column="24" lean-forward="true" selection-start-line="176" selection-start-column="24" selection-end-line="176" selection-end-column="24" />
+            <state relative-caret-position="90">
+              <caret line="143" column="102" selection-start-line="143" selection-start-column="102" selection-end-line="143" selection-end-column="102" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <marker date="1541599925000" expanded="true" signature="7359:7829" ph="..." />
-                <marker date="1541599925000" expanded="true" signature="7560:7661" ph="..." />
+                <marker date="1541600269000" expanded="true" signature="6057:6527" ph="..." />
+                <marker date="1541600269000" expanded="true" signature="6258:6359" ph="..." />
               </folding>
             </state>
           </provider>
@@ -250,12 +249,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Test One.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-700">
-          <caret line="176" column="24" lean-forward="true" selection-start-line="176" selection-start-column="24" selection-end-line="176" selection-end-column="24" />
+        <state relative-caret-position="90">
+          <caret line="143" column="102" selection-start-line="143" selection-start-column="102" selection-end-line="143" selection-end-column="102" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1541599925000" expanded="true" signature="7359:7829" ph="..." />
-            <marker date="1541599925000" expanded="true" signature="7560:7661" ph="..." />
+            <marker date="1541600269000" expanded="true" signature="6057:6527" ph="..." />
+            <marker date="1541600269000" expanded="true" signature="6258:6359" ph="..." />
           </folding>
         </state>
       </provider>

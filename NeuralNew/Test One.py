@@ -143,29 +143,6 @@ class Connector:
             self.nodes[0].add_force([ratio[0][0] * multiply * self.power, ratio[0][1] * self.power])
             self.nodes[1].add_force([-ratio[0][0] * multiply * self.power, -ratio[0][1] * self.power])
 
-            if self.nodes[0].cords[0] == self.nodes[1].cords[0]:  # TODO find correct midpoint
-                middle = self.nodes[1].cords[0] - (self.nodes[1].cords[0] - self.nodes[0].cords[0]) / 2
-                if first_on_left:
-                    self.nodes[0].cords[0] = middle - self.nodes[0].size
-                    self.nodes[1].cords[0] = middle + self.nodes[1].size
-                else:
-                    self.nodes[0].cords[0] = middle + self.nodes[0].size
-                    self.nodes[1].cords[0] = middle - self.nodes[1].size
-                self.touching = True
-
-            elif self.nodes[0].cords[0] < self.nodes[1].cords[0]:
-                if not first_on_left:
-                    middle = self.nodes[1].cords[0] - math.fabs(self.nodes[1].cords[0] - self.nodes[0].cords[0])/2
-                    self.nodes[0].cords[0] = middle - self.nodes[0].size
-                    self.nodes[1].cords[0] = middle + self.nodes[1].size
-                    self.touching = True
-
-            elif first_on_left:
-                self.touching = True
-                middle = self.nodes[1].cords[0] - (self.nodes[1].cords[0] - self.nodes[0].cords[0])/2
-                self.nodes[0].cords[0] = middle + self.nodes[0].size
-                self.nodes[1].cords[0] = middle - self.nodes[1].size
-
     def draw(self):
         node1_thickness = int(self.nodes[0].size/5 * self.warping)
         node2_thickness = int(self.nodes[1].size/5 * self.warping)
