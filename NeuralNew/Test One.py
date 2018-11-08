@@ -35,6 +35,7 @@ class Node:
         self.touching_ground = (self.cords[1] + self.size) == base
 
     def move(self, adds):
+        print(self.size, ":",  adds)
         xadd = adds[0]
         yadd = adds[1]
         if self.touching_ground and yadd < 0:
@@ -89,6 +90,7 @@ class Node:
             else:
                 no = con.nodes[1]
                 other = con.nodes[0]
+
             if no.cords[1] > self.cords[1] and not no.touching_ground:
                 add = no.sum_forces(self)
                 force_on[0] += add[0]
@@ -99,8 +101,6 @@ class Node:
 
         applied_force = [self.applied_force[0] + force_on[0] + total_force[0],
                          self.applied_force[1] + force_on[1] + total_force[1]]
-        if not self.touching_ground:
-            self.applied_force = [self.applied_force[0], 0]
         return applied_force
 
     def apply_forces(self):
@@ -111,7 +111,9 @@ class Node:
         self.applied_force = [0, 0]
 
     def add_force(self, adds):
+        print(self.size, 1, self.applied_force)
         self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
+        print(self.size, 2, self.applied_force)
 
 
 class Connector:
@@ -150,7 +152,7 @@ class Connector:
             ratio = find_ratio(self.nodes[0].cords, self.nodes[1].cords)
             multiply = 1
             self.nodes[0].add_force([ratio[0][0] * multiply * self.power, ratio[0][1] * self.power])
-            self.nodes[1].add_force([-ratio[0][0] * multiply * self.power, -ratio[0][1] * self.power])
+            self.nodes[1].add_force([-ratio[0][0] * multiply * self.power, ratio[0][1] * self.power])
 
     def draw(self):
         node1_thickness = int(self.nodes[0].size/5 * self.warping)
@@ -241,6 +243,7 @@ while running:
     for o in organisms:
         o.take_action()
         o.control_forces()
+    print("Loop")
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
