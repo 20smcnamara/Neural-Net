@@ -23,6 +23,7 @@ class Node:
         self.touching_ground = False
         self.connectors = []
         self.connected_nodes = []
+        self.update_cords()
         self.applied_force = [0, 0]
         if friction <= .9:
             self.color = (250, 185, 255)
@@ -34,8 +35,13 @@ class Node:
     def update(self):
         self.touching_ground = (self.cords[1] + self.size) == base
 
+    def update_cords(self):
+        self.hitbox = pygame.Rect(self.cords[0] - self.size * 5 / 6,
+                                  self.cords[1] - self.size * 5 / 6,
+                                  self.size * 5 / 3,
+                                  self.size * 5 / 3)
+
     def move(self, adds):
-        print(self.size, ":",  adds)
         xadd = adds[0]
         yadd = adds[1]
         if self.touching_ground and yadd < 0:
@@ -47,6 +53,7 @@ class Node:
         if self.cords[1] + self.size >= base:
             self.cords[1] = base-self.size
             self.touching_ground = True
+        self.update_cords()
 
     def get_long(self, other_node):
         x_length = math.fabs(self.cords[0] - other_node.cords[0])
@@ -54,54 +61,30 @@ class Node:
         return (x_length ** 2 + y_length ** 2) ** .5
 
     def draw(self):
-        pygame.draw.circle(screen, self.color, [int(self.cords[0]), int(self.cords[1])], self.size)
+        # pygame.draw.circle(screen, self.color, [int(self.cords[0]), int(self.cords[1])], self.size)
+        pygame.draw.rect(screen, self.color, self.hitbox)
 
-    def sum_forces(self, to):  # TODO Decide ridged or jelly joints (Please do ridged)
-        if to.size != 0:
-            boolean = True
-            ratio = find_ratio(self.cords, to.cords)
-            total = 0
-            amount = 0
-            for no in self.connected_nodes:
-                if no.cords[1] < self:
-                    total += find_angle(self, no)
-                    amount += 1
-            if amount > 0:
-                total_force = [ratio[0][0] * ((self.size * GRAVITY) * find_angle(self, to)/(total/amount)),
-                               ratio[0][1] * ((self.size * GRAVITY) * find_angle(self, to)/(total/amount))]
-            else:
-                total_force = [ratio[0][0] * ((self.size * GRAVITY) * find_angle(self, to)),
-                               ratio[0][1] * ((self.size * GRAVITY) * find_angle(self, to))]
-            for no in self.connected_nodes:
-                if no.cords[1] > self.cords[1] and not no.touching_ground:
-                    boolean = False
-                    break
-            if boolean:
-                return total_force
-        elif not self.touching_ground:
-            total_force = [0, (self.size * GRAVITY)]
-        else:
-            total_force = [0, 0]
-        force_on = [0, 0]
-        for con in self.connectors:
-            if con.nodes[0] != self:
-                no = con.nodes[0]
-                other = con.nodes[1]
-            else:
-                no = con.nodes[1]
-                other = con.nodes[0]
-
-            if no.cords[1] > self.cords[1] and not no.touching_ground:
-                add = no.sum_forces(self)
-                force_on[0] += add[0]
-                force_on[1] += add[1]
-            elif not self.touching_ground:
-                add = no.sum_forces(self)
-                other.add_force(add)
-
-        applied_force = [self.applied_force[0] + force_on[0] + total_force[0],
-                         self.applied_force[1] + force_on[1] + total_force[1]]
-        return applied_force
+    def sum_forces(self, last):
+        total_forces = [0, 0]
+        if self.touching_ground or self:
+            return [0, 0]
+        for n in self.connected_nodes:
+            if n != last:
+                adds = n.sum_forces
+                if not n.touching_ground:
+                    if n.cords[1] == self.cords[1]:
+                        total_forces = [total_forces[0], total_forces[1] - adds[1]]
+                    elif n.cords[1] > self.cords[1]:
+                        total_forces = [total_forces[0] + adds[1], total_forces[1] + adds[1]]
+                    else:
+                        total_forces = [total_forces[0] + adds[1], total_forces[1] - adds[1]]
+                else:
+                    if n.cords[1] == self.cords[1]:
+                        total_forces = [total_forces[0], total_forces[1] - adds[1]]
+                    elif n.cords[1] > self.cords[1]:
+                        total_forces = [total_forces[0] - adds[1], total_forces[1] + adds[1]]
+                    else:
+                        total_forces = [total_forces[0] + adds[1], total_forces[1] + adds[1]]
 
     def apply_forces(self):
         if math.fabs(self.applied_force[0]) >= self.threshold or self.touching_ground:
@@ -111,9 +94,7 @@ class Node:
         self.applied_force = [0, 0]
 
     def add_force(self, adds):
-        print(self.size, 1, self.applied_force)
         self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
-        print(self.size, 2, self.applied_force)
 
 
 class Connector:
@@ -165,9 +146,9 @@ class Connector:
         if self.relaxing == 2:
             color = (15, 15, 15)
         pygame.draw.polygon(screen, color, ([node1[0], node1[1] + node1_thickness],
-                                                   [node1[0], node1[1] - node1_thickness],
-                                                   [node2[0], node2[1] - node2_thickness],
-                                                   [node2[0], node2[1] + node2_thickness]))
+                                            [node1[0], node1[1] - node1_thickness],
+                                            [node2[0], node2[1] - node2_thickness],
+                                            [node2[0], node2[1] + node2_thickness]))
         self.nodes[0].draw()
         self.nodes[1].draw()
 
@@ -243,7 +224,6 @@ while running:
     for o in organisms:
         o.take_action()
         o.control_forces()
-    print("Loop")
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
