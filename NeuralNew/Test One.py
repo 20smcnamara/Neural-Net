@@ -9,37 +9,68 @@ display_size = 750
 screen = pygame.display.set_mode([display_size, display_size])
 pygame.display.set_caption("Testing")
 base = display_size - 150
+ground = pygame.Rect((0, base, display_size, display_size - base))
 GRAVITY = 1.5
+
+
+class Circle(pygame.sprite.Sprite):
+
+    def __init__(self, color, radius, cords):
+        self.radius = radius
+        pygame.sprite.Sprite.__init__(self)
+        self.image = pygame.Surface((radius, radius))
+        self.image.fill((255, 255, 255))
+        self.color = color
+        self.cords = cords
+        self.len_rect = math.sqrt(2 * (self.radius ** 2))
+        self.rect = pygame.Rect((cords[0] - self.len_rect / 2,
+                                 cords[1] - self.len_rect / 2,
+                                 self.len_rect,
+                                 self.len_rect))
+        self.rect.center = (cords[0], cords[1])
+        self.dx = 5
+        self.dy = 5
+
+    def draw(self):
+        pygame.draw.circle(screen, self.color, self.cords, self.radius)
+
+    def move_to(self, cords):
+        self.cords = cords
+        self.len_rect = math.sqrt(2 * (self.radius ** 2))
+        self.rect = pygame.Rect((cords[0] - self.len_rect / 2,
+                                 cords[1] - self.len_rect / 2,
+                                 self.len_rect,
+                                 self.len_rect))
+
+    def is_touching_object(self, other):
+        return other.Rect.collidepoint(self.rect)
 
 
 class Node:
 
     def __init__(self, friction, size, cords):
-        self.friction = friction*2
+        self.friction = friction
         self.size = size*3
-        self.threshold = size * friction / 100
+        self.threshold = size * friction / 10
         self.cords = cords
         self.mass = size
         self.touching_ground = False
         self.connectors = []
         self.connected_nodes = []
-        self.update_cords()
         self.applied_force = [0, 0]
-        if friction <= .9:
-            self.color = (250, 185, 255)
-        elif friction >= 1.5:
-            self.color = (255, 125, 175)
-        else:
-            self.color = (255, 102, 102)
+        self.color = (255, (203 - 135 * friction) * 1.88, (203 - 135 * friction) * 1.88)  # Look at the magic #'s
+        if friction > 1.5:
+            self.color = (255, 0, 0)
+        if friction < 0.5:
+            self.color = (255, 230, 230)
+        self.circle = Circle(self.color, self.size * 5, cords)
 
     def update(self):
         self.touching_ground = (self.cords[1] + self.size) == base
+        self.update_cords()
 
     def update_cords(self):
-        self.hitbox = pygame.Rect(self.cords[0] - self.size * 5 / 6,
-                                  self.cords[1] - self.size * 5 / 6,
-                                  self.size * 5 / 3,
-                                  self.size * 5 / 3)
+        self.circle.move_to(self.cords)
 
     def move(self, adds):
         xadd = adds[0]
@@ -61,16 +92,14 @@ class Node:
         return (x_length ** 2 + y_length ** 2) ** .5
 
     def draw(self):
-        # pygame.draw.circle(screen, self.color, [int(self.cords[0]), int(self.cords[1])], self.size)
-        pygame.draw.rect(screen, self.color, self.hitbox)
+        pygame.draw.circle(screen, self.color, [int(self.cords[0]), int(self.cords[1])], self.size)
 
-    def sum_forces(self, last):
+    def sum_forces(self, calculated):
         total_forces = [0, 0]
-        if self.touching_ground or self:
+        if self in calculated:
             return [0, 0]
         for n in self.connected_nodes:
-            if n != last:
-                adds = n.sum_forces
+                adds = n.sum_forces()
                 if not n.touching_ground:
                     if n.cords[1] == self.cords[1]:
                         total_forces = [total_forces[0], total_forces[1] - adds[1]]
@@ -85,45 +114,58 @@ class Node:
                         total_forces = [total_forces[0] - adds[1], total_forces[1] + adds[1]]
                     else:
                         total_forces = [total_forces[0] + adds[1], total_forces[1] + adds[1]]
+        calculated.append(self)
+        return total_forces
 
     def apply_forces(self):
+        print(self.threshold)
         if math.fabs(self.applied_force[0]) >= self.threshold or self.touching_ground:
             self.move(self.applied_force)
         else:
             self.move([0, self.applied_force[1]])
-        self.applied_force = [0, 0]
+        if self.touching_ground:
+            self.applied_force = [0, 0]
+        else:
+            self.applied_force = [0, self.mass * GRAVITY]
 
     def add_force(self, adds):
         self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
 
+    def check_collision(self, other):
+        return pygame.sprite.collide_circle(self.circle, other.circle)
+
 
 class Connector:
 
-    def __init__(self, power, nodes, relaxing):
+    def __init__(self, power, sleep, nodes, status):
+        self.init_status = status
         self.power = power/2*3
         self.nodes = nodes
         self.warping = 1.0
-        self.relaxing = relaxing
+        self.status = status
         self.last_time = 0
         self.minLength = nodes[0].get_long(nodes[1])
         self.touching = False
+        self.sleep = sleep
         nodes[0].connectors.append(self)
         nodes[1].connectors.append(self)
 
-    def expand(self, sleep):
-        step = time.time()
-        if round(step) % sleep == 0 and round(step) != self.last_time:
+    def expand(self):
+        step = init_time - time.time()
+        if round(step) % self.sleep == self.init_status and round(step) != self.last_time:
             self.last_time = round(step)
-            self.relaxing += 1
-            if self.relaxing == 3:
-                self.relaxing = 0
-        if self.relaxing == 1:
+            self.status += 1
+            if self.status == 3:
+                self.status = 0
+        if self.status == 2:
+            return 
+        if self.status == 1:
             self.warping = .75
             ratio = find_ratio(self.nodes[0].cords, self.nodes[1].cords)
             self.nodes[0].add_force([-ratio[0][0] * self.power, -ratio[0][1] * self.power])
             self.nodes[1].add_force([ratio[1][0] * self.power, ratio[1][1] * self.power])
             self.touching = False
-        elif self.relaxing == 0:
+        elif self.status == 0:
             self.relax()
         draw()
 
@@ -141,9 +183,9 @@ class Connector:
         node1 = self.nodes[0].cords
         node2 = self.nodes[1].cords
         color = (75, 15, 15)
-        if self.relaxing == 1:
+        if self.status == 1:
             color = (15, 75, 15)
-        if self.relaxing == 2:
+        if self.status == 2:
             color = (15, 15, 15)
         pygame.draw.polygon(screen, color, ([node1[0], node1[1] + node1_thickness],
                                             [node1[0], node1[1] - node1_thickness],
@@ -155,24 +197,27 @@ class Connector:
 
 class Organism:
 
-    def __init__(self, nodes, connectors, sleep):
+    def __init__(self, nodes, connectors):
         self.connectors = connectors
         self.nodes = nodes
         self.last_time = -1
-        self.sleep = sleep
 
     def control_forces(self):
         for n in self.nodes:
-            n.sum_forces(blank_node)
+            n.sum_forces([n])
             n.apply_forces()
 
     def take_action(self):
         for c in self.connectors:
-            c.expand(self.sleep)
+            c.expand()
 
     def draw(self):
         for c in self.connectors:
             c.draw()
+
+    def update(self):
+        for n in self.nodes:
+            n.update()
 
 
 def find_ratio(cords1, cords2):
@@ -208,22 +253,23 @@ def draw():
 
 
 all_nodes = [Node(.75, 5, [display_size/2 - 100, display_size]),
-             Node(1.6, 3, [display_size/2 + 100, display_size]),
-             Node(1.6, 4, [display_size/2, display_size/2])]
+             Node(1.3, 3, [display_size/2 + 100, display_size / 2]),
+             Node(1.1, 4, [display_size/2, display_size/2])]
 
-all_connectors = [Connector(10, [all_nodes[0], all_nodes[1]], 0),  # Between the OG 2 has the most power
-                  Connector(10, [all_nodes[1], all_nodes[2]], 0),  # Between the 1, and 2 has the middlest power
-                  Connector(10, [all_nodes[0], all_nodes[2]], 0)]  # Between the 0, and 2 has the least power
+all_connectors = [Connector(10, 1, [all_nodes[0], all_nodes[1]], 2),  # Between the OG 2 has the most power
+                  Connector(10, 1, [all_nodes[1], all_nodes[2]], 2),  # Between the 1, and 2 has the middlest power
+                  Connector(10, 1, [all_nodes[0], all_nodes[2]], 2)]  # Between the 0, and 2 has the least power
 running = True
 blank_node = Node(0, 0, [0, 0])
 init_time = time.time()
-organisms = [Organism(all_nodes, all_connectors, 2)]
+organisms = [Organism(all_nodes, all_connectors)]
 while running:
     moment = init_time - time.time()
     draw()
     for o in organisms:
         o.take_action()
         o.control_forces()
+        o.update()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()

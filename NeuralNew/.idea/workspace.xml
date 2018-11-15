@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29e1a184-8550-4697-b7a5-70de2c288622" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/20smcnamara.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/20smcnamara.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test One.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test One.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,35 +47,35 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.47" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="3229" />
+          <entry key="py" value="5212" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="3229" />
+          <entry key="Python" value="5212" />
         </counts>
       </usages-collector>
     </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="NeuralNew" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Test One.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
-              <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+            <state relative-caret-position="292">
+              <caret line="160" column="19" selection-start-line="160" selection-start-column="19" selection-end-line="160" selection-end-column="19" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <marker date="1542130913000" expanded="true" signature="974:1224" ph="..." />
-                <marker date="1542130913000" expanded="true" signature="1946:1955" ph="..." />
-                <marker date="1542130913000" expanded="true" signature="2139:3213" ph="..." />
-                <marker date="1542130913000" expanded="true" signature="5843:6313" ph="..." />
-                <marker date="1542130913000" expanded="true" signature="6044:6145" ph="..." />
+                <marker date="1542297872000" expanded="true" signature="1555:1561" ph="..." />
               </folding>
             </state>
           </provider>
@@ -129,20 +129,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="NeuralNew" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NeuralNew" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -221,9 +208,9 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24947146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24947146" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" weight="0.32980973" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49964765" visible="true" weight="0.17590362" />
@@ -253,15 +240,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Test One.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+        <state relative-caret-position="292">
+          <caret line="160" column="19" selection-start-line="160" selection-start-column="19" selection-end-line="160" selection-end-column="19" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1542130913000" expanded="true" signature="974:1224" ph="..." />
-            <marker date="1542130913000" expanded="true" signature="1946:1955" ph="..." />
-            <marker date="1542130913000" expanded="true" signature="2139:3213" ph="..." />
-            <marker date="1542130913000" expanded="true" signature="5843:6313" ph="..." />
-            <marker date="1542130913000" expanded="true" signature="6044:6145" ph="..." />
+            <marker date="1542297872000" expanded="true" signature="1555:1561" ph="..." />
           </folding>
         </state>
       </provider>
