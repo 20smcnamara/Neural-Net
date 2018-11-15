@@ -10,7 +10,7 @@ screen = pygame.display.set_mode([display_size, display_size])
 pygame.display.set_caption("Testing")
 base = display_size - 150
 ground = pygame.Rect((0, base, display_size, display_size - base))
-GRAVITY = 1.5
+GRAVITY = 1.2
 
 
 class Circle(pygame.sprite.Sprite):
@@ -100,33 +100,36 @@ class Node:
         if self in calculated:
             return [0, 0]
         for n in self.connected_nodes:
-                adds = n.sum_forces()
-                if not n.touching_ground:
-                    if n.cords[1] == self.cords[1]:
-                        total_forces = [total_forces[0], total_forces[1] - adds[1]]
-                    elif n.cords[1] > self.cords[1]:
-                        total_forces = [total_forces[0] + adds[1], total_forces[1] + adds[1]]
-                    else:
-                        total_forces = [total_forces[0] + adds[1], total_forces[1] - adds[1]]
+            adds = n.sum_forces()
+            if not n.touching_ground:
+                if n.cords[1] == self.cords[1]:
+                    total_forces = [total_forces[0], total_forces[1] - adds[1]]
+                elif n.cords[1] > self.cords[1]:
+                    total_forces = [total_forces[0] + adds[1], total_forces[1] + adds[1]]
                 else:
-                    if n.cords[1] == self.cords[1]:
-                        total_forces = [total_forces[0], total_forces[1] - adds[1]]
-                    elif n.cords[1] > self.cords[1]:
-                        total_forces = [total_forces[0] - adds[1], total_forces[1] + adds[1]]
-                    else:
-                        total_forces = [total_forces[0] + adds[1], total_forces[1] + adds[1]]
+                    total_forces = [total_forces[0] + adds[1], total_forces[1] - adds[1]]
+            else:
+                if n.cords[1] == self.cords[1]:
+                    total_forces = [total_forces[0], total_forces[1] - adds[1]]
+                elif n.cords[1] > self.cords[1]:
+                    total_forces = [total_forces[0] - adds[1], total_forces[1] + adds[1]]
+                else:
+                    total_forces = [total_forces[0] + adds[1], total_forces[1] + adds[1]]
         calculated.append(self)
         return total_forces
 
     def apply_forces(self):
+        print(self.applied_force, self.size)
         if math.fabs(self.applied_force[0]) >= self.threshold or self.touching_ground:
             self.move(self.applied_force)
         else:
             self.move([0, self.applied_force[1]])
         if self.touching_ground:
             self.applied_force = [0, 0]
+            self.velocity[1] = 0
         else:
-            self.applied_force = [0, self.mass * GRAVITY]
+            self.applied_force = [0, 0]
+            self.velocity[1] += (self.mass * 5) * GRAVITY / 45
 
     def add_force(self, adds):
         self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1] + self.velocity[1]]
@@ -139,7 +142,7 @@ class Connector:
 
     def __init__(self, power, sleep, nodes, status):
         self.init_status = status
-        self.power = power/2*3
+        self.power = power/3
         self.nodes = nodes
         self.warping = 1.0
         self.status = status
@@ -150,24 +153,24 @@ class Connector:
         nodes[0].connectors.append(self)
         nodes[1].connectors.append(self)
 
-    def expand(self):
+    def take_action(self):
         step = init_time - time.time()
         if round(step) % self.sleep == 0 and round(step) != self.last_time:
             self.last_time = round(step)
             self.status += 1
             if self.status == 3:
                 self.status = 0
-        if self.status == 2:
-            return
         if self.status == 1:
-            self.warping = .75
-            ratio = find_ratio(self.nodes[0].cords, self.nodes[1].cords)
-            self.nodes[0].add_force([-ratio[0][0] * self.power, -ratio[0][1] * self.power])
-            self.nodes[1].add_force([ratio[1][0] * self.power, ratio[1][1] * self.power])
-            self.touching = False
-        elif self.status == 0:
+            self.expand()
+        if self.status == 0:
             self.relax()
-        draw()
+
+    def expand(self):
+        self.warping = .75
+        ratio = find_ratio(self.nodes[0].cords, self.nodes[1].cords)
+        self.nodes[0].add_force([-ratio[0][0] * self.power, -ratio[0][1] * self.power])
+        self.nodes[1].add_force([ratio[1][0] * self.power, ratio[1][1] * self.power])
+        self.touching = False
 
     def relax(self):
         if not self.touching:
@@ -209,7 +212,7 @@ class Organism:
 
     def take_action(self):
         for c in self.connectors:
-            c.expand()
+            c.take_action()
 
     def draw(self):
         for c in self.connectors:
@@ -256,9 +259,9 @@ all_nodes = [Node(.75, 5, [display_size/2 - 100, display_size]),
              Node(1.3, 3, [display_size/2 + 100, display_size / 2]),
              Node(1.1, 4, [display_size/2, display_size/2])]
 
-all_connectors = [Connector(10, 1, [all_nodes[0], all_nodes[1]], 2),  # Between the OG 2 has the most power
-                  Connector(10, 1, [all_nodes[1], all_nodes[2]], 2),  # Between the 1, and 2 has the middlest power
-                  Connector(10, 1, [all_nodes[0], all_nodes[2]], 2)]  # Between the 0, and 2 has the least power
+all_connectors = [Connector(10, 1, [all_nodes[0], all_nodes[1]], 1),  # Between the OG 2 has the most power
+                  Connector(15, 1, [all_nodes[1], all_nodes[2]], 2),  # Between the 1, and 2 has the middlest power
+                  Connector(10, 1, [all_nodes[0], all_nodes[2]], 0)]  # Between the 0, and 2 has the least power
 running = True
 blank_node = Node(0, 0, [0, 0])
 init_time = time.time()
