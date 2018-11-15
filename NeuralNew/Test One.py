@@ -58,6 +58,7 @@ class Node:
         self.connectors = []
         self.connected_nodes = []
         self.applied_force = [0, 0]
+        self.velocity = [0, 0]
         self.color = (255, (203 - 135 * friction) * 1.88, (203 - 135 * friction) * 1.88)  # Look at the magic #'s
         if friction > 1.5:
             self.color = (255, 0, 0)
@@ -118,7 +119,6 @@ class Node:
         return total_forces
 
     def apply_forces(self):
-        print(self.threshold)
         if math.fabs(self.applied_force[0]) >= self.threshold or self.touching_ground:
             self.move(self.applied_force)
         else:
@@ -129,7 +129,7 @@ class Node:
             self.applied_force = [0, self.mass * GRAVITY]
 
     def add_force(self, adds):
-        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
+        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1] + self.velocity[1]]
 
     def check_collision(self, other):
         return pygame.sprite.collide_circle(self.circle, other.circle)
@@ -152,13 +152,13 @@ class Connector:
 
     def expand(self):
         step = init_time - time.time()
-        if round(step) % self.sleep == self.init_status and round(step) != self.last_time:
+        if round(step) % self.sleep == 0 and round(step) != self.last_time:
             self.last_time = round(step)
             self.status += 1
             if self.status == 3:
                 self.status = 0
         if self.status == 2:
-            return 
+            return
         if self.status == 1:
             self.warping = .75
             ratio = find_ratio(self.nodes[0].cords, self.nodes[1].cords)
