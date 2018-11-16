@@ -11,6 +11,7 @@ pygame.display.set_caption("Testing")
 base = display_size - 150
 ground = pygame.Rect((0, base, display_size, display_size - base))
 GRAVITY = 1.2
+AIR_FRICTION = 1.01
 
 
 class Circle(pygame.sprite.Sprite):
@@ -49,6 +50,7 @@ class Circle(pygame.sprite.Sprite):
 class Node:
 
     def __init__(self, friction, size, cords):
+        self.resistance = 1
         self.friction = friction
         self.size = size*3
         self.threshold = size * friction / 10
@@ -76,15 +78,17 @@ class Node:
     def move(self, adds):
         xadd = adds[0]
         yadd = adds[1]
-        if self.touching_ground and yadd < 0:
+        if self.touching_ground and yadd > 0:
             yadd = 0
         friction = self.friction
         if not self.touching_ground:
-            friction = 1
+            friction = AIR_FRICTION
         self.cords = [self.cords[0]+xadd/(friction*self.mass), self.cords[1]+yadd/self.mass]
         if self.cords[1] + self.size >= base:
             self.cords[1] = base-self.size
             self.touching_ground = True
+        else:
+            self.touching_ground = False
         self.update_cords()
 
     def get_long(self, other_node):
@@ -99,40 +103,46 @@ class Node:
         total_forces = [0, 0]
         if self in calculated:
             return [0, 0]
+        calculated.append(self)
+        self.resistance = 1
         for n in self.connected_nodes:
-            adds = n.sum_forces()
+            adds = n.sum_forces(calculated)
             if not n.touching_ground:
                 if n.cords[1] == self.cords[1]:
                     total_forces = [total_forces[0], total_forces[1] - adds[1]]
                 elif n.cords[1] > self.cords[1]:
-                    total_forces = [total_forces[0] + adds[1], total_forces[1] + adds[1]]
+                    total_forces = [total_forces[0] + adds[0], total_forces[1] + adds[1]]
                 else:
-                    total_forces = [total_forces[0] + adds[1], total_forces[1] - adds[1]]
+                    total_forces = [total_forces[0] + adds[0], total_forces[1] - adds[1]]
             else:
                 if n.cords[1] == self.cords[1]:
                     total_forces = [total_forces[0], total_forces[1] - adds[1]]
                 elif n.cords[1] > self.cords[1]:
-                    total_forces = [total_forces[0] - adds[1], total_forces[1] + adds[1]]
+                    total_forces = [total_forces[0] - adds[0], total_forces[1] + adds[1]]
                 else:
-                    total_forces = [total_forces[0] + adds[1], total_forces[1] + adds[1]]
-        calculated.append(self)
-        return total_forces
+                    total_forces = [total_forces[0] + adds[0], total_forces[1] + adds[1]]
+            if not self.touching_ground and n.touching_ground:
+                ratio = find_ratio(self.cords, n.cords)
+                self.resistance += math.fabs(ratio[0][1] * 10)
+        to_return = [total_forces[0] + self.applied_force[0], total_forces[1] + self.applied_force[1]]
+        self.applied_force = to_return
+        return to_return
 
     def apply_forces(self):
-        print(self.applied_force, self.size)
+        # self.applied_force = [self.applied_force[0] + self.velocity[0], self.applied_force[1] + self.velocity[1]]
         if math.fabs(self.applied_force[0]) >= self.threshold or self.touching_ground:
             self.move(self.applied_force)
         else:
             self.move([0, self.applied_force[1]])
         if self.touching_ground:
-            self.applied_force = [0, 0]
             self.velocity[1] = 0
+            self.applied_force = [self.velocity[0], self.velocity[1]]
         else:
-            self.applied_force = [0, 0]
-            self.velocity[1] += (self.mass * 5) * GRAVITY / 45
+            self.velocity[1] += (self.mass * 5) * GRAVITY / 45 / self.resistance
+            self.applied_force = [self.velocity[0], self.velocity[1]]
 
     def add_force(self, adds):
-        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1] + self.velocity[1]]
+        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
 
     def check_collision(self, other):
         return pygame.sprite.collide_circle(self.circle, other.circle)
@@ -152,6 +162,8 @@ class Connector:
         self.sleep = sleep
         nodes[0].connectors.append(self)
         nodes[1].connectors.append(self)
+        nodes[0].connected_nodes.append(nodes[1])
+        nodes[1].connected_nodes.append(nodes[0])
 
     def take_action(self):
         step = init_time - time.time()
@@ -207,7 +219,7 @@ class Organism:
 
     def control_forces(self):
         for n in self.nodes:
-            n.sum_forces([n])
+            print(n.sum_forces([]), n.size)
             n.apply_forces()
 
     def take_action(self):
@@ -256,12 +268,12 @@ def draw():
 
 
 all_nodes = [Node(.75, 5, [display_size/2 - 100, display_size]),
-             Node(1.3, 3, [display_size/2 + 100, display_size / 2]),
+             Node(1.3, 3, [display_size/2 + 100, display_size]),
              Node(1.1, 4, [display_size/2, display_size/2])]
 
-all_connectors = [Connector(10, 1, [all_nodes[0], all_nodes[1]], 1),  # Between the OG 2 has the most power
-                  Connector(15, 1, [all_nodes[1], all_nodes[2]], 2),  # Between the 1, and 2 has the middlest power
-                  Connector(10, 1, [all_nodes[0], all_nodes[2]], 0)]  # Between the 0, and 2 has the least power
+all_connectors = [Connector(10, 10, [all_nodes[0], all_nodes[1]], 2),  # Between the OG 2 has the most power
+                  Connector(15, 10, [all_nodes[1], all_nodes[2]], 2),  # Between the 1, and 2 has the middlest power
+                  Connector(10, 10, [all_nodes[0], all_nodes[2]], 2)]  # Between the 0, and 2 has the least power
 running = True
 blank_node = Node(0, 0, [0, 0])
 init_time = time.time()
@@ -277,4 +289,5 @@ while running:
         if event.type == pygame.QUIT:
             pygame.quit()
             quit(0)
+    print("")
     time.sleep(.01)
