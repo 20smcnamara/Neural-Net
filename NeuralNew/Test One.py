@@ -59,8 +59,10 @@ class Node:
         self.touching_ground = False
         self.connectors = []
         self.connected_nodes = []
-        self.applied_force = [0, 0]
-        self.velocity = [0, 0]
+        self.force_of_gravity = (self.mass * 5) * GRAVITY / 5 / self.resistance
+        self.velocity = [0, self.force_of_gravity]
+        self.applied_force = self.velocity
+        print(self.applied_force)
         self.color = (255, (203 - 135 * friction) * 1.88, (203 - 135 * friction) * 1.88)  # Look at the magic #'s
         if friction > 1.5:
             self.color = (255, 0, 0)
@@ -105,6 +107,7 @@ class Node:
             return [0, 0]
         calculated.append(self)
         self.resistance = 1
+        returned_self_force = self.applied_force
         for n in self.connected_nodes:
             adds = n.sum_forces(calculated)
             if not n.touching_ground:
@@ -124,21 +127,26 @@ class Node:
             if not self.touching_ground and n.touching_ground:
                 ratio = find_ratio(self.cords, n.cords)
                 self.resistance += math.fabs(ratio[0][1] * 10)
-        to_return = [total_forces[0] + self.applied_force[0], total_forces[1] + self.applied_force[1]]
+        if self.touching_ground:
+            returned_self_force[1] = 1
+        to_return = [total_forces[0] + returned_self_force[0], total_forces[1] + returned_self_force[1]]
         self.applied_force = to_return
         return to_return
 
     def apply_forces(self):
         # self.applied_force = [self.applied_force[0] + self.velocity[0], self.applied_force[1] + self.velocity[1]]
-        if math.fabs(self.applied_force[0]) >= self.threshold or self.touching_ground:
+        print(self.applied_force)
+        if math.fabs(self.applied_force[0]) >= self.threshold or not self.touching_ground:
             self.move(self.applied_force)
         else:
             self.move([0, self.applied_force[1]])
         if self.touching_ground:
-            self.velocity[1] = 0
+            print(self.size, 1)
+            self.velocity[1] = self.force_of_gravity
             self.applied_force = [self.velocity[0], self.velocity[1]]
         else:
-            self.velocity[1] += (self.mass * 5) * GRAVITY / 45 / self.resistance
+            print(self.size, 2)
+            self.velocity[1] += self.force_of_gravity
             self.applied_force = [self.velocity[0], self.velocity[1]]
 
     def add_force(self, adds):
@@ -219,7 +227,7 @@ class Organism:
 
     def control_forces(self):
         for n in self.nodes:
-            print(n.sum_forces([]), n.size)
+            n.sum_forces([])
             n.apply_forces()
 
     def take_action(self):

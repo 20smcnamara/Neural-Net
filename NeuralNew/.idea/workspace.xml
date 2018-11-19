@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29e1a184-8550-4697-b7a5-70de2c288622" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test One.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test One.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,12 +53,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="6121" />
+          <entry key="py" value="6420" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="6121" />
+          <entry key="Python" value="6420" />
         </counts>
       </usages-collector>
     </session>
@@ -70,12 +71,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Test One.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="130" column="10" selection-start-line="130" selection-start-column="10" selection-end-line="130" selection-end-column="10" />
+            <state relative-caret-position="329">
+              <caret line="130" column="31" selection-start-line="130" selection-start-column="31" selection-end-line="130" selection-end-column="31" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <marker date="1542385218000" expanded="true" signature="1575:1581" ph="..." />
-                <marker date="1542385218000" expanded="true" signature="6192:6557" ph="..." />
+                <marker date="1542635049000" expanded="true" signature="1575:1581" ph="..." />
+                <marker date="1542635049000" expanded="true" signature="6589:6954" ph="..." />
               </folding>
             </state>
           </provider>
@@ -97,6 +98,7 @@
       <find>self.touch</find>
       <find>12</find>
       <find>12</find>
+      <find>print</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -243,12 +245,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Test One.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="130" column="10" selection-start-line="130" selection-start-column="10" selection-end-line="130" selection-end-column="10" />
+        <state relative-caret-position="329">
+          <caret line="130" column="31" selection-start-line="130" selection-start-column="31" selection-end-line="130" selection-end-column="31" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1542385218000" expanded="true" signature="1575:1581" ph="..." />
-            <marker date="1542385218000" expanded="true" signature="6192:6557" ph="..." />
+            <marker date="1542635049000" expanded="true" signature="1575:1581" ph="..." />
+            <marker date="1542635049000" expanded="true" signature="6589:6954" ph="..." />
           </folding>
         </state>
       </provider>
