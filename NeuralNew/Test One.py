@@ -105,32 +105,40 @@ class Node:
             return [0, 0]
         calculated.append(self)
         self.resistance = 1
-        returned_self_force = self.applied_force
         for n in self.connected_nodes:
             adds = n.sum_forces(calculated)
             ratio = find_ratio(self.cords, n.cords)
+            ratio = [ratio[0] * 1000, ratio[1] * 1000]
             adds = [adds[0] * ratio[0][0], adds[1] * ratio[0][1]]
             if not n.touching_ground:
                 if n.cords[1] == self.cords[1]:
+                    print(1)
                     self.applied_force = [self.applied_force[0], self.applied_force[1] - adds[1]]
                 elif n.cords[1] > self.cords[1]:
+                    print(2)
                     self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] - adds[1]]
                 else:
+                    print(3)
                     self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
             else:
                 if n.cords[1] == self.cords[1]:
+                    print(4)
                     self.applied_force = [self.applied_force[0], self.applied_force[1] - adds[1]]
                 elif n.cords[1] > self.cords[1]:
+                    print(5)
                     self.applied_force = [self.applied_force[0] - adds[0], self.applied_force[1] + adds[1]]
                 else:
                     if not self.touching_ground:
                         self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
                     else:
-                        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] - self.applied_force[1] * ratio[0][1]]
+                        print("HERE -------------------------")
+                        self.applied_force = [self.applied_force[0] + adds[0], 0]  # TODO proper ratio needed
             if not self.touching_ground and n.touching_ground:
                 ratio = find_ratio(self.cords, n.cords)
                 self.resistance += math.fabs(ratio[0][1] * 10)
-        to_return = [self.applied_force[0] + returned_self_force[0], self.applied_force[1] + returned_self_force[1]]
+        if self.size == 9:
+            print(self.applied_force)
+        to_return = [self.applied_force[0], self.applied_force[1]]
         return to_return
 
     def apply_forces(self):
@@ -141,6 +149,8 @@ class Node:
         if self.touching_ground:
             self.velocity[1] = self.force_of_gravity
             self.applied_force = [self.velocity[0], self.velocity[1]]
+            if self.applied_force[1] > 0:
+                self.applied_force[1] = 0
         else:
             self.velocity[1] += self.force_of_gravity
             self.applied_force = [self.velocity[0], self.velocity[1]]
@@ -275,9 +285,9 @@ all_nodes = [Node(.75, 5, [display_size/2 - 100, display_size]),
              Node(1.3, 3, [display_size/2 + 100, display_size]),
              Node(1.1, 4, [display_size/2, display_size/2])]
 
-all_connectors = [Connector(10, 20, [all_nodes[0], all_nodes[1]], 2),  # Between the OG 2 has the most power
-                  Connector(15, 20, [all_nodes[1], all_nodes[2]], 2),  # Between the 1, and 2 has the middlest power
-                  Connector(10, 20, [all_nodes[0], all_nodes[2]], 2)]  # Between the 0, and 2 has the least power
+all_connectors = [Connector(10, 2, [all_nodes[0], all_nodes[1]], 2),  # Between the OG 2 has the most power
+                  Connector(15, 2, [all_nodes[1], all_nodes[2]], 2),  # Between the 1, and 2 has the middlest power
+                  Connector(10, 2, [all_nodes[0], all_nodes[2]], 2)]  # Between the 0, and 2 has the least power
 running = True
 blank_node = Node(0, 0, [0, 0])
 init_time = time.time()
