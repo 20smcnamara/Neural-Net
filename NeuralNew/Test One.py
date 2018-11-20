@@ -59,7 +59,7 @@ class Node:
         self.touching_ground = False
         self.connectors = []
         self.connected_nodes = []
-        self.force_of_gravity = (self.mass * 5) * GRAVITY / self.resistance
+        self.force_of_gravity = (self.mass * 5) * GRAVITY / 65 / self.resistance
         self.velocity = [0, self.force_of_gravity]
         self.applied_force = self.velocity
         self.color = (255, (203 - 135 * friction) * 1.88, (203 - 135 * friction) * 1.88)
@@ -109,8 +109,8 @@ class Node:
         returned_self_force = self.applied_force
         for n in self.connected_nodes:
             adds = n.sum_forces(calculated)
-            if adds[1] < 0:
-                print(n.cords[1] + n.size, self.cords[1] + self.size, adds)
+            ratio = find_ratio(self.cords, n.cords)
+            adds = [adds[0] * ratio[0][0], adds[1] * ratio[0][1]]
             if not n.touching_ground:
                 if n.cords[1] == self.cords[1]:
                     total_forces = [total_forces[0], total_forces[1] - adds[1]]
@@ -120,16 +120,14 @@ class Node:
                     total_forces = [total_forces[0] + adds[0], total_forces[1] + adds[1]]
             else:
                 if n.cords[1] == self.cords[1]:
-                    print(1)
                     total_forces = [total_forces[0], total_forces[1] - adds[1]]
                 elif n.cords[1] > self.cords[1]:
-                    print(2, adds)
                     total_forces = [total_forces[0] - adds[0], total_forces[1] + adds[1]]
                 else:
-                    print(3)
-                    total_forces = [total_forces[0] + adds[0], total_forces[1] + adds[1]]
-                if adds[1] > 0:
-                    total_forces = [total_forces[0], total_forces[1] - adds[1]]
+                    if not self.touching_ground:
+                        total_forces = [total_forces[0] + adds[0], total_forces[1] + adds[1]]
+                    else:
+                        total_forces = [total_forces[0] + adds[0], total_forces[1] - total_forces[1] * ratio[0][1]]
             if not self.touching_ground and n.touching_ground:
                 ratio = find_ratio(self.cords, n.cords)
                 self.resistance += math.fabs(ratio[0][1] * 10)
@@ -228,7 +226,6 @@ class Organism:
     def control_forces(self):
         for n in self.nodes:
             n.sum_forces([])
-            print("'-----", n.size)
             n.apply_forces()
 
     def take_action(self):
@@ -277,12 +274,12 @@ def draw():
 
 
 all_nodes = [Node(.75, 5, [display_size/2 - 100, display_size]),
-             Node(1.3, 3, [display_size/2 + 100, display_size/2 + 5]),
+             Node(1.3, 3, [display_size/2 + 100, display_size]),
              Node(1.1, 4, [display_size/2, display_size/2])]
 
-all_connectors = [Connector(10, 1000, [all_nodes[0], all_nodes[1]], 2),  # Between the OG 2 has the most power
-                  Connector(15, 1000, [all_nodes[1], all_nodes[2]], 2),  # Between the 1, and 2 has the middlest power
-                  Connector(10, 1000, [all_nodes[0], all_nodes[2]], 2)]  # Between the 0, and 2 has the least power
+all_connectors = [Connector(10, 20, [all_nodes[0], all_nodes[1]], 2),  # Between the OG 2 has the most power
+                  Connector(15, 20, [all_nodes[1], all_nodes[2]], 2),  # Between the 1, and 2 has the middlest power
+                  Connector(10, 20, [all_nodes[0], all_nodes[2]], 2)]  # Between the 0, and 2 has the least power
 running = True
 blank_node = Node(0, 0, [0, 0])
 init_time = time.time()
@@ -298,5 +295,4 @@ while running:
         if event.type == pygame.QUIT:
             pygame.quit()
             quit(0)
-    print("")
-    time.sleep(1)
+    time.sleep(.01)
