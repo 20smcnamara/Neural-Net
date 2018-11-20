@@ -101,7 +101,6 @@ class Node:
         pygame.draw.circle(screen, self.color, [int(self.cords[0]), int(self.cords[1])], self.size)
 
     def sum_forces(self, calculated):
-        total_forces = [0, 0]
         if self in calculated:
             return [0, 0]
         calculated.append(self)
@@ -113,26 +112,25 @@ class Node:
             adds = [adds[0] * ratio[0][0], adds[1] * ratio[0][1]]
             if not n.touching_ground:
                 if n.cords[1] == self.cords[1]:
-                    total_forces = [total_forces[0], total_forces[1] - adds[1]]
+                    self.applied_force = [self.applied_force[0], self.applied_force[1] - adds[1]]
                 elif n.cords[1] > self.cords[1]:
-                    total_forces = [total_forces[0] + adds[0], total_forces[1] - adds[1]]
+                    self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] - adds[1]]
                 else:
-                    total_forces = [total_forces[0] + adds[0], total_forces[1] + adds[1]]
+                    self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
             else:
                 if n.cords[1] == self.cords[1]:
-                    total_forces = [total_forces[0], total_forces[1] - adds[1]]
+                    self.applied_force = [self.applied_force[0], self.applied_force[1] - adds[1]]
                 elif n.cords[1] > self.cords[1]:
-                    total_forces = [total_forces[0] - adds[0], total_forces[1] + adds[1]]
+                    self.applied_force = [self.applied_force[0] - adds[0], self.applied_force[1] + adds[1]]
                 else:
                     if not self.touching_ground:
-                        total_forces = [total_forces[0] + adds[0], total_forces[1] + adds[1]]
+                        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
                     else:
-                        total_forces = [total_forces[0] + adds[0], total_forces[1] - total_forces[1] * ratio[0][1]]
+                        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] - self.applied_force[1] * ratio[0][1]]
             if not self.touching_ground and n.touching_ground:
                 ratio = find_ratio(self.cords, n.cords)
                 self.resistance += math.fabs(ratio[0][1] * 10)
-        to_return = [total_forces[0] + returned_self_force[0], total_forces[1] + returned_self_force[1]]
-        self.applied_force = to_return
+        to_return = [self.applied_force[0] + returned_self_force[0], self.applied_force[1] + returned_self_force[1]]
         return to_return
 
     def apply_forces(self):
