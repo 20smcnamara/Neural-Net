@@ -52,18 +52,17 @@ class Node:
     def __init__(self, friction, size, cords):
         self.resistance = 1
         self.friction = friction
-        self.size = size*3
+        self.size = size * 3
         self.threshold = size * friction / 10
         self.cords = cords
         self.mass = size
         self.touching_ground = False
         self.connectors = []
         self.connected_nodes = []
-        self.force_of_gravity = (self.mass * 5) * GRAVITY / 5 / self.resistance
+        self.force_of_gravity = (self.mass * 5) * GRAVITY / self.resistance
         self.velocity = [0, self.force_of_gravity]
         self.applied_force = self.velocity
-        print(self.applied_force)
-        self.color = (255, (203 - 135 * friction) * 1.88, (203 - 135 * friction) * 1.88)  # Look at the magic #'s
+        self.color = (255, (203 - 135 * friction) * 1.88, (203 - 135 * friction) * 1.88)
         if friction > 1.5:
             self.color = (255, 0, 0)
         if friction < 0.5:
@@ -101,7 +100,7 @@ class Node:
     def draw(self):
         pygame.draw.circle(screen, self.color, [int(self.cords[0]), int(self.cords[1])], self.size)
 
-    def sum_forces(self, calculated):
+    def sum_forces(self, calculated):  # TODO fix the fact that when one node is just below another it takes off
         total_forces = [0, 0]
         if self in calculated:
             return [0, 0]
@@ -110,42 +109,43 @@ class Node:
         returned_self_force = self.applied_force
         for n in self.connected_nodes:
             adds = n.sum_forces(calculated)
+            print("--", n.size, adds)
             if not n.touching_ground:
                 if n.cords[1] == self.cords[1]:
                     total_forces = [total_forces[0], total_forces[1] - adds[1]]
                 elif n.cords[1] > self.cords[1]:
-                    total_forces = [total_forces[0] + adds[0], total_forces[1] + adds[1]]
-                else:
                     total_forces = [total_forces[0] + adds[0], total_forces[1] - adds[1]]
+                else:
+                    total_forces = [total_forces[0] + adds[0], total_forces[1] + adds[1]]
             else:
                 if n.cords[1] == self.cords[1]:
                     total_forces = [total_forces[0], total_forces[1] - adds[1]]
                 elif n.cords[1] > self.cords[1]:
                     total_forces = [total_forces[0] - adds[0], total_forces[1] + adds[1]]
                 else:
-                    total_forces = [total_forces[0] + adds[0], total_forces[1] + adds[1]]
+                    total_forces = [total_forces[0] + adds[0], total_forces[1] - adds[1]]
+                if adds[1] > 0:
+                    total_forces = [total_forces[0], total_forces[1] - adds[1]]
             if not self.touching_ground and n.touching_ground:
                 ratio = find_ratio(self.cords, n.cords)
                 self.resistance += math.fabs(ratio[0][1] * 10)
-        if self.touching_ground:
-            returned_self_force[1] = 1
         to_return = [total_forces[0] + returned_self_force[0], total_forces[1] + returned_self_force[1]]
         self.applied_force = to_return
+        print(self.applied_force)
         return to_return
 
     def apply_forces(self):
-        # self.applied_force = [self.applied_force[0] + self.velocity[0], self.applied_force[1] + self.velocity[1]]
-        print(self.applied_force)
+        # print(self.applied_force)
         if math.fabs(self.applied_force[0]) >= self.threshold or not self.touching_ground:
             self.move(self.applied_force)
         else:
             self.move([0, self.applied_force[1]])
         if self.touching_ground:
-            print(self.size, 1)
+            # print(self.size, 1, self.touching_ground)
             self.velocity[1] = self.force_of_gravity
             self.applied_force = [self.velocity[0], self.velocity[1]]
         else:
-            print(self.size, 2)
+            # print(self.size, 2, self.touching_ground)
             self.velocity[1] += self.force_of_gravity
             self.applied_force = [self.velocity[0], self.velocity[1]]
 
@@ -228,6 +228,7 @@ class Organism:
     def control_forces(self):
         for n in self.nodes:
             n.sum_forces([])
+            print(n.size)
             n.apply_forces()
 
     def take_action(self):
@@ -279,9 +280,9 @@ all_nodes = [Node(.75, 5, [display_size/2 - 100, display_size]),
              Node(1.3, 3, [display_size/2 + 100, display_size]),
              Node(1.1, 4, [display_size/2, display_size/2])]
 
-all_connectors = [Connector(10, 10, [all_nodes[0], all_nodes[1]], 2),  # Between the OG 2 has the most power
-                  Connector(15, 10, [all_nodes[1], all_nodes[2]], 2),  # Between the 1, and 2 has the middlest power
-                  Connector(10, 10, [all_nodes[0], all_nodes[2]], 2)]  # Between the 0, and 2 has the least power
+all_connectors = [Connector(10, 1000, [all_nodes[0], all_nodes[1]], 2),  # Between the OG 2 has the most power
+                  Connector(15, 1000, [all_nodes[1], all_nodes[2]], 2),  # Between the 1, and 2 has the middlest power
+                  Connector(10, 1000, [all_nodes[0], all_nodes[2]], 2)]  # Between the 0, and 2 has the least power
 running = True
 blank_node = Node(0, 0, [0, 0])
 init_time = time.time()
