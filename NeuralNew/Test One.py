@@ -100,7 +100,7 @@ class Node:
     def draw(self):
         pygame.draw.circle(screen, self.color, [int(self.cords[0]), int(self.cords[1])], self.size)
 
-    def sum_forces(self, calculated):  # TODO fix the fact that when one node is just below another it takes off
+    def sum_forces(self, calculated):
         total_forces = [0, 0]
         if self in calculated:
             return [0, 0]
@@ -109,7 +109,8 @@ class Node:
         returned_self_force = self.applied_force
         for n in self.connected_nodes:
             adds = n.sum_forces(calculated)
-            print("--", n.size, adds)
+            if adds[1] < 0:
+                print(n.cords[1] + n.size, self.cords[1] + self.size, adds)
             if not n.touching_ground:
                 if n.cords[1] == self.cords[1]:
                     total_forces = [total_forces[0], total_forces[1] - adds[1]]
@@ -119,11 +120,14 @@ class Node:
                     total_forces = [total_forces[0] + adds[0], total_forces[1] + adds[1]]
             else:
                 if n.cords[1] == self.cords[1]:
+                    print(1)
                     total_forces = [total_forces[0], total_forces[1] - adds[1]]
                 elif n.cords[1] > self.cords[1]:
+                    print(2, adds)
                     total_forces = [total_forces[0] - adds[0], total_forces[1] + adds[1]]
                 else:
-                    total_forces = [total_forces[0] + adds[0], total_forces[1] - adds[1]]
+                    print(3)
+                    total_forces = [total_forces[0] + adds[0], total_forces[1] + adds[1]]
                 if adds[1] > 0:
                     total_forces = [total_forces[0], total_forces[1] - adds[1]]
             if not self.touching_ground and n.touching_ground:
@@ -131,21 +135,17 @@ class Node:
                 self.resistance += math.fabs(ratio[0][1] * 10)
         to_return = [total_forces[0] + returned_self_force[0], total_forces[1] + returned_self_force[1]]
         self.applied_force = to_return
-        print(self.applied_force)
         return to_return
 
     def apply_forces(self):
-        # print(self.applied_force)
         if math.fabs(self.applied_force[0]) >= self.threshold or not self.touching_ground:
             self.move(self.applied_force)
         else:
             self.move([0, self.applied_force[1]])
         if self.touching_ground:
-            # print(self.size, 1, self.touching_ground)
             self.velocity[1] = self.force_of_gravity
             self.applied_force = [self.velocity[0], self.velocity[1]]
         else:
-            # print(self.size, 2, self.touching_ground)
             self.velocity[1] += self.force_of_gravity
             self.applied_force = [self.velocity[0], self.velocity[1]]
 
@@ -228,7 +228,7 @@ class Organism:
     def control_forces(self):
         for n in self.nodes:
             n.sum_forces([])
-            print(n.size)
+            print("'-----", n.size)
             n.apply_forces()
 
     def take_action(self):
@@ -277,7 +277,7 @@ def draw():
 
 
 all_nodes = [Node(.75, 5, [display_size/2 - 100, display_size]),
-             Node(1.3, 3, [display_size/2 + 100, display_size]),
+             Node(1.3, 3, [display_size/2 + 100, display_size/2 + 5]),
              Node(1.1, 4, [display_size/2, display_size/2])]
 
 all_connectors = [Connector(10, 1000, [all_nodes[0], all_nodes[1]], 2),  # Between the OG 2 has the most power
@@ -299,4 +299,4 @@ while running:
             pygame.quit()
             quit(0)
     print("")
-    time.sleep(.01)
+    time.sleep(1)
