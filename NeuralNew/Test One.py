@@ -1,3 +1,5 @@
+# TODO Comment Program
+
 import pygame
 import random
 import math
@@ -112,36 +114,30 @@ class Node:
             adds = [adds[0] * ratio[0][0], adds[1] * ratio[0][1]]
             if not n.touching_ground:
                 if n.cords[1] == self.cords[1]:
-                    print(1)
                     self.applied_force = [self.applied_force[0], self.applied_force[1] - adds[1]]
                 elif n.cords[1] > self.cords[1]:
-                    print(2)
                     self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] - adds[1]]
                 else:
-                    print(3)
                     self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
             else:
                 if n.cords[1] == self.cords[1]:
-                    print(4)
                     self.applied_force = [self.applied_force[0], self.applied_force[1] - adds[1]]
                 elif n.cords[1] > self.cords[1]:
-                    print(5)
-                    self.applied_force = [self.applied_force[0] - adds[0], self.applied_force[1] + adds[1]]
+                    self.applied_force = [self.applied_force[0] - adds[0], self.applied_force[1] - adds[1]]
                 else:
                     if not self.touching_ground:
-                        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
+                        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] - adds[1]]
                     else:
-                        print("HERE -------------------------")
                         self.applied_force = [self.applied_force[0] + adds[0], 0]  # TODO proper ratio needed
             if not self.touching_ground and n.touching_ground:
                 ratio = find_ratio(self.cords, n.cords)
                 self.resistance += math.fabs(ratio[0][1] * 10)
-        if self.size == 9:
-            print(self.applied_force)
         to_return = [self.applied_force[0], self.applied_force[1]]
         return to_return
 
     def apply_forces(self):
+        if math.fabs(self.applied_force[1]) > self.force_of_gravity:
+            self.applied_force[1] = 0
         if math.fabs(self.applied_force[0]) >= self.threshold or not self.touching_ground:
             self.move(self.applied_force)
         else:
@@ -190,11 +186,12 @@ class Connector:
             self.expand()
         if self.status == 0:
             self.relax()
+        return self.status
 
     def expand(self):
         self.warping = .75
         ratio = find_ratio(self.nodes[0].cords, self.nodes[1].cords)
-        self.nodes[0].add_force([-ratio[0][0] * self.power, -ratio[0][1] * self.power])
+        self.nodes[0].add_force([-ratio[0][0] * self.power, ratio[0][1] * self.power])
         self.nodes[1].add_force([ratio[1][0] * self.power, ratio[1][1] * self.power])
         self.touching = False
 
@@ -237,8 +234,11 @@ class Organism:
             n.apply_forces()
 
     def take_action(self):
+        x = -1
         for c in self.connectors:
-            c.take_action()
+            x += 0
+            x = c.take_action()
+        return x
 
     def draw(self):
         for c in self.connectors:
@@ -247,6 +247,10 @@ class Organism:
     def update(self):
         for n in self.nodes:
             n.update()
+
+    def check_flying(self):
+        for n in self.nodes:
+            print(n.size, n.touching_ground)
 
 
 def find_ratio(cords1, cords2):
@@ -281,13 +285,14 @@ def draw():
     pygame.display.update()
 
 
-all_nodes = [Node(.75, 5, [display_size/2 - 100, display_size]),
-             Node(1.3, 3, [display_size/2 + 100, display_size]),
-             Node(1.1, 4, [display_size/2, display_size/2])]
+all_nodes = [Node(1.7, 5, [display_size / 2 - 100, display_size]),
+             Node(.89, 3, [display_size / 2 + 100, display_size]),
+             Node(1.23, 4, [display_size / 2, display_size/2])]
 
 all_connectors = [Connector(10, 2, [all_nodes[0], all_nodes[1]], 2),  # Between the OG 2 has the most power
-                  Connector(15, 2, [all_nodes[1], all_nodes[2]], 2),  # Between the 1, and 2 has the middlest power
+                  Connector(10, 2, [all_nodes[1], all_nodes[2]], 2),  # Between the 1, and 2 has the middlest power
                   Connector(10, 2, [all_nodes[0], all_nodes[2]], 2)]  # Between the 0, and 2 has the least power
+
 running = True
 blank_node = Node(0, 0, [0, 0])
 init_time = time.time()
@@ -296,11 +301,16 @@ while running:
     moment = init_time - time.time()
     draw()
     for o in organisms:
-        o.take_action()
         o.control_forces()
+        x = o.take_action()
+        if x == 0:
+            print("expanding")
+        elif x == 1:
+            print("relaxing")
         o.update()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             quit(0)
     time.sleep(.01)
+    print("")
