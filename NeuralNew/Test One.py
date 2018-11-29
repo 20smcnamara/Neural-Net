@@ -110,13 +110,13 @@ class Node:
         for n in self.connected_nodes:
             adds = n.sum_forces(calculated)
             ratio = find_ratio(self.cords, n.cords)
-            ratio = [ratio[0] * 1000, ratio[1] * 1000]
-            adds = [adds[0] * ratio[0][0], adds[1] * ratio[0][1]]
+            ratio = [ratio[0][0] ** 2, ratio[0][1] ** 2]
+            adds = [adds[0] * ratio[0], adds[1] * ratio[1]]
             if not n.touching_ground:
                 if n.cords[1] == self.cords[1]:
                     self.applied_force = [self.applied_force[0], self.applied_force[1] - adds[1]]
                 elif n.cords[1] > self.cords[1]:
-                    self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] - adds[1]]
+                    self.applied_force = [self.applied_force[0] - adds[0], self.applied_force[1] - adds[1]]
                 else:
                     self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
             else:
@@ -132,6 +132,8 @@ class Node:
             if not self.touching_ground and n.touching_ground:
                 ratio = find_ratio(self.cords, n.cords)
                 self.resistance += math.fabs(ratio[0][1] * 10)
+            if self.size == 15:
+                print(adds, n.size)
         to_return = [self.applied_force[0], self.applied_force[1]]
         return to_return
 
@@ -191,8 +193,8 @@ class Connector:
     def expand(self):
         self.warping = .75
         ratio = find_ratio(self.nodes[0].cords, self.nodes[1].cords)
-        self.nodes[0].add_force([-ratio[0][0] * self.power, ratio[0][1] * self.power])
-        self.nodes[1].add_force([ratio[1][0] * self.power, ratio[1][1] * self.power])
+        self.nodes[0].add_force([ratio[0][0] * self.power, -ratio[0][1] * self.power])
+        self.nodes[1].add_force([ratio[1][0] * self.power, -ratio[1][1] * self.power])
         self.touching = False
 
     def relax(self):
@@ -200,7 +202,7 @@ class Connector:
             self.warping = 1
             ratio = find_ratio(self.nodes[0].cords, self.nodes[1].cords)
             multiply = 1
-            self.nodes[0].add_force([ratio[0][0] * multiply * self.power, ratio[0][1] * self.power])
+            self.nodes[0].add_force([-ratio[0][0] * multiply * self.power, ratio[0][1] * self.power])
             self.nodes[1].add_force([-ratio[0][0] * multiply * self.power, ratio[0][1] * self.power])
 
     def draw(self):
@@ -211,7 +213,7 @@ class Connector:
         color = (75, 15, 15)
         if self.status == 1:
             color = (15, 75, 15)
-        if self.status == 2:
+        if self.status == 2 or self.power == 0:
             color = (15, 15, 15)
         pygame.draw.polygon(screen, color, ([node1[0], node1[1] + node1_thickness],
                                             [node1[0], node1[1] - node1_thickness],
@@ -289,8 +291,8 @@ all_nodes = [Node(1.7, 5, [display_size / 2 - 100, display_size]),
              Node(.89, 3, [display_size / 2 + 100, display_size]),
              Node(1.23, 4, [display_size / 2, display_size/2])]
 
-all_connectors = [Connector(10, 2, [all_nodes[0], all_nodes[1]], 2),  # Between the OG 2 has the most power
-                  Connector(10, 2, [all_nodes[1], all_nodes[2]], 2),  # Between the 1, and 2 has the middlest power
+all_connectors = [Connector(0, 2, [all_nodes[0], all_nodes[1]], 2),  # Between the OG 2 has the most power
+                  Connector(0, 2, [all_nodes[1], all_nodes[2]], 2),  # Between the 1, and 2 has the middlest power
                   Connector(10, 2, [all_nodes[0], all_nodes[2]], 2)]  # Between the 0, and 2 has the least power
 
 running = True
