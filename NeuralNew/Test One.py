@@ -14,6 +14,7 @@ base = display_size - 150
 ground = pygame.Rect((0, base, display_size, display_size - base))
 GRAVITY = 1.2
 AIR_FRICTION = 1.01
+JOINT_FRICTION = 2.5
 
 
 class Circle(pygame.sprite.Sprite):
@@ -109,31 +110,29 @@ class Node:
         self.resistance = 1
         for n in self.connected_nodes:
             adds = n.sum_forces(calculated)
-            ratio = find_ratio(self.cords, n.cords)
-            ratio = [ratio[0][0] ** 2, ratio[0][1] ** 2]
-            adds = [adds[0] * ratio[0], adds[1] * ratio[1]]
-            if not n.touching_ground:
-                if n.cords[1] == self.cords[1]:
-                    self.applied_force = [self.applied_force[0], self.applied_force[1] - adds[1]]
-                elif n.cords[1] > self.cords[1]:
-                    self.applied_force = [self.applied_force[0] - adds[0], self.applied_force[1] - adds[1]]
-                else:
-                    self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
-            else:
-                if n.cords[1] == self.cords[1]:
-                    self.applied_force = [self.applied_force[0], self.applied_force[1] - adds[1]]
-                elif n.cords[1] > self.cords[1]:
-                    self.applied_force = [self.applied_force[0] - adds[0], self.applied_force[1] - adds[1]]
-                else:
-                    if not self.touching_ground:
-                        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] - adds[1]]
+            adds = [adds[0] / JOINT_FRICTION, adds[1] / JOINT_FRICTION]
+            if n.touching_ground:
+                if self.touching_ground:
+                    if self.cords[1] > n.cords[1]:
+                        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
                     else:
-                        self.applied_force = [self.applied_force[0] + adds[0], 0]  # TODO proper ratio needed
-            if not self.touching_ground and n.touching_ground:
-                ratio = find_ratio(self.cords, n.cords)
-                self.resistance += math.fabs(ratio[0][1] * 10)
-            if self.size == 15:
-                print(adds, n.size)
+                        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
+                else:
+                    if self.cords[1] > n.cords[1]:
+                        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
+                    else:
+                        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
+            else:
+                if self.touching_ground:
+                    if self.cords[1] > n.cords[1]:
+                        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
+                    else:
+                        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
+                else:
+                    if self.cords[1] > n.cords[1]:
+                        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
+                    else:
+                        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
         to_return = [self.applied_force[0], self.applied_force[1]]
         return to_return
 
@@ -184,16 +183,16 @@ class Connector:
             self.status += 1
             if self.status == 3:
                 self.status = 0
-        if self.status == 1:
-            self.expand()
         if self.status == 0:
+            self.expand()
+        if self.status == 1:
             self.relax()
         return self.status
 
     def expand(self):
         self.warping = .75
         ratio = find_ratio(self.nodes[0].cords, self.nodes[1].cords)
-        self.nodes[0].add_force([ratio[0][0] * self.power, -ratio[0][1] * self.power])
+        self.nodes[0].add_force([ratio[0][0] * self.power * -1, -ratio[0][1] * self.power * -1])
         self.nodes[1].add_force([ratio[1][0] * self.power, -ratio[1][1] * self.power])
         self.touching = False
 
@@ -202,8 +201,8 @@ class Connector:
             self.warping = 1
             ratio = find_ratio(self.nodes[0].cords, self.nodes[1].cords)
             multiply = 1
-            self.nodes[0].add_force([-ratio[0][0] * multiply * self.power, ratio[0][1] * self.power])
-            self.nodes[1].add_force([-ratio[0][0] * multiply * self.power, ratio[0][1] * self.power])
+            self.nodes[0].add_force([ratio[0][0] * multiply * self.power, ratio[0][1] * self.power])
+            self.nodes[1].add_force([-ratio[0][0] * multiply * self.power, -ratio[0][1] * self.power])
 
     def draw(self):
         node1_thickness = int(self.nodes[0].size/5 * self.warping)
