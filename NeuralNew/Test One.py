@@ -111,28 +111,7 @@ class Node:
         for n in self.connected_nodes:
             adds = n.sum_forces(calculated)
             adds = [adds[0] / JOINT_FRICTION, adds[1] / JOINT_FRICTION]
-            if n.touching_ground:
-                if self.touching_ground:
-                    if self.cords[1] > n.cords[1]:
-                        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
-                    else:
-                        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
-                else:
-                    if self.cords[1] > n.cords[1]:
-                        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
-                    else:
-                        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
-            else:
-                if self.touching_ground:
-                    if self.cords[1] > n.cords[1]:
-                        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
-                    else:
-                        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
-                else:
-                    if self.cords[1] > n.cords[1]:
-                        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
-                    else:
-                        self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
+            self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
         to_return = [self.applied_force[0], self.applied_force[1]]
         return to_return
 
@@ -290,8 +269,8 @@ all_nodes = [Node(1.7, 5, [display_size / 2 - 100, display_size]),
              Node(.89, 3, [display_size / 2 + 100, display_size]),
              Node(1.23, 4, [display_size / 2, display_size/2])]
 
-all_connectors = [Connector(0, 2, [all_nodes[0], all_nodes[1]], 2),  # Between the OG 2 has the most power
-                  Connector(0, 2, [all_nodes[1], all_nodes[2]], 2),  # Between the 1, and 2 has the middlest power
+all_connectors = [Connector(10, 2, [all_nodes[0], all_nodes[1]], 2),  # Between the OG 2 has the most power
+                  Connector(10, 2, [all_nodes[1], all_nodes[2]], 2),  # Between the 1, and 2 has the middlest power
                   Connector(10, 2, [all_nodes[0], all_nodes[2]], 2)]  # Between the 0, and 2 has the least power
 
 running = True
