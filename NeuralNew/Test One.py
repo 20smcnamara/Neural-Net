@@ -66,6 +66,7 @@ class Node:
         self.velocity = [0, self.force_of_gravity]
         self.applied_force = self.velocity
         self.color = (255, (203 - 135 * friction) * 1.88, (203 - 135 * friction) * 1.88)
+        self.kinda_connected_nodes = []
         if friction > 1.5:
             self.color = (255, 0, 0)
         if friction < 0.5:
@@ -78,6 +79,13 @@ class Node:
 
     def update_cords(self):
         self.circle.move_to(self.cords)
+
+    def add_node(self, other):
+        self.connected_nodes.append(other)
+        self.kinda_connected_nodes.append(other)
+        for n in other.connected_nodes:
+            if n not in self.kinda_connected_nodes:
+                self.kinda_connected_nodes.append(n)
 
     def move(self, adds):
         xadd = adds[0]
@@ -110,14 +118,16 @@ class Node:
         self.resistance = 1
         for n in self.connected_nodes:
             adds = n.sum_forces(calculated)
-            adds = [adds[0] / JOINT_FRICTION, adds[1] / JOINT_FRICTION]
+            ratio = find_angle(self, n) * 3
+            thing = 5 - ratio
+            if thing < 0:
+                thing = 1
+            adds = [adds[0] / JOINT_FRICTION * ratio, adds[1] / JOINT_FRICTION * thing]
             self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
         to_return = [self.applied_force[0], self.applied_force[1]]
         return to_return
 
     def apply_forces(self):
-        if math.fabs(self.applied_force[1]) > self.force_of_gravity:
-            self.applied_force[1] = 0
         if math.fabs(self.applied_force[0]) >= self.threshold or not self.touching_ground:
             self.move(self.applied_force)
         else:
@@ -137,6 +147,9 @@ class Node:
     def check_collision(self, other):
         return pygame.sprite.collide_circle(self.circle, other.circle)
 
+    def is_connected(self, other):
+        return other in self.kinda_connected_nodes
+
 
 class Connector:
 
@@ -152,12 +165,12 @@ class Connector:
         self.sleep = sleep
         nodes[0].connectors.append(self)
         nodes[1].connectors.append(self)
-        nodes[0].connected_nodes.append(nodes[1])
-        nodes[1].connected_nodes.append(nodes[0])
+        nodes[0].add_node(nodes[1])
+        nodes[1].add_node(nodes[0])
 
     def take_action(self):
-        step = init_time - time.time()
-        if round(step) % self.sleep == 0 and round(step) != self.last_time:
+        step = moment
+        if step % self.sleep == 0 and round(step) != self.last_time:
             self.last_time = round(step)
             self.status += 1
             if self.status == 3:
@@ -228,9 +241,66 @@ class Organism:
         for n in self.nodes:
             n.update()
 
-    def check_flying(self):
-        for n in self.nodes:
-            print(n.size, n.touching_ground)
+
+class Generation:
+
+    def __init__(self, number_of_organisms=100):
+        self.organisms = []
+        self.active_org = 0
+        for x in range(number_of_organisms):
+            self.create_organisms()
+
+    def create_organisms(self):
+        num_nodes = random.randint(3, 6)
+        nodes = []
+        for num in range(num_nodes):
+            nodes.append(Node(float(random.randint(7, 20)) / 10.0,
+                              random.randint(3, 6),
+                              [random.randint(display_size / 3, display_size / 3 * 2),
+                               random.randint(base - 50, base)]))
+        all_connected = False
+        connectors = []
+        while not all_connected:
+            n1 = 0
+            n2 = 0
+            checking = True
+            while checking:
+                n1 = random.randint(0, num_nodes - 1)
+                n2 = random.randint(0, num_nodes - 1)
+                if nodes[n1].is_connected(nodes[n2]) or n2 == n1 or nodes[n1] == blank_node or nodes[n2] == blank_node:
+                    checking = True
+                else:
+                    checking = False
+            new_con = Connector(10, random.randint(1, 3), [nodes[n1], nodes[n2]], 2)
+            connectors.append(new_con)
+            broken = False
+            for no1 in nodes:
+                for no2 in nodes:
+                    if no1 != no2:
+                        all_connected = no1.is_connected(no2)
+                    if not all_connected:
+                        break
+                if broken:
+                    break
+        self.organisms.append(Organism(nodes, connectors))
+
+    def control_forces(self):
+        self.organisms[self.active_org].control_forces()
+
+    def take_action(self):
+        self.organisms[self.active_org].take_action()
+
+    def draw(self):
+        self.organisms[self.active_org].draw()
+
+    def update(self):
+        self.organisms[self.active_org].update()
+
+    def next_org(self):
+        self.active_org += 1
+        if self.active_org == len(self.organisms):
+            self.active_org = 0
+            need_new_generation = True
 
 
 def find_ratio(cords1, cords2):
@@ -260,37 +330,64 @@ def draw_back():
 
 def draw():
     draw_back()
-    for org in organisms:
-        org.draw()
+    for gen in generations:
+        gen.draw()
     pygame.display.update()
 
 
-all_nodes = [Node(1.7, 5, [display_size / 2 - 100, display_size]),
-             Node(.89, 3, [display_size / 2 + 100, display_size]),
-             Node(1.23, 4, [display_size / 2, display_size/2])]
-
-all_connectors = [Connector(10, 2, [all_nodes[0], all_nodes[1]], 2),  # Between the OG 2 has the most power
-                  Connector(10, 2, [all_nodes[1], all_nodes[2]], 2),  # Between the 1, and 2 has the middlest power
-                  Connector(10, 2, [all_nodes[0], all_nodes[2]], 2)]  # Between the 0, and 2 has the least power
+# all_nodes = [Node(1.7, 5, [display_size / 2 - 100, display_size]),
+#              Node(.89, 3, [display_size / 2 + 100, display_size]),
+#              Node(1.23, 4, [display_size / 2, display_size/2])]
+#
+# all_connectors = [Connector(10, 2, [all_nodes[0], all_nodes[1]], 2),  # Between the OG 2 has the most power
+#                   Connector(10, 2, [all_nodes[1], all_nodes[2]], 2),  # Between the 1, and 2 has the middlest power
+#                   Connector(10, 2, [all_nodes[0], all_nodes[2]], 2)]  # Between the 0, and 2 has the least power
+#
+# running = True
+# blank_node = Node(0, 0, [0, 0])
+# init_time = time.time()
+# organisms = [Organism(all_nodes, all_connectors)]
+# while running:
+#     moment = init_time - time.time()
+#     draw()
+#     for o in organisms:
+#         o.control_forces()
+#         x = o.take_action()
+#         if x == 0:
+#             print("expanding")
+#         elif x == 1:
+#             print("relaxing")
+#         o.update()
+#     for event in pygame.event.get():
+#         if event.type == pygame.QUIT:
+#             pygame.quit()
+#             quit(0)
+#     time.sleep(.01)
+#     print("")
 
 running = True
 blank_node = Node(0, 0, [0, 0])
+new_gen = Generation()
+generations = [new_gen]
 init_time = time.time()
-organisms = [Organism(all_nodes, all_connectors)]
+last10 = 0
+current_generation = generations[len(generations) - 1]
+need_new_generation = False
+speed = 10
 while running:
-    moment = init_time - time.time()
+    moment = round(init_time * speed - time.time() * speed)
     draw()
-    for o in organisms:
-        o.control_forces()
-        x = o.take_action()
-        if x == 0:
-            print("expanding")
-        elif x == 1:
-            print("relaxing")
-        o.update()
+    current_generation.control_forces()
+    current_generation.take_action()
+    current_generation.update()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             quit(0)
-    time.sleep(.01)
-    print("")
+    if moment % 5 == 0 and last10 != moment:
+        if need_new_generation:
+            generations.append(Generation())
+            need_new_generation = False
+        current_generation = generations[len(generations) - 1]
+        current_generation.next_org()
+        last10 = moment
