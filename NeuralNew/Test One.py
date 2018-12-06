@@ -7,7 +7,7 @@ import time
 
 pygame.init()
 font = pygame.font.Font('freesansbold.ttf', 15)
-display_size = 750
+display_size = 900
 screen = pygame.display.set_mode([display_size, display_size])
 pygame.display.set_caption("Testing")
 base = display_size - 150
@@ -78,7 +78,8 @@ class Node:
         self.update_cords()
 
     def update_cords(self):
-        self.circle.move_to(self.cords)
+        # self.circle.move_to(self.cords)
+        return
 
     def add_node(self, other):
         self.connected_nodes.append(other)
@@ -220,6 +221,8 @@ class Organism:
         self.connectors = connectors
         self.nodes = nodes
         self.last_time = -1
+        self.is_good_organism = True
+        self.run = False
 
     def control_forces(self):
         for n in self.nodes:
@@ -227,6 +230,7 @@ class Organism:
             n.apply_forces()
 
     def take_action(self):
+        self.run = True
         x = -1
         for c in self.connectors:
             x += 0
@@ -234,6 +238,13 @@ class Organism:
         return x
 
     def draw(self):
+        for n in self.nodes:
+            if n.cords[0] + n.size < - 100 or \
+                    n.cords[1] + n.size < - 100 or \
+                    n.cords[0] - n.size > display_size + 100 or \
+                    n.cords[1] - n.size > display_size + 100:
+                self.is_good_organism = False
+                return
         for c in self.connectors:
             c.draw()
 
@@ -241,14 +252,26 @@ class Organism:
         for n in self.nodes:
             n.update()
 
+    def get_distance_traveled(self):
+        total = 0
+        for n in self.nodes:
+            total += n.cords[0]
+        return total
+
 
 class Generation:
 
-    def __init__(self, number_of_organisms=100):
+    def __init__(self, number_of_organisms=50, older_gen=None):
         self.organisms = []
         self.active_org = 0
-        for x in range(number_of_organisms):
-            self.create_organisms()
+        if older_gen:
+            for x in range(1, number_of_organisms - 1):
+                self.breed_organisms([older_gen.organisms[x], older_gen.organisms[x - 1]])
+                self.breed_organisms([older_gen.organisms[x], older_gen.organisms[x + 1]])
+            print(len(self.organisms))
+        else:
+            for x in range(number_of_organisms):
+                self.create_organisms()
 
     def create_organisms(self):
         num_nodes = random.randint(3, 6)
@@ -284,6 +307,59 @@ class Generation:
                     break
         self.organisms.append(Organism(nodes, connectors))
 
+    def breed_organisms(self, old_organisms):
+        with_least = 0
+        num_nodes = [len(old_organisms[0].nodes), len(old_organisms[1].nodes)]
+        if len(old_organisms[0].nodes) > len(old_organisms[0].nodes):
+            num_nodes = [len(old_organisms[1].nodes), len(old_organisms[0].nodes)]
+            with_least = 1
+        num_nodes = random.randint(num_nodes[0], num_nodes[1])
+        nodes = []
+        for num in range(num_nodes):
+            friction = []
+            if num < num_nodes[0]:
+                friction = [old_organisms[0].nodes[num].friction, old_organisms[1].nodes[num].friction]
+                if old_organisms[0].nodes[num].friction > old_organisms[1].nodes[num].friction:
+                    friction = [old_organisms[1].nodes[num].friction, old_organisms[0].nodes[num].friction]
+            else:
+                friction = [old_organisms[with_least].nodes[num].friction - .2,
+                            old_organisms[with_least].nodes[num].friction + .2]
+            if num < num_nodes[0]:  # TODO This
+                sizes = [len(old_organisms[0].nodes), len(old_organisms[1].nodes)]
+                if len(old_organisms[0].nodes) > len(old_organisms[0].nodes):
+                    sizes = [len(old_organisms[1].nodes), len(old_organisms[0].nodes)]
+            else:
+                sizes = [len(old_organisms[1].nodes), len(old_organisms[0].nodes)]
+            nodes.append(Node(float(random.randint(friction[0], friction[1])) / 10.0,
+                              random.randint(3, 6),
+                              [random.randint(display_size / 3, display_size / 3 * 2),
+                               random.randint(base - 50, base)]))
+        all_connected = False
+        connectors = []
+        while not all_connected:
+            n1 = 0
+            n2 = 0
+            checking = True
+            while checking:
+                n1 = random.randint(0, num_nodes - 1)
+                n2 = random.randint(0, num_nodes - 1)
+                if nodes[n1].is_connected(nodes[n2]) or n2 == n1 or nodes[n1] == blank_node or nodes[n2] == blank_node:
+                    checking = True
+                else:
+                    checking = False
+            new_con = Connector(1, random.randint(1, 3), [nodes[n1], nodes[n2]], 2)
+            connectors.append(new_con)
+            broken = False
+            for no1 in nodes:
+                for no2 in nodes:
+                    if no1 != no2:
+                        all_connected = no1.is_connected(no2)
+                    if not all_connected:
+                        break
+                if broken:
+                    break
+        self.organisms.append(Organism(nodes, connectors))
+
     def control_forces(self):
         self.organisms[self.active_org].control_forces()
 
@@ -292,6 +368,8 @@ class Generation:
 
     def draw(self):
         self.organisms[self.active_org].draw()
+        if not self.organisms[self.active_org].is_good_organism:
+            self.next_org()
 
     def update(self):
         self.organisms[self.active_org].update()
@@ -301,6 +379,22 @@ class Generation:
         if self.active_org == len(self.organisms):
             self.active_org = 0
             need_new_generation = True
+
+    def sort_organisms(self):
+        for dsa in self.organisms:
+            for o in range(len(self.organisms) - 1):
+                if self.organisms[o].get_distance_traveled() > self.organisms[o + 1].get_distance_traveled():
+                    temp = self.organisms[o]
+                    self.organisms[o] = self.organisms[o + 1]
+                    self.organisms[o + 1] = temp
+
+    def kill(self):
+        self.sort_organisms()
+        del self.organisms[0:4]
+        for x in range(int((len(self.organisms) + 5) / 2 - 3)):
+            del self.organisms[random.randint(0, len(self.organisms) - 11)]
+        for x in range(3):
+            del self.organisms[random.randint(len(self.organisms) - 11, len(self.organisms))]
 
 
 def find_ratio(cords1, cords2):
@@ -373,7 +467,7 @@ init_time = time.time()
 last10 = 0
 current_generation = generations[len(generations) - 1]
 need_new_generation = False
-speed = 10
+speed = 100
 while running:
     moment = round(init_time * speed - time.time() * speed)
     draw()
@@ -386,8 +480,9 @@ while running:
             quit(0)
     if moment % 5 == 0 and last10 != moment:
         if need_new_generation:
-            generations.append(Generation())
+            generations.append(Generation(older_gen=current_generation))
             need_new_generation = False
-        current_generation = generations[len(generations) - 1]
-        current_generation.next_org()
+            current_generation = generations[len(generations) - 1]
+        else:
+            current_generation.next_org()
         last10 = moment
