@@ -375,54 +375,6 @@ class Generation:
 
     def breed_organisms(self, old_organisms):
         with_least = 0
-        num_nodes = [len(old_organisms[0].nodes), len(old_organisms[1].nodes)]
-        if len(old_organisms[0].nodes) > len(old_organisms[0].nodes):
-            num_nodes = [len(old_organisms[1].nodes), len(old_organisms[0].nodes)]
-            with_least = 1
-        num_nodes = random.randint(num_nodes[0], num_nodes[1])
-        nodes = []
-        for num in range(num_nodes):
-            friction = []
-            sizes = []
-            if num < num_nodes[0]:
-                friction = [old_organisms[0].nodes[num].friction, old_organisms[1].nodes[num].friction]
-                if old_organisms[0].nodes[num].friction > old_organisms[1].nodes[num].friction:
-                    friction = [old_organisms[1].nodes[num].friction, old_organisms[0].nodes[num].friction]
-                sizes = [len(old_organisms[0].nodes), len(old_organisms[1].nodes)]
-                if len(old_organisms[0].nodes) > len(old_organisms[0].nodes):
-                    sizes = [len(old_organisms[1].nodes), len(old_organisms[0].nodes)]
-                friction = [old_organisms[with_least].nodes[num].friction - .2,
-                            old_organisms[with_least].nodes[num].friction + .2]
-                sizes = [len(old_organisms[1].nodes), len(old_organisms[0].nodes)]
-            nodes.append(Node(float(random.randint(friction[0], friction[1])) / 10.0,
-                              random.randint(sizes[0], sizes[1]),
-                              [random.randint(display_size / 3, display_size / 3 * 2),
-                               random.randint(base - 50, base)]))
-        all_connected = False
-        connectors = []
-        while not all_connected:
-            n1 = 0
-            n2 = 0
-            checking = True
-            while checking:
-                n1 = random.randint(0, num_nodes - 1)
-                n2 = random.randint(0, num_nodes - 1)
-                if nodes[n1].is_connected(nodes[n2]) or n2 == n1 or nodes[n1] == blank_node or nodes[n2] == blank_node:
-                    checking = True
-                else:
-                    checking = False
-            new_con = Connector(1, random.randint(1, 3), [nodes[n1], nodes[n2]], 2)
-            connectors.append(new_con)
-            broken = False
-            for no1 in nodes:
-                for no2 in nodes:
-                    if no1 != no2:
-                        all_connected = no1.is_connected(no2)
-                    if not all_connected:
-                        break
-                if broken:
-                    break
-        self.organisms.append(Organism(nodes, connectors))
 
     def control_forces(self):
         self.organisms[self.active_org].control_forces()
