@@ -15,39 +15,24 @@ ground = pygame.Rect((0, base, display_size, display_size - base))
 GRAVITY = 1.2
 AIR_FRICTION = 1.01
 JOINT_FRICTION = 2.5
-
-
-class Circle(pygame.sprite.Sprite):
-
-    def __init__(self, color, radius, cords):
-        self.radius = radius
-        pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.Surface((radius, radius))
-        self.image.fill((255, 255, 255))
-        self.color = color
-        self.cords = cords
-        self.len_rect = math.sqrt(2 * (self.radius ** 2))
-        self.rect = pygame.Rect((cords[0] - self.len_rect / 2,
-                                 cords[1] - self.len_rect / 2,
-                                 self.len_rect,
-                                 self.len_rect))
-        self.rect.center = (cords[0], cords[1])
-        self.dx = 5
-        self.dy = 5
-
-    def draw(self):
-        pygame.draw.circle(screen, self.color, self.cords, self.radius)
-
-    def move_to(self, cords):
-        self.cords = cords
-        self.len_rect = math.sqrt(2 * (self.radius ** 2))
-        self.rect = pygame.Rect((cords[0] - self.len_rect / 2,
-                                 cords[1] - self.len_rect / 2,
-                                 self.len_rect,
-                                 self.len_rect))
-
-    def is_touching_object(self, other):
-        return other.Rect.collidepoint(self.rect)
+spawns_x = [display_size / 2 - 150, display_size / 2 - 100, display_size / 2 - 50, display_size / 2]
+spawns_y = [base, base - 50, base - 100]
+for s1 in range(len(spawns_x)):
+    for s2 in range(len(spawns_x)):
+        if spawns_x[s2] < spawns_x[s1]:
+            temp = spawns_x[s1]
+            spawns_x[s1] = spawns_x[s2]
+            spawns_x[s2] = temp
+for s1 in range(len(spawns_y)):
+    for s2 in range(len(spawns_y)):
+        if spawns_y[s2] < spawns_y[s1]:
+            temp = spawns_y[s1]
+            spawns_y[s1] = spawns_y[s2]
+            spawns_y[s2] = temp
+spawns = []
+for s1 in spawns_x:
+    for s2 in spawns_y:
+        spawns.append([s1, s2])
 
 
 class Node:
@@ -67,11 +52,11 @@ class Node:
         self.applied_force = self.velocity
         self.color = (255, (203 - 135 * friction) * 1.88, (203 - 135 * friction) * 1.88)
         self.kinda_connected_nodes = []
+        self.mode = 0
         if friction > 1.5:
             self.color = (255, 0, 0)
         if friction < 0.5:
             self.color = (255, 230, 230)
-        self.circle = Circle(self.color, self.size * 5, cords)
 
     def update(self):
         self.touching_ground = (self.cords[1] + self.size) == base
@@ -96,7 +81,16 @@ class Node:
         friction = self.friction
         if not self.touching_ground:
             friction = AIR_FRICTION
-        self.cords = [self.cords[0]+xadd/(friction*self.mass), self.cords[1]+yadd/self.mass]
+
+        if self.mode == 0 or \
+                (self.mode == 2 and xadd/(friction*self.mass) < 0) or \
+                (self.mode == 1 and xadd/(friction*self.mass) > 0):
+            self.cords = [self.cords[0]+xadd/(friction*self.mass), self.cords[1]+yadd/self.mass]
+        else:
+            self.cords = [self.cords[0], self.cords[1] + yadd / self.mass]
+            global screen_adjust
+            screen_adjust -= xadd / (friction * self.mass)
+
         if self.cords[1] + self.size >= base:
             self.cords[1] = base-self.size
             self.touching_ground = True
@@ -144,9 +138,6 @@ class Node:
 
     def add_force(self, adds):
         self.applied_force = [self.applied_force[0] + adds[0], self.applied_force[1] + adds[1]]
-
-    def check_collision(self, other):
-        return pygame.sprite.collide_circle(self.circle, other.circle)
 
     def is_connected(self, other):
         return other in self.kinda_connected_nodes
@@ -223,11 +214,57 @@ class Organism:
         self.last_time = -1
         self.is_good_organism = True
         self.run = False
+        self.spawns = []
+        self.traveled = 0
+        self.readjust()
+        self.fitness = 0
+
+    def compare_node_cords(self, other):
+        same = []
+        no_matches = []
+        both = self.nodes.copy()
+        both.append(other.nodes.copy())
+        for n1 in range(len(self.nodes)):
+            if n1 == len(other.nodes):
+                break
+            for n2 in range(len(self.nodes)):
+                if n2 == len(other.nodes):
+                    break
+                if self.nodes[n1].cords == other.nodes.cords:
+                    same.append([self.nodes[n1], self.nodes[n2]])
+        for n1 in both:
+            good = False
+            for n2 in same:
+                if n1 in n2:
+                    good = True
+            if not good:
+                no_matches.append(n1)
+
+    def readjust(self):
+        bottom = spawns_y[len(spawns_y) - 1]
+        rightist = spawns_x[len(spawns_x) - 1]
+        for n in self.nodes:
+            if n.cords[1] > bottom:
+                bottom = n.cords[1]
+            if n.cords[0] > rightist:
+                rightist = n.cords[0]
+        while bottom != spawns_y[0]:
+            for n in self.nodes:
+                n.cords[1] += 50
+            bottom += 50
+        while rightist != spawns_x[0]:
+            for n in self.nodes:
+                n.cords[0] += 50
+            rightist += 50
 
     def control_forces(self):
+        before = self.find_halfway()
         for n in self.nodes:
             n.sum_forces([])
             n.apply_forces()
+        self.fitness += (before - self.find_halfway()) * -1
+        print(self.fitness)
+
 
     def take_action(self):
         self.run = True
@@ -238,25 +275,51 @@ class Organism:
         return x
 
     def draw(self):
-        for n in self.nodes:
-            if n.cords[0] + n.size < - 100 or \
-                    n.cords[1] + n.size < - 100 or \
-                    n.cords[0] - n.size > display_size + 100 or \
-                    n.cords[1] - n.size > display_size + 100:
-                self.is_good_organism = False
-                return
         for c in self.connectors:
             c.draw()
 
     def update(self):
         for n in self.nodes:
             n.update()
+        if self.get_space_between() > display_size or math.fabs(screen_adjust) > 500:
+            self.is_good_organism = False
+        for n in self.nodes:
+            if n.cords[1] < 0:
+                self.is_good_organism = False
+        else:
+            for n in self.nodes:
+                if self.nodes[self.get_far_sides()[1]].cords[0] > display_size - 250 or \
+                        self.nodes[self.get_far_sides()[1]].cords[0] > display_size - 300 and self.nodes[0].mode == 1:
+                    n.mode = 2
+                elif self.nodes[self.get_far_sides()[1]].cords[0] < 250 or \
+                        self.nodes[self.get_far_sides()[1]].cords[0] < display_size - 300 and self.nodes[0].mode == 1:
+                    n.mode = 1
+                else:
+                    n.mode = 0
+
+    def find_halfway(self):
+        sides = self.get_far_sides()
+        return self.nodes[sides[0]].cords[0] - (self.nodes[sides[0]].cords[0] - self.nodes[sides[1]].cords[0]) / 2
 
     def get_distance_traveled(self):
-        total = 0
         for n in self.nodes:
-            total += n.cords[0]
-        return total
+            print(self.traveled, n.cords[0] - display_size / 2)
+            self.traveled += n.cords[0] - display_size / 2
+        return self.traveled
+
+    def get_far_sides(self):
+        leftist = 0
+        rightist = 0
+        for n in range(len(self.nodes)):
+            if self.nodes[n].cords[0] < self.nodes[leftist].cords[0]:
+                leftist = n
+            if self.nodes[n].cords[0] > self.nodes[rightist].cords[0]:
+                rightist = n
+        return [leftist, rightist]
+
+    def get_space_between(self):
+        sides = self.get_far_sides()
+        return self.nodes[sides[1]].cords[0] - self.nodes[sides[0]].cords[0]
 
 
 class Generation:
@@ -268,7 +331,6 @@ class Generation:
             for x in range(1, number_of_organisms - 1):
                 self.breed_organisms([older_gen.organisms[x], older_gen.organisms[x - 1]])
                 self.breed_organisms([older_gen.organisms[x], older_gen.organisms[x + 1]])
-            print(len(self.organisms))
         else:
             for x in range(number_of_organisms):
                 self.create_organisms()
@@ -276,11 +338,15 @@ class Generation:
     def create_organisms(self):
         num_nodes = random.randint(3, 6)
         nodes = []
+        used_cords = []
         for num in range(num_nodes):
+            cords = []
+            while cords == [] or cords in used_cords:
+                cords = random.choice(spawns)
+            used_cords.append(cords)
             nodes.append(Node(float(random.randint(7, 20)) / 10.0,
                               random.randint(3, 6),
-                              [random.randint(display_size / 3, display_size / 3 * 2),
-                               random.randint(base - 50, base)]))
+                              cords))
         all_connected = False
         connectors = []
         while not all_connected:
@@ -317,21 +383,19 @@ class Generation:
         nodes = []
         for num in range(num_nodes):
             friction = []
+            sizes = []
             if num < num_nodes[0]:
                 friction = [old_organisms[0].nodes[num].friction, old_organisms[1].nodes[num].friction]
                 if old_organisms[0].nodes[num].friction > old_organisms[1].nodes[num].friction:
                     friction = [old_organisms[1].nodes[num].friction, old_organisms[0].nodes[num].friction]
-            else:
-                friction = [old_organisms[with_least].nodes[num].friction - .2,
-                            old_organisms[with_least].nodes[num].friction + .2]
-            if num < num_nodes[0]:  # TODO This
                 sizes = [len(old_organisms[0].nodes), len(old_organisms[1].nodes)]
                 if len(old_organisms[0].nodes) > len(old_organisms[0].nodes):
                     sizes = [len(old_organisms[1].nodes), len(old_organisms[0].nodes)]
-            else:
+                friction = [old_organisms[with_least].nodes[num].friction - .2,
+                            old_organisms[with_least].nodes[num].friction + .2]
                 sizes = [len(old_organisms[1].nodes), len(old_organisms[0].nodes)]
             nodes.append(Node(float(random.randint(friction[0], friction[1])) / 10.0,
-                              random.randint(3, 6),
+                              random.randint(sizes[0], sizes[1]),
                               [random.randint(display_size / 3, display_size / 3 * 2),
                                random.randint(base - 50, base)]))
         all_connected = False
@@ -379,6 +443,8 @@ class Generation:
         if self.active_org == len(self.organisms):
             self.active_org = 0
             need_new_generation = True
+        global screen_adjust
+        screen_adjust = 0
 
     def sort_organisms(self):
         for dsa in self.organisms:
@@ -420,6 +486,14 @@ def find_angle(node1, node2):
 def draw_back():
     screen.fill((66, 194, 244))
     pygame.draw.rect(screen, (66, 244, 98), (0, base, display_size, display_size))
+    global screen_adjust
+    while screen_adjust > 0:
+        screen_adjust -= 100
+    while screen_adjust < 0:
+        screen_adjust += 100
+    for x in range(0, display_size + 100, 100):
+        xb = x + screen_adjust
+        pygame.draw.rect(screen, (50, 50, 50), (xb + screen_adjust, 0, 6, base))
 
 
 def draw():
@@ -468,8 +542,10 @@ last10 = 0
 current_generation = generations[len(generations) - 1]
 need_new_generation = False
 speed = 100
+screen_adjust = 0
+org_init_time = time.time()
 while running:
-    moment = round(init_time * speed - time.time() * speed)
+    moment = round(org_init_time * speed - time.time() * speed)
     draw()
     current_generation.control_forces()
     current_generation.take_action()
@@ -485,4 +561,6 @@ while running:
             current_generation = generations[len(generations) - 1]
         else:
             current_generation.next_org()
+            org_init_time = time.time()
         last10 = moment
+    time.sleep(.01)
