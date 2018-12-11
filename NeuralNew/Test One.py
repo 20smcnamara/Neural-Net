@@ -454,37 +454,6 @@ def draw():
         gen.draw()
     pygame.display.update()
 
-
-# all_nodes = [Node(1.7, 5, [display_size / 2 - 100, display_size]),
-#              Node(.89, 3, [display_size / 2 + 100, display_size]),
-#              Node(1.23, 4, [display_size / 2, display_size/2])]
-#
-# all_connectors = [Connector(10, 2, [all_nodes[0], all_nodes[1]], 2),  # Between the OG 2 has the most power
-#                   Connector(10, 2, [all_nodes[1], all_nodes[2]], 2),  # Between the 1, and 2 has the middlest power
-#                   Connector(10, 2, [all_nodes[0], all_nodes[2]], 2)]  # Between the 0, and 2 has the least power
-#
-# running = True
-# blank_node = Node(0, 0, [0, 0])
-# init_time = time.time()
-# organisms = [Organism(all_nodes, all_connectors)]
-# while running:
-#     moment = init_time - time.time()
-#     draw()
-#     for o in organisms:
-#         o.control_forces()
-#         x = o.take_action()
-#         if x == 0:
-#             print("expanding")
-#         elif x == 1:
-#             print("relaxing")
-#         o.update()
-#     for event in pygame.event.get():
-#         if event.type == pygame.QUIT:
-#             pygame.quit()
-#             quit(0)
-#     time.sleep(.01)
-#     print("")
-
 running = True
 blank_node = Node(0, 0, [0, 0])
 new_gen = Generation()
