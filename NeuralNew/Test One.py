@@ -61,11 +61,11 @@ def write_organisms():
     file_object = open("save_one", "w")
     for organism in current_generation.organisms:
         for node in organism.nodes:
-            file_object.write("Node,"+str(node.friction)+","+str(node.size)+","+str(node.cords[0])+"-"+str(node.cords[0]))
+            file_object.write("Node,"+str(node.friction)+","+str(node.size)+","+str(node.cords[0])+"-"+str(node.cords[0])+"\n")
         for connector in organism.connectors:
-            file_object.write("Connector,"+str(connector.power)+","+str(connector.sleep)+","+str(connector.nodes[0])+"-"+str(connector.nodes[0])+str(connector.status)+",")
-        file_object.write("Organism")
-    file_object.write("Generation")
+            file_object.write("Connector,"+str(connector.power)+","+str(connector.sleep)+","+str(connector.nodes[0])+"-"+str(connector.nodes[0])+str(connector.status)+","+"\n")
+        file_object.write("Organism\n")
+    file_object.write("Generation\n")
 
 
 class Node:
@@ -595,14 +595,13 @@ def mix(org1, org2):
                     correct_nodes.append(n)
             correct_nodes.append(c2)
             loading.append(correct_nodes)
-    print(loading)
     for x in loading:
         created_connectors.append(Connector(10, x[2].init_status, [x[0], x[1]], 2))
 
 
 running = True
 blank_node = Node(0, 0, [0, 0])
-new_gen = Generation()
+new_gen = # Generation()
 generations = [new_gen]
 init_time = time.time()
 last10 = 0
@@ -617,28 +616,30 @@ organism_since_started = 1
 sums = []
 average = 0
 
-while running:
-    start_loop = time.time()
-    moment = round(org_init_time * speed - start_loop * speed) * -1
-    draw()
-    current_generation.control_forces()
-    current_generation.take_action()
-    current_generation.update()
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            quit(0)
-    if moment % 5 == 0 and last10 != moment:
-        if need_new_generation:
-            generations.append(Generation(older_gen=current_generation))
-            need_new_generation = False
-            current_generation = generations[len(generations) - 1]
-        else:
-            current_generation.next_org()
-            org_init_time = time.time()
-        organism_started = time.time()
-        last10 = moment
-    end_loop = time.time()
-    sums.append(end_loop - start_loop)
-    average += 1
+write_organisms()
+
+# while running:
+#     start_loop = time.time()
+#     moment = round(org_init_time * speed - start_loop * speed) * -1
+#     draw()
+#     current_generation.control_forces()
+#     current_generation.take_action()
+#     current_generation.update()
+#     for event in pygame.event.get():
+#         if event.type == pygame.QUIT:
+#             pygame.quit()
+#             quit(0)
+#     if moment % 5 == 0 and last10 != moment:
+#         if need_new_generation:
+#             generations.append(Generation(older_gen=current_generation))
+#             need_new_generation = False
+#             current_generation = generations[len(generations) - 1]
+#         else:
+#             current_generation.next_org()
+#             org_init_time = time.time()
+#         organism_started = time.time()
+#         last10 = moment
+#     end_loop = time.time()
+#     sums.append(end_loop - start_loop)
+#     average += 1
     # print(sum(sums) / average)
