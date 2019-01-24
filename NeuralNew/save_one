@@ -1,1130 +1,1066 @@
-Node,1.89,15,300.0-300.0
-Node,1.88,15,400.0-400.0
-Node,1.5,15,350.0-350.0
-Node,1.83,12,400.0-400.0
-Node,1.0,18,400.0-400.0
-Node,1.35,12,300.0-300.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x10f7e5c50>-<__main__.Node object at 0x10f7e5c50>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x1103825c0>-<__main__.Node object at 0x1103825c0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x10f7e5c50>-<__main__.Node object at 0x10f7e5c50>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x1103827f0>-<__main__.Node object at 0x1103827f0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x110382550>-<__main__.Node object at 0x110382550>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x10feb5eb8>-<__main__.Node object at 0x10feb5eb8>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x10f7e5e80>-<__main__.Node object at 0x10f7e5e80>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x10feb5eb8>-<__main__.Node object at 0x10feb5eb8>2,
-Organism
-Node,1.97,15,450.0-450.0
-Node,1.65,15,450.0-450.0
-Node,1.41,9,350.0-350.0
-Node,1.59,15,300.0-300.0
-Node,1.8,9,450.0-450.0
-Node,1.92,12,400.0-400.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x110390dd8>-<__main__.Node object at 0x110390dd8>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110382160>-<__main__.Node object at 0x110382160>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x1103900f0>-<__main__.Node object at 0x1103900f0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x110382160>-<__main__.Node object at 0x110382160>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110390cc0>-<__main__.Node object at 0x110390cc0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x110390cc0>-<__main__.Node object at 0x110390cc0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x1103900f0>-<__main__.Node object at 0x1103900f0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x1103903c8>-<__main__.Node object at 0x1103903c8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x110390dd8>-<__main__.Node object at 0x110390dd8>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x1103900f0>-<__main__.Node object at 0x1103900f0>2,
-Organism
-Node,1.48,12,350.0-350.0
-Node,1.27,9,400.0-400.0
-Node,1.24,18,400.0-400.0
-Node,1.54,15,450.0-450.0
-Node,1.22,12,450.0-450.0
-Node,1.17,18,350.0-350.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x1103909e8>-<__main__.Node object at 0x1103909e8>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x110390278>-<__main__.Node object at 0x110390278>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110390588>-<__main__.Node object at 0x110390588>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110390278>-<__main__.Node object at 0x110390278>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x1103909b0>-<__main__.Node object at 0x1103909b0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110390278>-<__main__.Node object at 0x110390278>2,
-Organism
-Node,1.38,9,300.0-300.0
-Node,1.2,12,450.0-450.0
-Node,1.51,18,450.0-450.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x110390668>-<__main__.Node object at 0x110390668>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x110390c88>-<__main__.Node object at 0x110390c88>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x110390668>-<__main__.Node object at 0x110390668>2,
-Organism
-Node,1.84,18,350.0-350.0
-Node,1.66,9,450.0-450.0
-Node,1.44,9,400.0-400.0
-Node,1.61,9,450.0-450.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x110390d68>-<__main__.Node object at 0x110390d68>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x110390cf8>-<__main__.Node object at 0x110390cf8>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110390cf8>-<__main__.Node object at 0x110390cf8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x110390d68>-<__main__.Node object at 0x110390d68>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x110390d68>-<__main__.Node object at 0x110390d68>2,
-Organism
-Node,1.55,18,350.0-350.0
-Node,1.08,9,450.0-450.0
-Node,1.41,12,350.0-350.0
-Node,1.02,15,350.0-350.0
-Node,1.65,15,450.0-450.0
-Node,1.44,18,450.0-450.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11036e048>-<__main__.Node object at 0x11036e048>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11036e2e8>-<__main__.Node object at 0x11036e2e8>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11036e358>-<__main__.Node object at 0x11036e358>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11036e1d0>-<__main__.Node object at 0x11036e1d0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x11036e048>-<__main__.Node object at 0x11036e048>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11036e2e8>-<__main__.Node object at 0x11036e2e8>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11036e358>-<__main__.Node object at 0x11036e358>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x11036e320>-<__main__.Node object at 0x11036e320>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11036e048>-<__main__.Node object at 0x11036e048>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11036e048>-<__main__.Node object at 0x11036e048>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11036e1d0>-<__main__.Node object at 0x11036e1d0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11036e2e8>-<__main__.Node object at 0x11036e2e8>2,
-Organism
-Node,1.2,18,450.0-450.0
-Node,1.78,15,300.0-300.0
-Node,1.05,15,350.0-350.0
-Node,1.24,12,450.0-450.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11036e438>-<__main__.Node object at 0x11036e438>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x11036ea58>-<__main__.Node object at 0x11036ea58>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11036e748>-<__main__.Node object at 0x11036e748>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x11036ec88>-<__main__.Node object at 0x11036ec88>2,
-Organism
-Node,1.44,12,450.0-450.0
-Node,1.26,12,400.0-400.0
-Node,1.99,15,400.0-400.0
-Node,1.63,12,400.0-400.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11036ee80>-<__main__.Node object at 0x11036ee80>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x11036e9b0>-<__main__.Node object at 0x11036e9b0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x11036e9b0>-<__main__.Node object at 0x11036e9b0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11036ee80>-<__main__.Node object at 0x11036ee80>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11036e940>-<__main__.Node object at 0x11036e940>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11036ee80>-<__main__.Node object at 0x11036ee80>2,
-Organism
-Node,1.73,9,400.0-400.0
-Node,1.34,18,300.0-300.0
-Node,1.41,12,450.0-450.0
-Node,1.6,18,300.0-300.0
-Node,1.89,15,400.0-400.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x11036ed30>-<__main__.Node object at 0x11036ed30>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11036e550>-<__main__.Node object at 0x11036e550>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x11036e550>-<__main__.Node object at 0x11036e550>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x11036e5c0>-<__main__.Node object at 0x11036e5c0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11036e6a0>-<__main__.Node object at 0x11036e6a0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x11036ee10>-<__main__.Node object at 0x11036ee10>2,
-Organism
-Node,1.71,12,300.0-300.0
-Node,1.06,18,400.0-400.0
-Node,1.36,15,300.0-300.0
-Node,1.94,12,350.0-350.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110364ac8>-<__main__.Node object at 0x110364ac8>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110364d68>-<__main__.Node object at 0x110364d68>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110364ac8>-<__main__.Node object at 0x110364ac8>2,
-Organism
-Node,1.98,15,450.0-450.0
-Node,1.78,18,300.0-300.0
-Node,1.56,15,400.0-400.0
-Node,1.38,9,350.0-350.0
-Node,2.0,15,300.0-300.0
-Node,1.88,15,300.0-300.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x110364fd0>-<__main__.Node object at 0x110364fd0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110364a58>-<__main__.Node object at 0x110364a58>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x110364e80>-<__main__.Node object at 0x110364e80>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110364c88>-<__main__.Node object at 0x110364c88>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x110364c88>-<__main__.Node object at 0x110364c88>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x110364e80>-<__main__.Node object at 0x110364e80>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110364e80>-<__main__.Node object at 0x110364e80>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110364a58>-<__main__.Node object at 0x110364a58>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x110364780>-<__main__.Node object at 0x110364780>2,
-Organism
-Node,1.3,18,400.0-400.0
-Node,1.82,15,450.0-450.0
-Node,1.54,15,450.0-450.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110364828>-<__main__.Node object at 0x110364828>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x1103647b8>-<__main__.Node object at 0x1103647b8>2,
-Organism
-Node,1.05,18,350.0-350.0
-Node,1.9,12,350.0-350.0
-Node,1.98,12,300.0-300.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11036f0f0>-<__main__.Node object at 0x11036f0f0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11036f438>-<__main__.Node object at 0x11036f438>2,
-Organism
-Node,1.46,12,300.0-300.0
-Node,1.87,18,300.0-300.0
-Node,1.15,9,450.0-450.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11036f7b8>-<__main__.Node object at 0x11036f7b8>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11036f7b8>-<__main__.Node object at 0x11036f7b8>2,
-Organism
-Node,1.3,12,450.0-450.0
-Node,1.14,9,450.0-450.0
-Node,1.06,15,350.0-350.0
-Node,1.44,18,400.0-400.0
-Node,1.9,12,300.0-300.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11036fa20>-<__main__.Node object at 0x11036fa20>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11036f2b0>-<__main__.Node object at 0x11036f2b0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x11036fb00>-<__main__.Node object at 0x11036fb00>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11036f2b0>-<__main__.Node object at 0x11036f2b0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11036fa20>-<__main__.Node object at 0x11036fa20>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x11036f278>-<__main__.Node object at 0x11036f278>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11036fb00>-<__main__.Node object at 0x11036fb00>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11036fa20>-<__main__.Node object at 0x11036fa20>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11036f2b0>-<__main__.Node object at 0x11036f2b0>2,
-Organism
-Node,1.86,18,400.0-400.0
-Node,1.89,9,400.0-400.0
-Node,1.99,12,350.0-350.0
-Node,1.28,9,350.0-350.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x11036fa90>-<__main__.Node object at 0x11036fa90>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11036f908>-<__main__.Node object at 0x11036f908>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11036feb8>-<__main__.Node object at 0x11036feb8>2,
-Organism
-Node,1.09,9,400.0-400.0
-Node,1.57,18,300.0-300.0
-Node,1.18,9,400.0-400.0
-Node,1.73,12,350.0-350.0
-Node,1.44,12,400.0-400.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11036ff28>-<__main__.Node object at 0x11036ff28>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11036fe80>-<__main__.Node object at 0x11036fe80>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11036fba8>-<__main__.Node object at 0x11036fba8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x11036fb70>-<__main__.Node object at 0x11036fb70>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11036fe80>-<__main__.Node object at 0x11036fe80>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11036fba8>-<__main__.Node object at 0x11036fba8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x1103742e8>-<__main__.Node object at 0x1103742e8>2,
-Organism
-Node,1.68,9,400.0-400.0
-Node,1.69,18,300.0-300.0
-Node,1.24,15,450.0-450.0
-Node,1.63,12,400.0-400.0
-Node,1.29,9,350.0-350.0
-Node,1.66,12,350.0-350.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x110374668>-<__main__.Node object at 0x110374668>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x1103740b8>-<__main__.Node object at 0x1103740b8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x1103742b0>-<__main__.Node object at 0x1103742b0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x1103742b0>-<__main__.Node object at 0x1103742b0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x110374550>-<__main__.Node object at 0x110374550>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x1103740b8>-<__main__.Node object at 0x1103740b8>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x1103742b0>-<__main__.Node object at 0x1103742b0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x110374400>-<__main__.Node object at 0x110374400>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x110374550>-<__main__.Node object at 0x110374550>2,
-Organism
-Node,1.3,15,350.0-350.0
-Node,1.99,15,400.0-400.0
-Node,1.85,18,450.0-450.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x1103749b0>-<__main__.Node object at 0x1103749b0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x1103749b0>-<__main__.Node object at 0x1103749b0>2,
-Organism
-Node,1.22,9,350.0-350.0
-Node,1.94,12,450.0-450.0
-Node,1.79,12,450.0-450.0
-Node,1.55,9,350.0-350.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110374ef0>-<__main__.Node object at 0x110374ef0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x110374cf8>-<__main__.Node object at 0x110374cf8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x110374c18>-<__main__.Node object at 0x110374c18>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x110374a90>-<__main__.Node object at 0x110374a90>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x110374c18>-<__main__.Node object at 0x110374c18>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x110374ef0>-<__main__.Node object at 0x110374ef0>2,
-Organism
-Node,1.07,9,400.0-400.0
-Node,1.28,18,350.0-350.0
-Node,1.08,15,400.0-400.0
-Node,1.13,15,300.0-300.0
-Node,1.64,15,400.0-400.0
-Node,1.11,12,300.0-300.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x110374b70>-<__main__.Node object at 0x110374b70>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110374da0>-<__main__.Node object at 0x110374da0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110377198>-<__main__.Node object at 0x110377198>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x110377208>-<__main__.Node object at 0x110377208>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x1103774e0>-<__main__.Node object at 0x1103774e0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x1103772e8>-<__main__.Node object at 0x1103772e8>2,
-Organism
-Node,1.76,9,400.0-400.0
-Node,1.56,18,300.0-300.0
-Node,1.4,18,350.0-350.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x1103775f8>-<__main__.Node object at 0x1103775f8>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x110377390>-<__main__.Node object at 0x110377390>2,
-Organism
-Node,1.46,12,450.0-450.0
-Node,1.65,18,350.0-350.0
-Node,1.6,15,350.0-350.0
-Node,1.21,15,300.0-300.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x1103776d8>-<__main__.Node object at 0x1103776d8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x110377780>-<__main__.Node object at 0x110377780>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110377780>-<__main__.Node object at 0x110377780>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x1103776a0>-<__main__.Node object at 0x1103776a0>2,
-Organism
-Node,1.91,18,400.0-400.0
-Node,1.64,18,350.0-350.0
-Node,1.42,9,450.0-450.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x1103779e8>-<__main__.Node object at 0x1103779e8>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x110377e80>-<__main__.Node object at 0x110377e80>2,
-Organism
-Node,1.18,15,300.0-300.0
-Node,1.6,12,450.0-450.0
-Node,1.01,9,300.0-300.0
-Node,1.78,15,450.0-450.0
-Node,1.25,9,450.0-450.0
-Node,1.14,9,450.0-450.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x110377e10>-<__main__.Node object at 0x110377e10>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110377e10>-<__main__.Node object at 0x110377e10>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110377b00>-<__main__.Node object at 0x110377b00>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x110377b00>-<__main__.Node object at 0x110377b00>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x110377c50>-<__main__.Node object at 0x110377c50>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x110377b00>-<__main__.Node object at 0x110377b00>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110377b38>-<__main__.Node object at 0x110377b38>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x110377da0>-<__main__.Node object at 0x110377da0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x110377b38>-<__main__.Node object at 0x110377b38>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110377e10>-<__main__.Node object at 0x110377e10>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110377b00>-<__main__.Node object at 0x110377b00>2,
-Organism
-Node,1.99,15,300.0-300.0
-Node,1.46,18,350.0-350.0
-Node,1.23,9,350.0-350.0
-Node,1.52,9,300.0-300.0
-Node,1.96,9,400.0-400.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x110379320>-<__main__.Node object at 0x110379320>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x1103797b8>-<__main__.Node object at 0x1103797b8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x110379080>-<__main__.Node object at 0x110379080>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110379080>-<__main__.Node object at 0x110379080>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x1103794a8>-<__main__.Node object at 0x1103794a8>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x110379208>-<__main__.Node object at 0x110379208>2,
-Organism
-Node,1.39,18,450.0-450.0
-Node,1.42,12,450.0-450.0
-Node,1.33,9,300.0-300.0
-Node,1.76,12,450.0-450.0
-Node,1.94,9,300.0-300.0
-Node,1.4,9,450.0-450.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110379c18>-<__main__.Node object at 0x110379c18>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x1103795f8>-<__main__.Node object at 0x1103795f8>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x1103795f8>-<__main__.Node object at 0x1103795f8>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110379630>-<__main__.Node object at 0x110379630>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110379c18>-<__main__.Node object at 0x110379c18>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x110379c18>-<__main__.Node object at 0x110379c18>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x1103796a0>-<__main__.Node object at 0x1103796a0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110379908>-<__main__.Node object at 0x110379908>2,
-Organism
-Node,1.14,9,400.0-400.0
-Node,1.71,15,350.0-350.0
-Node,1.84,12,300.0-300.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x110379a58>-<__main__.Node object at 0x110379a58>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110379ac8>-<__main__.Node object at 0x110379ac8>2,
-Organism
-Node,1.98,18,400.0-400.0
-Node,2.0,15,450.0-450.0
-Node,2.0,15,350.0-350.0
-Node,1.26,9,350.0-350.0
-Node,1.25,12,400.0-400.0
-Node,1.89,15,350.0-350.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11037d1d0>-<__main__.Node object at 0x11037d1d0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x110379f28>-<__main__.Node object at 0x110379f28>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x110379a90>-<__main__.Node object at 0x110379a90>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x110379a90>-<__main__.Node object at 0x110379a90>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x110379f28>-<__main__.Node object at 0x110379f28>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x11037d2b0>-<__main__.Node object at 0x11037d2b0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x110379a90>-<__main__.Node object at 0x110379a90>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11037df98>-<__main__.Node object at 0x11037df98>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x110379f60>-<__main__.Node object at 0x110379f60>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x110379f28>-<__main__.Node object at 0x110379f28>2,
-Organism
-Node,1.99,12,300.0-300.0
-Node,1.37,9,400.0-400.0
-Node,1.91,15,350.0-350.0
-Node,1.2,12,450.0-450.0
-Node,1.23,18,450.0-450.0
-Node,1.53,15,450.0-450.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11037d940>-<__main__.Node object at 0x11037d940>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11037d4a8>-<__main__.Node object at 0x11037d4a8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x11037d4a8>-<__main__.Node object at 0x11037d4a8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x11037d8d0>-<__main__.Node object at 0x11037d8d0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11037d748>-<__main__.Node object at 0x11037d748>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11037d940>-<__main__.Node object at 0x11037d940>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x11037d400>-<__main__.Node object at 0x11037d400>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11037d8d0>-<__main__.Node object at 0x11037d8d0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x11037d4a8>-<__main__.Node object at 0x11037d4a8>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11037d4a8>-<__main__.Node object at 0x11037d4a8>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11037d160>-<__main__.Node object at 0x11037d160>2,
-Organism
-Node,1.99,18,400.0-400.0
-Node,1.78,9,350.0-350.0
-Node,1.79,9,300.0-300.0
-Node,1.37,15,350.0-350.0
-Node,1.64,18,300.0-300.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11037df60>-<__main__.Node object at 0x11037df60>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11037d828>-<__main__.Node object at 0x11037d828>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11037de10>-<__main__.Node object at 0x11037de10>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x11037d828>-<__main__.Node object at 0x11037d828>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11037de10>-<__main__.Node object at 0x11037de10>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11037db38>-<__main__.Node object at 0x11037db38>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x11037df60>-<__main__.Node object at 0x11037df60>2,
-Organism
-Node,1.7,15,300.0-300.0
-Node,1.44,18,300.0-300.0
-Node,1.58,15,400.0-400.0
-Node,1.98,12,400.0-400.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11037dc18>-<__main__.Node object at 0x11037dc18>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x1103a9cc0>-<__main__.Node object at 0x1103a9cc0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x1103a9f98>-<__main__.Node object at 0x1103a9f98>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x1103a9cc0>-<__main__.Node object at 0x1103a9cc0>2,
-Organism
-Node,1.35,9,450.0-450.0
-Node,1.57,18,350.0-350.0
-Node,1.76,15,400.0-400.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x1103a9ef0>-<__main__.Node object at 0x1103a9ef0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x1103a9978>-<__main__.Node object at 0x1103a9978>2,
-Organism
-Node,1.34,12,400.0-400.0
-Node,1.87,18,300.0-300.0
-Node,1.92,9,350.0-350.0
-Node,1.87,15,300.0-300.0
-Node,1.41,9,450.0-450.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x1103a9780>-<__main__.Node object at 0x1103a9780>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x1103a9898>-<__main__.Node object at 0x1103a9898>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x1103a9940>-<__main__.Node object at 0x1103a9940>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x1103a9780>-<__main__.Node object at 0x1103a9780>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x1103a9780>-<__main__.Node object at 0x1103a9780>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x1103a9940>-<__main__.Node object at 0x1103a9940>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x1103a9518>-<__main__.Node object at 0x1103a9518>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x1103a9898>-<__main__.Node object at 0x1103a9898>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x1103a9518>-<__main__.Node object at 0x1103a9518>2,
-Organism
-Node,1.27,18,350.0-350.0
-Node,1.46,15,400.0-400.0
-Node,1.23,15,350.0-350.0
-Node,1.47,18,450.0-450.0
-Node,1.99,15,350.0-350.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x1103a92e8>-<__main__.Node object at 0x1103a92e8>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x1103a92e8>-<__main__.Node object at 0x1103a92e8>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x1103a9438>-<__main__.Node object at 0x1103a9438>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x1103a92e8>-<__main__.Node object at 0x1103a92e8>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x1103a9828>-<__main__.Node object at 0x1103a9828>2,
-Organism
-Node,1.42,18,350.0-350.0
-Node,1.41,18,400.0-400.0
-Node,1.92,18,450.0-450.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x1103a9048>-<__main__.Node object at 0x1103a9048>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x1103a9198>-<__main__.Node object at 0x1103a9198>2,
-Organism
-Node,1.44,15,450.0-450.0
-Node,1.65,15,400.0-400.0
-Node,1.48,18,400.0-400.0
-Node,1.59,9,350.0-350.0
-Node,1.09,15,400.0-400.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11037f160>-<__main__.Node object at 0x11037f160>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x11037f2e8>-<__main__.Node object at 0x11037f2e8>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11037f0b8>-<__main__.Node object at 0x11037f0b8>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11037f160>-<__main__.Node object at 0x11037f160>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11037f0b8>-<__main__.Node object at 0x11037f0b8>2,
-Organism
-Node,1.96,9,350.0-350.0
-Node,1.07,9,400.0-400.0
-Node,1.84,9,350.0-350.0
-Node,1.42,18,450.0-450.0
-Node,1.75,15,300.0-300.0
-Node,1.07,9,400.0-400.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x11037f7f0>-<__main__.Node object at 0x11037f7f0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11037f7f0>-<__main__.Node object at 0x11037f7f0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11037f128>-<__main__.Node object at 0x11037f128>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11037f7f0>-<__main__.Node object at 0x11037f7f0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11037f4a8>-<__main__.Node object at 0x11037f4a8>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11037f3c8>-<__main__.Node object at 0x11037f3c8>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11037f6a0>-<__main__.Node object at 0x11037f6a0>2,
-Organism
-Node,1.73,12,300.0-300.0
-Node,1.3,15,400.0-400.0
-Node,1.17,12,400.0-400.0
-Node,1.23,12,300.0-300.0
-Node,1.94,12,400.0-400.0
-Node,1.89,12,400.0-400.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11037f668>-<__main__.Node object at 0x11037f668>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x11037fdd8>-<__main__.Node object at 0x11037fdd8>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11037fef0>-<__main__.Node object at 0x11037fef0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x11037fc18>-<__main__.Node object at 0x11037fc18>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x11037fc18>-<__main__.Node object at 0x11037fc18>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11037fef0>-<__main__.Node object at 0x11037fef0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11037f780>-<__main__.Node object at 0x11037f780>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11037fef0>-<__main__.Node object at 0x11037fef0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x11037fdd8>-<__main__.Node object at 0x11037fdd8>2,
-Organism
-Node,1.83,12,450.0-450.0
-Node,1.19,15,400.0-400.0
-Node,1.56,9,450.0-450.0
-Node,1.99,15,400.0-400.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116da9080>-<__main__.Node object at 0x116da9080>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116da9080>-<__main__.Node object at 0x116da9080>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116da9160>-<__main__.Node object at 0x116da9160>2,
-Organism
-Node,1.93,9,300.0-300.0
-Node,1.13,15,300.0-300.0
-Node,2.0,9,450.0-450.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116da92e8>-<__main__.Node object at 0x116da92e8>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116da93c8>-<__main__.Node object at 0x116da93c8>2,
-Organism
-Node,1.8,12,400.0-400.0
-Node,1.17,18,350.0-350.0
-Node,1.52,12,300.0-300.0
-Node,1.19,18,450.0-450.0
-Node,1.58,12,350.0-350.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116da9518>-<__main__.Node object at 0x116da9518>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116da9518>-<__main__.Node object at 0x116da9518>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116da9518>-<__main__.Node object at 0x116da9518>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116da9588>-<__main__.Node object at 0x116da9588>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116da9668>-<__main__.Node object at 0x116da9668>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116da95f8>-<__main__.Node object at 0x116da95f8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116da96d8>-<__main__.Node object at 0x116da96d8>2,
-Organism
-Node,1.44,15,300.0-300.0
-Node,1.17,15,300.0-300.0
-Node,1.21,15,400.0-400.0
-Node,1.87,18,400.0-400.0
-Node,1.53,9,350.0-350.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116da9940>-<__main__.Node object at 0x116da9940>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116da9a90>-<__main__.Node object at 0x116da9a90>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116da9b00>-<__main__.Node object at 0x116da9b00>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116da9a20>-<__main__.Node object at 0x116da9a20>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116da9a20>-<__main__.Node object at 0x116da9a20>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116da9b00>-<__main__.Node object at 0x116da9b00>2,
-Organism
-Node,1.96,18,400.0-400.0
-Node,1.62,9,450.0-450.0
-Node,1.61,9,450.0-450.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116da9da0>-<__main__.Node object at 0x116da9da0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116da9d30>-<__main__.Node object at 0x116da9d30>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116da9e10>-<__main__.Node object at 0x116da9e10>2,
-Organism
-Node,1.94,15,400.0-400.0
-Node,1.86,12,450.0-450.0
-Node,1.28,15,450.0-450.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116db2048>-<__main__.Node object at 0x116db2048>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116da9f98>-<__main__.Node object at 0x116da9f98>2,
-Organism
-Node,1.85,12,400.0-400.0
-Node,1.11,15,350.0-350.0
-Node,1.22,15,450.0-450.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116db2208>-<__main__.Node object at 0x116db2208>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116db2278>-<__main__.Node object at 0x116db2278>2,
-Organism
-Node,1.95,15,350.0-350.0
-Node,1.46,9,450.0-450.0
-Node,1.19,9,300.0-300.0
-Node,1.91,9,400.0-400.0
-Node,1.9,12,300.0-300.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116db24a8>-<__main__.Node object at 0x116db24a8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116db2518>-<__main__.Node object at 0x116db2518>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116db2518>-<__main__.Node object at 0x116db2518>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116db25f8>-<__main__.Node object at 0x116db25f8>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116db24a8>-<__main__.Node object at 0x116db24a8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116db2588>-<__main__.Node object at 0x116db2588>2,
-Organism
-Node,1.31,12,350.0-350.0
-Node,1.06,15,400.0-400.0
-Node,1.73,15,450.0-450.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116db2908>-<__main__.Node object at 0x116db2908>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116db2828>-<__main__.Node object at 0x116db2828>2,
-Organism
-Node,1.39,15,450.0-450.0
-Node,1.6,18,400.0-400.0
-Node,1.89,18,450.0-450.0
-Node,1.25,18,400.0-400.0
-Node,1.16,9,400.0-400.0
-Node,1.03,18,450.0-450.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116db2ba8>-<__main__.Node object at 0x116db2ba8>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116db2ac8>-<__main__.Node object at 0x116db2ac8>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116db2b38>-<__main__.Node object at 0x116db2b38>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116db2c88>-<__main__.Node object at 0x116db2c88>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116db2b38>-<__main__.Node object at 0x116db2b38>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116db2a58>-<__main__.Node object at 0x116db2a58>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116db2c88>-<__main__.Node object at 0x116db2c88>2,
-Organism
-Node,1.32,9,350.0-350.0
-Node,1.46,9,450.0-450.0
-Node,1.63,15,450.0-450.0
-Node,1.12,9,400.0-400.0
-Node,1.85,18,350.0-350.0
-Node,1.49,15,350.0-350.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116dbe080>-<__main__.Node object at 0x116dbe080>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dbe160>-<__main__.Node object at 0x116dbe160>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116dbe080>-<__main__.Node object at 0x116dbe080>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dbe160>-<__main__.Node object at 0x116dbe160>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dbe160>-<__main__.Node object at 0x116dbe160>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116db2f60>-<__main__.Node object at 0x116db2f60>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dbe0f0>-<__main__.Node object at 0x116dbe0f0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dbe080>-<__main__.Node object at 0x116dbe080>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116db2f60>-<__main__.Node object at 0x116db2f60>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dbe080>-<__main__.Node object at 0x116dbe080>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116db2fd0>-<__main__.Node object at 0x116db2fd0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dbe160>-<__main__.Node object at 0x116dbe160>2,
-Organism
-Node,1.49,15,300.0-300.0
-Node,1.29,12,350.0-350.0
-Node,1.28,15,350.0-350.0
-Node,1.26,9,300.0-300.0
-Node,1.13,9,350.0-350.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dbe4e0>-<__main__.Node object at 0x116dbe4e0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dbe5c0>-<__main__.Node object at 0x116dbe5c0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116dbe5c0>-<__main__.Node object at 0x116dbe5c0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dbe630>-<__main__.Node object at 0x116dbe630>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dbe4e0>-<__main__.Node object at 0x116dbe4e0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dbe4e0>-<__main__.Node object at 0x116dbe4e0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dbe630>-<__main__.Node object at 0x116dbe630>2,
-Organism
-Node,1.69,9,400.0-400.0
-Node,1.83,18,450.0-450.0
-Node,1.63,12,400.0-400.0
-Node,1.4,15,350.0-350.0
-Node,1.13,9,300.0-300.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dbea58>-<__main__.Node object at 0x116dbea58>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116dbe9e8>-<__main__.Node object at 0x116dbe9e8>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dbeac8>-<__main__.Node object at 0x116dbeac8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dbe9e8>-<__main__.Node object at 0x116dbe9e8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dbea58>-<__main__.Node object at 0x116dbea58>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dbe908>-<__main__.Node object at 0x116dbe908>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dbeac8>-<__main__.Node object at 0x116dbeac8>2,
-Organism
-Node,1.15,15,400.0-400.0
-Node,1.03,9,350.0-350.0
-Node,1.08,18,300.0-300.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dbeda0>-<__main__.Node object at 0x116dbeda0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dbee10>-<__main__.Node object at 0x116dbee10>2,
-Organism
-Node,1.52,12,350.0-350.0
-Node,1.8,12,400.0-400.0
-Node,1.06,18,300.0-300.0
-Node,1.52,9,450.0-450.0
-Node,1.9,15,400.0-400.0
-Node,1.36,12,300.0-300.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dc8080>-<__main__.Node object at 0x116dc8080>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dbef60>-<__main__.Node object at 0x116dbef60>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dc8080>-<__main__.Node object at 0x116dc8080>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dc8160>-<__main__.Node object at 0x116dc8160>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dc8160>-<__main__.Node object at 0x116dc8160>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116dbef60>-<__main__.Node object at 0x116dbef60>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dbefd0>-<__main__.Node object at 0x116dbefd0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dc80f0>-<__main__.Node object at 0x116dc80f0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dc81d0>-<__main__.Node object at 0x116dc81d0>2,
-Organism
-Node,1.94,12,400.0-400.0
-Node,1.5,15,300.0-300.0
-Node,1.3,9,450.0-450.0
-Node,1.87,15,400.0-400.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dc85f8>-<__main__.Node object at 0x116dc85f8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dc8588>-<__main__.Node object at 0x116dc8588>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dc85f8>-<__main__.Node object at 0x116dc85f8>2,
-Organism
-Node,1.96,18,350.0-350.0
-Node,1.61,12,350.0-350.0
-Node,1.25,18,450.0-450.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116dc8860>-<__main__.Node object at 0x116dc8860>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116dc8780>-<__main__.Node object at 0x116dc8780>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dc8860>-<__main__.Node object at 0x116dc8860>2,
-Organism
-Node,1.16,12,450.0-450.0
-Node,1.44,12,400.0-400.0
-Node,1.29,18,350.0-350.0
-Node,1.41,18,400.0-400.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116dc89e8>-<__main__.Node object at 0x116dc89e8>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dc8ac8>-<__main__.Node object at 0x116dc8ac8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dc8a58>-<__main__.Node object at 0x116dc8a58>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dc8b38>-<__main__.Node object at 0x116dc8b38>2,
-Organism
-Node,1.67,18,300.0-300.0
-Node,1.95,9,400.0-400.0
-Node,1.2,9,350.0-350.0
-Node,1.06,18,450.0-450.0
-Node,1.25,15,300.0-300.0
-Node,1.51,18,400.0-400.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116dc8dd8>-<__main__.Node object at 0x116dc8dd8>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dc8e48>-<__main__.Node object at 0x116dc8e48>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dc8dd8>-<__main__.Node object at 0x116dc8dd8>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116dc8dd8>-<__main__.Node object at 0x116dc8dd8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dc8d68>-<__main__.Node object at 0x116dc8d68>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dc8eb8>-<__main__.Node object at 0x116dc8eb8>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116dc8dd8>-<__main__.Node object at 0x116dc8dd8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dc8cf8>-<__main__.Node object at 0x116dc8cf8>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dc8cf8>-<__main__.Node object at 0x116dc8cf8>2,
-Organism
-Node,1.81,15,450.0-450.0
-Node,1.34,15,300.0-300.0
-Node,1.48,9,450.0-450.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116dd1240>-<__main__.Node object at 0x116dd1240>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dd1320>-<__main__.Node object at 0x116dd1320>2,
-Organism
-Node,1.69,15,450.0-450.0
-Node,1.27,18,300.0-300.0
-Node,1.03,18,400.0-400.0
-Node,1.04,12,300.0-300.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dd15c0>-<__main__.Node object at 0x116dd15c0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dd1470>-<__main__.Node object at 0x116dd1470>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dd14e0>-<__main__.Node object at 0x116dd14e0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116dd15c0>-<__main__.Node object at 0x116dd15c0>2,
-Organism
-Node,1.64,18,350.0-350.0
-Node,1.63,18,450.0-450.0
-Node,1.93,18,400.0-400.0
-Node,1.21,18,300.0-300.0
-Node,1.54,15,450.0-450.0
-Node,1.0,18,300.0-300.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dd18d0>-<__main__.Node object at 0x116dd18d0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dd1860>-<__main__.Node object at 0x116dd1860>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116dd17f0>-<__main__.Node object at 0x116dd17f0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dd18d0>-<__main__.Node object at 0x116dd18d0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dd18d0>-<__main__.Node object at 0x116dd18d0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dd1940>-<__main__.Node object at 0x116dd1940>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dd1940>-<__main__.Node object at 0x116dd1940>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dd17f0>-<__main__.Node object at 0x116dd17f0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dd19b0>-<__main__.Node object at 0x116dd19b0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dd1860>-<__main__.Node object at 0x116dd1860>2,
-Organism
-Node,1.29,15,400.0-400.0
-Node,1.33,12,300.0-300.0
-Node,1.06,15,350.0-350.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dd1cc0>-<__main__.Node object at 0x116dd1cc0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116dd1da0>-<__main__.Node object at 0x116dd1da0>2,
-Organism
-Node,1.47,12,350.0-350.0
-Node,1.99,12,350.0-350.0
-Node,1.7,15,450.0-450.0
-Node,1.14,15,400.0-400.0
-Node,1.64,18,450.0-450.0
-Node,1.2,9,450.0-450.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116ddb080>-<__main__.Node object at 0x116ddb080>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116dd1ef0>-<__main__.Node object at 0x116dd1ef0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116ddb160>-<__main__.Node object at 0x116ddb160>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116ddb0f0>-<__main__.Node object at 0x116ddb0f0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116ddb0f0>-<__main__.Node object at 0x116ddb0f0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116dd1ef0>-<__main__.Node object at 0x116dd1ef0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116ddb080>-<__main__.Node object at 0x116ddb080>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dd1f60>-<__main__.Node object at 0x116dd1f60>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116ddb160>-<__main__.Node object at 0x116ddb160>2,
-Organism
-Node,1.79,12,450.0-450.0
-Node,1.67,15,400.0-400.0
-Node,1.91,18,350.0-350.0
-Node,1.63,15,350.0-350.0
-Node,1.76,9,400.0-400.0
-Node,1.43,9,300.0-300.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116ddb588>-<__main__.Node object at 0x116ddb588>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116ddb588>-<__main__.Node object at 0x116ddb588>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116ddb438>-<__main__.Node object at 0x116ddb438>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116ddb4a8>-<__main__.Node object at 0x116ddb4a8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116ddb588>-<__main__.Node object at 0x116ddb588>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116ddb668>-<__main__.Node object at 0x116ddb668>2,
-Organism
-Node,1.01,12,300.0-300.0
-Node,1.1,18,350.0-350.0
-Node,1.34,18,400.0-400.0
-Node,1.87,9,450.0-450.0
-Node,1.34,18,350.0-350.0
-Node,1.47,9,400.0-400.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116ddb978>-<__main__.Node object at 0x116ddb978>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116ddbac8>-<__main__.Node object at 0x116ddbac8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116ddb898>-<__main__.Node object at 0x116ddb898>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116ddb978>-<__main__.Node object at 0x116ddb978>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116ddb908>-<__main__.Node object at 0x116ddb908>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116ddb9e8>-<__main__.Node object at 0x116ddb9e8>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116ddb898>-<__main__.Node object at 0x116ddb898>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116ddbac8>-<__main__.Node object at 0x116ddbac8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116ddb908>-<__main__.Node object at 0x116ddb908>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116ddb898>-<__main__.Node object at 0x116ddb898>2,
-Organism
-Node,1.51,15,350.0-350.0
-Node,1.52,12,450.0-450.0
-Node,1.06,9,350.0-350.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116ddbdd8>-<__main__.Node object at 0x116ddbdd8>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116ddbdd8>-<__main__.Node object at 0x116ddbdd8>2,
-Organism
-Node,1.48,18,300.0-300.0
-Node,1.87,9,300.0-300.0
-Node,1.07,15,400.0-400.0
-Node,1.46,18,450.0-450.0
-Node,1.23,18,450.0-450.0
-Node,1.47,15,400.0-400.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116de6048>-<__main__.Node object at 0x116de6048>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116de6048>-<__main__.Node object at 0x116de6048>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116de6198>-<__main__.Node object at 0x116de6198>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116de60b8>-<__main__.Node object at 0x116de60b8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116de6208>-<__main__.Node object at 0x116de6208>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116de6278>-<__main__.Node object at 0x116de6278>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116de6048>-<__main__.Node object at 0x116de6048>2,
-Organism
-Node,1.11,12,350.0-350.0
-Node,1.1,9,300.0-300.0
-Node,1.91,9,350.0-350.0
-Node,1.19,15,350.0-350.0
-Node,1.85,12,450.0-450.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116de6630>-<__main__.Node object at 0x116de6630>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116de6550>-<__main__.Node object at 0x116de6550>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116de66a0>-<__main__.Node object at 0x116de66a0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116de6550>-<__main__.Node object at 0x116de6550>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116de65c0>-<__main__.Node object at 0x116de65c0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116de6630>-<__main__.Node object at 0x116de6630>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116de66a0>-<__main__.Node object at 0x116de66a0>2,
-Organism
-Node,1.7,15,350.0-350.0
-Node,1.63,12,350.0-350.0
-Node,1.44,9,350.0-350.0
-Node,1.2,18,450.0-450.0
-Node,1.5,18,350.0-350.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116de6908>-<__main__.Node object at 0x116de6908>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116de6908>-<__main__.Node object at 0x116de6908>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116de6a58>-<__main__.Node object at 0x116de6a58>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116de6a58>-<__main__.Node object at 0x116de6a58>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116de6a58>-<__main__.Node object at 0x116de6a58>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116de6908>-<__main__.Node object at 0x116de6908>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116de69e8>-<__main__.Node object at 0x116de69e8>2,
-Organism
-Node,1.41,9,400.0-400.0
-Node,1.88,12,350.0-350.0
-Node,1.99,9,450.0-450.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116de6da0>-<__main__.Node object at 0x116de6da0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116de6d30>-<__main__.Node object at 0x116de6d30>2,
-Organism
-Node,1.63,15,350.0-350.0
-Node,1.89,18,300.0-300.0
-Node,1.03,18,450.0-450.0
-Node,1.5,15,450.0-450.0
-Node,1.88,15,400.0-400.0
-Node,1.31,15,300.0-300.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116de6fd0>-<__main__.Node object at 0x116de6fd0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116de6f60>-<__main__.Node object at 0x116de6f60>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116df1160>-<__main__.Node object at 0x116df1160>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116de6fd0>-<__main__.Node object at 0x116de6fd0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116de6f60>-<__main__.Node object at 0x116de6f60>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116df11d0>-<__main__.Node object at 0x116df11d0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116df11d0>-<__main__.Node object at 0x116df11d0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116df1160>-<__main__.Node object at 0x116df1160>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116df10f0>-<__main__.Node object at 0x116df10f0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116de6fd0>-<__main__.Node object at 0x116de6fd0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116df10f0>-<__main__.Node object at 0x116df10f0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116df11d0>-<__main__.Node object at 0x116df11d0>2,
-Organism
-Node,1.29,12,450.0-450.0
-Node,1.28,18,450.0-450.0
-Node,1.37,18,450.0-450.0
-Node,1.41,12,400.0-400.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116df1630>-<__main__.Node object at 0x116df1630>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116df1550>-<__main__.Node object at 0x116df1550>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116df16a0>-<__main__.Node object at 0x116df16a0>2,
-Organism
-Node,1.25,18,400.0-400.0
-Node,1.7,9,450.0-450.0
-Node,1.22,18,400.0-400.0
-Node,1.3,18,400.0-400.0
-Node,1.44,9,450.0-450.0
-Node,1.29,9,400.0-400.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116df1828>-<__main__.Node object at 0x116df1828>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116df1978>-<__main__.Node object at 0x116df1978>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116df19e8>-<__main__.Node object at 0x116df19e8>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116df19e8>-<__main__.Node object at 0x116df19e8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116df1908>-<__main__.Node object at 0x116df1908>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116df1908>-<__main__.Node object at 0x116df1908>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116df1898>-<__main__.Node object at 0x116df1898>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116df1978>-<__main__.Node object at 0x116df1978>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116df1a58>-<__main__.Node object at 0x116df1a58>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116df1828>-<__main__.Node object at 0x116df1828>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116df1a58>-<__main__.Node object at 0x116df1a58>2,
-Organism
-Node,1.17,12,400.0-400.0
-Node,1.97,9,400.0-400.0
-Node,1.06,9,400.0-400.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116df1da0>-<__main__.Node object at 0x116df1da0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116df1da0>-<__main__.Node object at 0x116df1da0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116df1e80>-<__main__.Node object at 0x116df1e80>2,
-Organism
-Node,1.12,12,450.0-450.0
-Node,1.54,18,400.0-400.0
-Node,1.99,12,400.0-400.0
-Node,1.36,9,300.0-300.0
-Node,1.24,15,450.0-450.0
-Node,1.87,15,300.0-300.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116dfa0b8>-<__main__.Node object at 0x116dfa0b8>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dfa048>-<__main__.Node object at 0x116dfa048>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dfa278>-<__main__.Node object at 0x116dfa278>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dfa128>-<__main__.Node object at 0x116dfa128>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dfa198>-<__main__.Node object at 0x116dfa198>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dfa0b8>-<__main__.Node object at 0x116dfa0b8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dfa208>-<__main__.Node object at 0x116dfa208>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dfa128>-<__main__.Node object at 0x116dfa128>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dfa278>-<__main__.Node object at 0x116dfa278>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dfa198>-<__main__.Node object at 0x116dfa198>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dfa128>-<__main__.Node object at 0x116dfa128>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dfa0b8>-<__main__.Node object at 0x116dfa0b8>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dfa278>-<__main__.Node object at 0x116dfa278>2,
-Organism
-Node,1.84,9,400.0-400.0
-Node,1.03,15,350.0-350.0
-Node,1.17,9,450.0-450.0
-Node,1.99,18,400.0-400.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dfa710>-<__main__.Node object at 0x116dfa710>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dfa6a0>-<__main__.Node object at 0x116dfa6a0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116dfa780>-<__main__.Node object at 0x116dfa780>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dfa710>-<__main__.Node object at 0x116dfa710>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116dfa780>-<__main__.Node object at 0x116dfa780>2,
-Organism
-Node,1.74,15,350.0-350.0
-Node,1.5,15,400.0-400.0
-Node,1.28,18,300.0-300.0
-Node,1.93,9,300.0-300.0
-Node,1.54,15,400.0-400.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116dfa9e8>-<__main__.Node object at 0x116dfa9e8>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116dfaa58>-<__main__.Node object at 0x116dfaa58>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dfa978>-<__main__.Node object at 0x116dfa978>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dfaa58>-<__main__.Node object at 0x116dfaa58>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116dfaac8>-<__main__.Node object at 0x116dfaac8>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dfa9e8>-<__main__.Node object at 0x116dfa9e8>2,
-Organism
-Node,1.06,12,350.0-350.0
-Node,1.86,15,350.0-350.0
-Node,1.36,18,400.0-400.0
-Node,1.5,18,450.0-450.0
-Node,1.34,15,350.0-350.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dfaf28>-<__main__.Node object at 0x116dfaf28>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dfadd8>-<__main__.Node object at 0x116dfadd8>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116dfae48>-<__main__.Node object at 0x116dfae48>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dfad68>-<__main__.Node object at 0x116dfad68>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dfaf28>-<__main__.Node object at 0x116dfaf28>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116dfadd8>-<__main__.Node object at 0x116dfadd8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dfad68>-<__main__.Node object at 0x116dfad68>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116dfaf28>-<__main__.Node object at 0x116dfaf28>2,
-Organism
-Node,1.01,18,350.0-350.0
-Node,1.41,18,350.0-350.0
-Node,1.88,15,450.0-450.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e04278>-<__main__.Node object at 0x116e04278>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e04208>-<__main__.Node object at 0x116e04208>2,
-Organism
-Node,1.49,15,350.0-350.0
-Node,1.9,12,400.0-400.0
-Node,1.31,15,450.0-450.0
-Node,1.4,18,300.0-300.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e04438>-<__main__.Node object at 0x116e04438>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e04518>-<__main__.Node object at 0x116e04518>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e04588>-<__main__.Node object at 0x116e04588>2,
-Organism
-Node,1.64,18,300.0-300.0
-Node,1.21,9,300.0-300.0
-Node,1.89,12,450.0-450.0
-Node,1.48,18,350.0-350.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e04780>-<__main__.Node object at 0x116e04780>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e04860>-<__main__.Node object at 0x116e04860>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e047f0>-<__main__.Node object at 0x116e047f0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e04860>-<__main__.Node object at 0x116e04860>2,
-Organism
-Node,1.89,12,400.0-400.0
-Node,1.83,9,400.0-400.0
-Node,1.22,9,450.0-450.0
-Node,1.24,15,450.0-450.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e04b70>-<__main__.Node object at 0x116e04b70>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e04b70>-<__main__.Node object at 0x116e04b70>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e04a20>-<__main__.Node object at 0x116e04a20>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e04b00>-<__main__.Node object at 0x116e04b00>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e04b70>-<__main__.Node object at 0x116e04b70>2,
-Organism
-Node,1.46,12,400.0-400.0
-Node,1.38,12,450.0-450.0
-Node,1.98,18,400.0-400.0
-Node,1.62,9,300.0-300.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e04e48>-<__main__.Node object at 0x116e04e48>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e04dd8>-<__main__.Node object at 0x116e04dd8>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e04d68>-<__main__.Node object at 0x116e04d68>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e04eb8>-<__main__.Node object at 0x116e04eb8>2,
-Organism
-Node,1.23,12,400.0-400.0
-Node,1.67,15,300.0-300.0
-Node,1.97,18,450.0-450.0
-Node,1.77,9,450.0-450.0
-Node,1.61,9,450.0-450.0
-Node,1.41,15,350.0-350.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e0e0b8>-<__main__.Node object at 0x116e0e0b8>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e0e2e8>-<__main__.Node object at 0x116e0e2e8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e0e198>-<__main__.Node object at 0x116e0e198>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e0e198>-<__main__.Node object at 0x116e0e198>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e0e198>-<__main__.Node object at 0x116e0e198>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e0e128>-<__main__.Node object at 0x116e0e128>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e0e278>-<__main__.Node object at 0x116e0e278>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e0e208>-<__main__.Node object at 0x116e0e208>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e0e0b8>-<__main__.Node object at 0x116e0e0b8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e0e128>-<__main__.Node object at 0x116e0e128>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e0e2e8>-<__main__.Node object at 0x116e0e2e8>2,
-Organism
-Node,1.84,12,300.0-300.0
-Node,1.9,12,300.0-300.0
-Node,1.02,15,300.0-300.0
-Node,1.86,9,400.0-400.0
-Node,1.2,15,400.0-400.0
-Node,1.31,9,450.0-450.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e0e780>-<__main__.Node object at 0x116e0e780>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e0e780>-<__main__.Node object at 0x116e0e780>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e0e710>-<__main__.Node object at 0x116e0e710>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e0e860>-<__main__.Node object at 0x116e0e860>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e0e7f0>-<__main__.Node object at 0x116e0e7f0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e0e6a0>-<__main__.Node object at 0x116e0e6a0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e0e7f0>-<__main__.Node object at 0x116e0e7f0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e0e780>-<__main__.Node object at 0x116e0e780>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e0e6a0>-<__main__.Node object at 0x116e0e6a0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e0e780>-<__main__.Node object at 0x116e0e780>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e0e6a0>-<__main__.Node object at 0x116e0e6a0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e0e860>-<__main__.Node object at 0x116e0e860>2,
-Organism
-Node,1.17,12,400.0-400.0
-Node,1.04,15,400.0-400.0
-Node,1.49,12,300.0-300.0
-Node,1.81,12,400.0-400.0
-Node,1.9,9,300.0-300.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e0eda0>-<__main__.Node object at 0x116e0eda0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e0ed30>-<__main__.Node object at 0x116e0ed30>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e0eda0>-<__main__.Node object at 0x116e0eda0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e0ec50>-<__main__.Node object at 0x116e0ec50>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e0ec50>-<__main__.Node object at 0x116e0ec50>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e0ebe0>-<__main__.Node object at 0x116e0ebe0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e0eda0>-<__main__.Node object at 0x116e0eda0>2,
-Organism
-Node,1.22,15,400.0-400.0
-Node,1.48,15,300.0-300.0
-Node,1.49,15,300.0-300.0
-Node,1.97,18,350.0-350.0
-Node,1.87,18,400.0-400.0
-Node,1.66,9,450.0-450.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e19128>-<__main__.Node object at 0x116e19128>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e19198>-<__main__.Node object at 0x116e19198>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e19048>-<__main__.Node object at 0x116e19048>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e19048>-<__main__.Node object at 0x116e19048>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e19278>-<__main__.Node object at 0x116e19278>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e19198>-<__main__.Node object at 0x116e19198>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e19208>-<__main__.Node object at 0x116e19208>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e19128>-<__main__.Node object at 0x116e19128>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e19048>-<__main__.Node object at 0x116e19048>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e19198>-<__main__.Node object at 0x116e19198>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e19278>-<__main__.Node object at 0x116e19278>2,
-Organism
-Node,1.61,18,400.0-400.0
-Node,1.32,18,300.0-300.0
-Node,1.42,12,450.0-450.0
-Node,1.32,12,300.0-300.0
-Node,1.25,9,450.0-450.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e19630>-<__main__.Node object at 0x116e19630>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e19780>-<__main__.Node object at 0x116e19780>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e19780>-<__main__.Node object at 0x116e19780>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e19780>-<__main__.Node object at 0x116e19780>2,
-Organism
-Node,1.91,15,400.0-400.0
-Node,1.23,12,400.0-400.0
-Node,1.18,9,300.0-300.0
-Node,1.99,18,450.0-450.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e19940>-<__main__.Node object at 0x116e19940>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e19940>-<__main__.Node object at 0x116e19940>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e199b0>-<__main__.Node object at 0x116e199b0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e199b0>-<__main__.Node object at 0x116e199b0>2,
-Organism
-Node,1.1,9,400.0-400.0
-Node,1.98,18,300.0-300.0
-Node,1.62,12,300.0-300.0
-Node,1.42,18,450.0-450.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e19c50>-<__main__.Node object at 0x116e19c50>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e19c50>-<__main__.Node object at 0x116e19c50>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e19d30>-<__main__.Node object at 0x116e19d30>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e19cc0>-<__main__.Node object at 0x116e19cc0>2,
-Organism
-Node,1.25,15,350.0-350.0
-Node,1.01,9,450.0-450.0
-Node,1.91,18,350.0-350.0
-Node,1.47,12,400.0-400.0
-Node,1.4,9,400.0-400.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e22080>-<__main__.Node object at 0x116e22080>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e19fd0>-<__main__.Node object at 0x116e19fd0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e220f0>-<__main__.Node object at 0x116e220f0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e220f0>-<__main__.Node object at 0x116e220f0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e22080>-<__main__.Node object at 0x116e22080>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e19fd0>-<__main__.Node object at 0x116e19fd0>2,
-Organism
-Node,1.64,9,400.0-400.0
-Node,1.75,18,450.0-450.0
-Node,1.54,15,350.0-350.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e22470>-<__main__.Node object at 0x116e22470>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e22390>-<__main__.Node object at 0x116e22390>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e22470>-<__main__.Node object at 0x116e22470>2,
-Organism
-Node,1.85,18,350.0-350.0
-Node,1.09,18,450.0-450.0
-Node,1.07,9,350.0-350.0
-Node,1.76,12,450.0-450.0
-Node,1.12,15,450.0-450.0
-Node,1.48,9,400.0-400.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e225f8>-<__main__.Node object at 0x116e225f8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e225f8>-<__main__.Node object at 0x116e225f8>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e22748>-<__main__.Node object at 0x116e22748>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e22828>-<__main__.Node object at 0x116e22828>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e22668>-<__main__.Node object at 0x116e22668>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e22668>-<__main__.Node object at 0x116e22668>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e227b8>-<__main__.Node object at 0x116e227b8>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e22748>-<__main__.Node object at 0x116e22748>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e22828>-<__main__.Node object at 0x116e22828>2,
-Organism
-Node,1.0,9,400.0-400.0
-Node,1.46,18,450.0-450.0
-Node,1.87,12,300.0-300.0
-Node,1.03,12,300.0-300.0
-Node,1.15,18,300.0-300.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e22b70>-<__main__.Node object at 0x116e22b70>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e22b00>-<__main__.Node object at 0x116e22b00>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e22cc0>-<__main__.Node object at 0x116e22cc0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e22c50>-<__main__.Node object at 0x116e22c50>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e22cc0>-<__main__.Node object at 0x116e22cc0>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e22b70>-<__main__.Node object at 0x116e22b70>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e22b70>-<__main__.Node object at 0x116e22b70>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e22b00>-<__main__.Node object at 0x116e22b00>2,
-Organism
-Node,1.5,12,350.0-350.0
-Node,1.92,9,300.0-300.0
-Node,1.05,12,300.0-300.0
-Node,1.83,18,400.0-400.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e2b080>-<__main__.Node object at 0x116e2b080>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e2b0f0>-<__main__.Node object at 0x116e2b0f0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e22fd0>-<__main__.Node object at 0x116e22fd0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e22f60>-<__main__.Node object at 0x116e22f60>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e22f60>-<__main__.Node object at 0x116e22f60>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e2b0f0>-<__main__.Node object at 0x116e2b0f0>2,
-Organism
-Node,1.76,9,450.0-450.0
-Node,1.98,18,400.0-400.0
-Node,1.51,9,350.0-350.0
-Node,1.07,9,400.0-400.0
-Node,1.74,9,450.0-450.0
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e2b320>-<__main__.Node object at 0x116e2b320>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e2b4e0>-<__main__.Node object at 0x116e2b4e0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e2b320>-<__main__.Node object at 0x116e2b320>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e2b400>-<__main__.Node object at 0x116e2b400>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e2b470>-<__main__.Node object at 0x116e2b470>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e2b320>-<__main__.Node object at 0x116e2b320>2,
-Organism
-Node,1.53,12,450.0-450.0
-Node,1.64,18,450.0-450.0
-Node,1.19,9,400.0-400.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e2b780>-<__main__.Node object at 0x116e2b780>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e2b7f0>-<__main__.Node object at 0x116e2b7f0>2,
-Organism
-Node,1.96,18,350.0-350.0
-Node,1.73,15,450.0-450.0
-Node,1.02,18,400.0-400.0
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e2b940>-<__main__.Node object at 0x116e2b940>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e2b9b0>-<__main__.Node object at 0x116e2b9b0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e2ba20>-<__main__.Node object at 0x116e2ba20>2,
-Organism
-Node,1.75,18,300.0-300.0
-Node,1.12,15,350.0-350.0
-Node,1.11,9,450.0-450.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e2bba8>-<__main__.Node object at 0x116e2bba8>2,
-Connector,3.3333333333333335,1,<__main__.Node object at 0x116e2bc18>-<__main__.Node object at 0x116e2bc18>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e2bc88>-<__main__.Node object at 0x116e2bc88>2,
-Organism
-Node,1.44,15,400.0-400.0
-Node,1.11,18,350.0-350.0
-Node,1.27,9,400.0-400.0
-Node,1.09,9,450.0-450.0
-Node,1.29,18,400.0-400.0
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e2bf60>-<__main__.Node object at 0x116e2bf60>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e2bf60>-<__main__.Node object at 0x116e2bf60>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e2bfd0>-<__main__.Node object at 0x116e2bfd0>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e2bf60>-<__main__.Node object at 0x116e2bf60>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e2bef0>-<__main__.Node object at 0x116e2bef0>2,
-Connector,3.3333333333333335,3,<__main__.Node object at 0x116e2be80>-<__main__.Node object at 0x116e2be80>2,
-Connector,3.3333333333333335,2,<__main__.Node object at 0x116e2bfd0>-<__main__.Node object at 0x116e2bfd0>2,
+1
+Node,1.41,12,450.0-650
+Node,1.95,12,400.0-650
+Node,1.38,18,350.0-700
+Node,1.85,9,400.0-700
+Node,1.57,9,300.0-650
+Node,1.86,18,450.0-700
+Connector,3.3333333333333335,3,0-3,2
+Connector,3.3333333333333335,1,4-5,2
+Connector,3.3333333333333335,2,3-5,2
+Connector,3.3333333333333335,3,0-2,2
+Connector,3.3333333333333335,2,0-4,2
+Connector,3.3333333333333335,1,1-4,2
+Connector,3.3333333333333335,3,1-3,2
+Connector,3.3333333333333335,2,1-2,2
+Connector,3.3333333333333335,2,2-5,2
+Organism
+Node,1.16,12,350.0-650
+Node,1.68,12,400.0-700
+Node,1.67,18,350.0-750
+Node,1.53,12,350.0-700
+Connector,3.3333333333333335,1,1-2,2
+Connector,3.3333333333333335,3,0-2,2
+Connector,3.3333333333333335,2,2-3,2
+Organism
+Node,1.29,12,400.0-700
+Node,1.04,9,450.0-700
+Node,1.83,12,300.0-750
+Node,1.25,18,300.0-700
+Node,1.03,15,450.0-650
+Node,1.7,15,450.0-750
+Connector,3.3333333333333335,2,0-2,2
+Connector,3.3333333333333335,2,1-5,2
+Connector,3.3333333333333335,2,2-3,2
+Connector,3.3333333333333335,2,4-5,2
+Connector,3.3333333333333335,2,2-4,2
+Connector,3.3333333333333335,1,0-5,2
+Connector,3.3333333333333335,1,1-4,2
+Connector,3.3333333333333335,1,0-3,2
+Connector,3.3333333333333335,2,0-1,2
+Connector,3.3333333333333335,2,3-5,2
+Organism
+Node,1.49,15,450.0-750
+Node,1.48,9,450.0-700
+Node,1.4,18,350.0-700
+Node,1.49,12,400.0-750
+Node,1.42,9,450.0-650
+Connector,3.3333333333333335,3,1-2,2
+Connector,3.3333333333333335,2,0-1,2
+Connector,3.3333333333333335,1,0-2,2
+Connector,3.3333333333333335,1,1-3,2
+Connector,3.3333333333333335,3,2-3,2
+Connector,3.3333333333333335,2,1-4,2
+Organism
+Node,1.63,12,450.0-700
+Node,1.24,9,450.0-650
+Node,1.18,9,350.0-750
+Node,1.19,15,300.0-750
+Node,1.6,18,350.0-650
+Node,1.28,18,400.0-750
+Connector,3.3333333333333335,1,1-4,2
+Connector,3.3333333333333335,3,2-3,2
+Connector,3.3333333333333335,2,1-5,2
+Connector,3.3333333333333335,2,3-4,2
+Connector,3.3333333333333335,2,0-2,2
+Connector,3.3333333333333335,2,0-5,2
+Connector,3.3333333333333335,1,0-3,2
+Connector,3.3333333333333335,1,2-4,2
+Connector,3.3333333333333335,1,3-5,2
+Organism
+Node,1.32,15,300.0-750
+Node,1.2,18,400.0-750
+Node,2.0,12,400.0-700
+Node,1.53,12,300.0-700
+Node,1.93,15,300.0-650
+Connector,3.3333333333333335,2,0-4,2
+Connector,3.3333333333333335,1,1-2,2
+Connector,3.3333333333333335,2,3-4,2
+Connector,3.3333333333333335,3,0-1,2
+Connector,3.3333333333333335,1,0-3,2
+Connector,3.3333333333333335,2,2-4,2
+Organism
+Node,1.82,15,350.0-650
+Node,1.59,9,400.0-650
+Node,1.15,18,350.0-700
+Node,1.28,15,450.0-750
+Node,1.46,15,400.0-700
+Node,1.37,9,300.0-700
+Connector,3.3333333333333335,2,2-4,2
+Connector,3.3333333333333335,3,3-5,2
+Connector,3.3333333333333335,1,4-5,2
+Connector,3.3333333333333335,1,1-2,2
+Connector,3.3333333333333335,2,2-3,2
+Connector,3.3333333333333335,2,0-5,2
+Connector,3.3333333333333335,1,0-2,2
+Connector,3.3333333333333335,2,1-4,2
+Connector,3.3333333333333335,2,0-1,2
+Connector,3.3333333333333335,2,0-3,2
+Connector,3.3333333333333335,2,1-3,2
+Connector,3.3333333333333335,2,1-5,2
+Organism
+Node,1.94,18,450.0-750
+Node,1.34,12,300.0-700
+Node,1.9,18,400.0-700
+Node,1.36,9,350.0-750
+Node,1.84,18,400.0-750
+Connector,3.3333333333333335,3,0-1,2
+Connector,3.3333333333333335,1,1-2,2
+Connector,3.3333333333333335,2,2-4,2
+Connector,3.3333333333333335,1,3-4,2
+Connector,3.3333333333333335,3,0-2,2
+Connector,3.3333333333333335,1,0-3,2
+Connector,3.3333333333333335,2,1-3,2
+Connector,3.3333333333333335,1,2-3,2
+Connector,3.3333333333333335,2,0-4,2
+Organism
+Node,1.34,12,450.0-650
+Node,1.37,12,450.0-750
+Node,1.67,12,350.0-750
+Node,1.14,15,400.0-650
+Node,1.27,18,300.0-700
+Node,1.15,9,400.0-700
+Connector,3.3333333333333335,2,0-2,2
+Connector,3.3333333333333335,3,3-4,2
+Connector,3.3333333333333335,3,0-5,2
+Connector,3.3333333333333335,2,1-4,2
+Connector,3.3333333333333335,3,4-5,2
+Organism
+Node,1.37,15,450.0-750
+Node,1.4,9,450.0-650
+Node,1.82,15,400.0-650
+Node,1.91,18,350.0-650
+Node,1.81,9,400.0-700
+Connector,3.3333333333333335,3,2-3,2
+Connector,3.3333333333333335,3,0-3,2
+Connector,3.3333333333333335,1,0-1,2
+Connector,3.3333333333333335,2,1-2,2
+Connector,3.3333333333333335,3,0-4,2
+Connector,3.3333333333333335,1,2-4,2
+Organism
+Node,1.55,15,450.0-750
+Node,1.25,12,400.0-650
+Node,1.85,15,450.0-650
+Node,1.93,9,400.0-750
+Node,1.04,9,300.0-700
+Node,2.0,15,300.0-750
+Connector,3.3333333333333335,3,1-3,2
+Connector,3.3333333333333335,2,0-3,2
+Connector,3.3333333333333335,2,2-5,2
+Connector,3.3333333333333335,1,0-4,2
+Connector,3.3333333333333335,3,1-4,2
+Connector,3.3333333333333335,1,2-3,2
+Connector,3.3333333333333335,3,0-2,2
+Connector,3.3333333333333335,1,4-5,2
+Connector,3.3333333333333335,1,3-5,2
+Organism
+Node,1.93,18,350.0-650
+Node,1.95,12,450.0-650
+Node,1.79,12,350.0-700
+Connector,3.3333333333333335,1,1-2,2
+Connector,3.3333333333333335,2,0-1,2
+Connector,3.3333333333333335,2,0-2,2
+Organism
+Node,1.42,12,300.0-700
+Node,1.63,9,350.0-700
+Node,1.99,15,400.0-650
+Connector,3.3333333333333335,1,0-2,2
+Connector,3.3333333333333335,1,0-1,2
+Connector,3.3333333333333335,1,1-2,2
+Organism
+Node,2.0,12,450.0-650
+Node,1.37,18,400.0-650
+Node,1.79,12,350.0-700
+Node,1.22,15,350.0-750
+Node,1.16,12,300.0-700
+Node,1.21,18,300.0-650
+Connector,3.3333333333333335,1,0-4,2
+Connector,3.3333333333333335,1,4-5,2
+Connector,3.3333333333333335,1,3-5,2
+Connector,3.3333333333333335,2,1-3,2
+Connector,3.3333333333333335,3,2-4,2
+Connector,3.3333333333333335,2,2-3,2
+Connector,3.3333333333333335,1,0-3,2
+Connector,3.3333333333333335,1,1-4,2
+Connector,3.3333333333333335,2,2-5,2
+Connector,3.3333333333333335,1,1-5,2
+Organism
+Node,1.68,15,450.0-700
+Node,1.05,12,300.0-650
+Node,1.28,15,300.0-700
+Connector,3.3333333333333335,1,0-1,2
+Connector,3.3333333333333335,2,1-2,2
+Organism
+Node,1.2,18,400.0-650
+Node,1.61,9,300.0-750
+Node,1.32,15,400.0-700
+Connector,3.3333333333333335,1,0-1,2
+Connector,3.3333333333333335,2,1-2,2
+Organism
+Node,1.51,15,450.0-750
+Node,1.49,15,450.0-700
+Node,1.12,12,400.0-750
+Node,1.49,15,300.0-750
+Connector,3.3333333333333335,1,0-2,2
+Connector,3.3333333333333335,2,1-2,2
+Connector,3.3333333333333335,2,1-3,2
+Connector,3.3333333333333335,3,2-3,2
+Organism
+Node,1.34,12,300.0-650
+Node,1.67,9,400.0-650
+Node,1.78,9,450.0-750
+Connector,3.3333333333333335,1,1-2,2
+Connector,3.3333333333333335,1,0-1,2
+Connector,3.3333333333333335,3,0-2,2
+Organism
+Node,1.21,18,400.0-700
+Node,1.57,12,300.0-650
+Node,1.26,9,350.0-700
+Connector,3.3333333333333335,3,1-2,2
+Connector,3.3333333333333335,2,0-1,2
+Connector,3.3333333333333335,3,0-2,2
+Organism
+Node,1.05,18,400.0-750
+Node,1.22,18,300.0-700
+Node,1.54,12,450.0-750
+Node,1.85,12,350.0-750
+Node,1.23,9,450.0-650
+Connector,3.3333333333333335,3,2-4,2
+Connector,3.3333333333333335,1,3-4,2
+Connector,3.3333333333333335,1,1-2,2
+Connector,3.3333333333333335,2,1-4,2
+Connector,3.3333333333333335,2,1-3,2
+Connector,3.3333333333333335,1,2-3,2
+Connector,3.3333333333333335,1,0-1,2
+Connector,3.3333333333333335,1,0-4,2
+Organism
+Node,1.82,18,350.0-650
+Node,1.94,18,350.0-750
+Node,1.18,18,300.0-700
+Node,1.73,9,350.0-700
+Node,1.38,12,450.0-750
+Node,1.4,15,400.0-700
+Connector,3.3333333333333335,2,1-2,2
+Connector,3.3333333333333335,1,3-4,2
+Connector,3.3333333333333335,3,3-5,2
+Connector,3.3333333333333335,1,1-5,2
+Connector,3.3333333333333335,3,0-4,2
+Connector,3.3333333333333335,3,0-1,2
+Connector,3.3333333333333335,3,0-3,2
+Connector,3.3333333333333335,1,4-5,2
+Organism
+Node,1.08,12,350.0-650
+Node,1.83,18,300.0-650
+Node,1.22,9,450.0-700
+Node,1.45,15,450.0-750
+Connector,3.3333333333333335,1,0-1,2
+Connector,3.3333333333333335,1,0-2,2
+Connector,3.3333333333333335,3,2-3,2
+Connector,3.3333333333333335,2,0-3,2
+Organism
+Node,1.53,18,400.0-700
+Node,1.7,9,300.0-750
+Node,1.52,9,350.0-750
+Node,1.4,12,350.0-700
+Node,1.12,9,450.0-650
+Node,1.16,18,450.0-700
+Connector,3.3333333333333335,3,1-3,2
+Connector,3.3333333333333335,2,3-5,2
+Connector,3.3333333333333335,1,0-1,2
+Connector,3.3333333333333335,3,0-4,2
+Connector,3.3333333333333335,3,0-2,2
+Connector,3.3333333333333335,3,2-4,2
+Connector,3.3333333333333335,1,2-5,2
+Organism
+Node,1.14,18,400.0-650
+Node,1.08,15,400.0-700
+Node,1.0,18,450.0-700
+Node,1.33,15,350.0-650
+Node,1.81,15,300.0-700
+Connector,3.3333333333333335,1,0-4,2
+Connector,3.3333333333333335,1,2-4,2
+Connector,3.3333333333333335,1,1-3,2
+Connector,3.3333333333333335,1,0-1,2
+Connector,3.3333333333333335,3,3-4,2
+Organism
+Node,1.38,18,300.0-700
+Node,1.12,9,450.0-700
+Node,1.36,18,350.0-700
+Connector,3.3333333333333335,1,1-2,2
+Connector,3.3333333333333335,3,0-2,2
+Organism
+Node,1.58,12,300.0-750
+Node,1.37,18,450.0-700
+Node,1.46,18,450.0-750
+Node,1.51,12,300.0-700
+Connector,3.3333333333333335,3,0-3,2
+Connector,3.3333333333333335,3,1-2,2
+Connector,3.3333333333333335,2,2-3,2
+Organism
+Node,1.4,18,350.0-650
+Node,1.58,15,350.0-700
+Node,1.41,18,300.0-750
+Connector,3.3333333333333335,1,0-2,2
+Connector,3.3333333333333335,3,0-1,2
+Connector,3.3333333333333335,2,1-2,2
+Organism
+Node,1.33,15,400.0-650
+Node,1.58,9,350.0-750
+Node,1.44,15,300.0-650
+Connector,3.3333333333333335,2,0-1,2
+Connector,3.3333333333333335,2,0-2,2
+Organism
+Node,1.94,9,350.0-700
+Node,1.87,12,400.0-750
+Node,1.03,15,300.0-750
+Node,1.24,9,300.0-650
+Node,1.93,12,450.0-750
+Node,1.86,15,400.0-700
+Connector,3.3333333333333335,1,1-2,2
+Connector,3.3333333333333335,2,2-3,2
+Connector,3.3333333333333335,3,0-2,2
+Connector,3.3333333333333335,3,3-4,2
+Connector,3.3333333333333335,2,4-5,2
+Connector,3.3333333333333335,1,0-1,2
+Connector,3.3333333333333335,2,1-5,2
+Organism
+Node,1.66,15,300.0-650
+Node,1.5,15,450.0-650
+Node,1.47,18,350.0-750
+Node,1.0,18,450.0-750
+Node,1.25,18,300.0-750
+Connector,3.3333333333333335,3,0-4,2
+Connector,3.3333333333333335,3,0-2,2
+Connector,3.3333333333333335,2,0-3,2
+Connector,3.3333333333333335,3,0-1,2
+Connector,3.3333333333333335,3,1-2,2
+Connector,3.3333333333333335,1,3-4,2
+Connector,3.3333333333333335,1,1-4,2
+Organism
+Node,1.83,18,350.0-700
+Node,1.38,9,450.0-700
+Node,1.32,9,300.0-750
+Node,1.03,15,400.0-650
+Connector,3.3333333333333335,2,2-3,2
+Connector,3.3333333333333335,3,0-3,2
+Connector,3.3333333333333335,3,1-2,2
+Connector,3.3333333333333335,1,0-1,2
+Connector,3.3333333333333335,1,1-3,2
+Organism
+Node,1.27,15,300.0-650
+Node,1.68,15,350.0-750
+Node,1.87,9,450.0-700
+Connector,3.3333333333333335,3,0-2,2
+Connector,3.3333333333333335,3,0-1,2
+Connector,3.3333333333333335,3,1-2,2
+Organism
+Node,1.25,12,350.0-700
+Node,1.02,9,450.0-750
+Node,1.34,15,350.0-750
+Node,1.29,18,450.0-700
+Connector,3.3333333333333335,2,0-2,2
+Connector,3.3333333333333335,3,1-3,2
+Connector,3.3333333333333335,2,1-2,2
+Connector,3.3333333333333335,3,0-1,2
+Connector,3.3333333333333335,3,2-3,2
+Organism
+Node,1.08,9,400.0-750
+Node,1.54,12,450.0-650
+Node,1.83,9,450.0-750
+Connector,3.3333333333333335,3,0-1,2
+Connector,3.3333333333333335,2,1-2,2
+Organism
+Node,1.85,18,400.0-750
+Node,1.65,9,450.0-750
+Node,1.42,15,400.0-700
+Node,1.26,9,450.0-700
+Node,1.57,9,400.0-650
+Connector,3.3333333333333335,2,0-1,2
+Connector,3.3333333333333335,3,1-2,2
+Connector,3.3333333333333335,3,1-3,2
+Connector,3.3333333333333335,2,0-4,2
+Connector,3.3333333333333335,1,1-4,2
+Organism
+Node,1.7,12,450.0-750
+Node,1.29,9,400.0-750
+Node,1.99,9,350.0-650
+Node,1.97,12,350.0-700
+Node,1.31,18,450.0-700
+Connector,3.3333333333333335,1,1-3,2
+Connector,3.3333333333333335,3,1-4,2
+Connector,3.3333333333333335,2,0-2,2
+Connector,3.3333333333333335,1,3-4,2
+Connector,3.3333333333333335,3,1-2,2
+Connector,3.3333333333333335,3,0-1,2
+Connector,3.3333333333333335,2,2-3,2
+Connector,3.3333333333333335,1,2-4,2
+Organism
+Node,1.8,18,400.0-700
+Node,1.79,12,350.0-650
+Node,1.4,15,300.0-750
+Node,1.17,9,300.0-650
+Node,1.4,9,450.0-700
+Node,1.94,12,400.0-750
+Connector,3.3333333333333335,1,0-4,2
+Connector,3.3333333333333335,2,1-4,2
+Connector,3.3333333333333335,2,3-5,2
+Connector,3.3333333333333335,3,3-4,2
+Connector,3.3333333333333335,1,1-5,2
+Connector,3.3333333333333335,3,2-5,2
+Connector,3.3333333333333335,3,0-2,2
+Connector,3.3333333333333335,2,2-3,2
+Connector,3.3333333333333335,3,0-5,2
+Organism
+Node,1.29,12,400.0-650
+Node,1.96,12,400.0-700
+Node,1.3,15,450.0-650
+Node,1.89,18,300.0-700
+Node,1.33,12,300.0-650
+Connector,3.3333333333333335,2,2-4,2
+Connector,3.3333333333333335,2,3-4,2
+Connector,3.3333333333333335,3,0-1,2
+Connector,3.3333333333333335,3,1-4,2
+Organism
+Node,1.16,18,350.0-750
+Node,1.4,15,450.0-650
+Node,1.93,15,300.0-700
+Node,1.84,15,400.0-700
+Node,1.68,18,350.0-700
+Connector,3.3333333333333335,2,0-1,2
+Connector,3.3333333333333335,1,0-4,2
+Connector,3.3333333333333335,1,2-4,2
+Connector,3.3333333333333335,1,1-3,2
+Connector,3.3333333333333335,3,1-2,2
+Connector,3.3333333333333335,2,3-4,2
+Organism
+Node,1.22,12,300.0-750
+Node,1.24,12,400.0-650
+Node,1.45,9,300.0-650
+Node,1.14,9,450.0-650
+Node,1.26,18,300.0-700
+Node,1.62,15,350.0-700
+Connector,3.3333333333333335,3,0-2,2
+Connector,3.3333333333333335,3,0-3,2
+Connector,3.3333333333333335,2,1-3,2
+Connector,3.3333333333333335,2,2-5,2
+Connector,3.3333333333333335,2,3-5,2
+Connector,3.3333333333333335,1,1-2,2
+Connector,3.3333333333333335,2,0-4,2
+Connector,3.3333333333333335,3,2-4,2
+Connector,3.3333333333333335,3,3-4,2
+Connector,3.3333333333333335,3,0-1,2
+Connector,3.3333333333333335,2,4-5,2
+Organism
+Node,1.37,12,400.0-750
+Node,1.18,12,350.0-700
+Node,1.7,15,350.0-650
+Node,1.67,15,450.0-700
+Node,1.0,9,300.0-700
+Node,1.62,12,400.0-700
+Connector,3.3333333333333335,2,0-2,2
+Connector,3.3333333333333335,3,2-3,2
+Connector,3.3333333333333335,2,4-5,2
+Connector,3.3333333333333335,2,0-3,2
+Connector,3.3333333333333335,2,1-2,2
+Connector,3.3333333333333335,2,0-5,2
+Connector,3.3333333333333335,3,1-5,2
+Organism
+Node,1.75,12,350.0-650
+Node,1.63,9,400.0-700
+Node,1.56,9,300.0-750
+Connector,3.3333333333333335,2,1-2,2
+Connector,3.3333333333333335,2,0-1,2
+Connector,3.3333333333333335,1,0-2,2
+Organism
+Node,1.94,18,300.0-700
+Node,1.39,9,400.0-650
+Node,1.31,15,450.0-750
+Node,1.19,9,300.0-750
+Node,1.52,18,400.0-750
+Connector,3.3333333333333335,2,2-3,2
+Connector,3.3333333333333335,1,3-4,2
+Connector,3.3333333333333335,1,1-3,2
+Connector,3.3333333333333335,3,0-3,2
+Connector,3.3333333333333335,1,1-2,2
+Connector,3.3333333333333335,1,1-4,2
+Connector,3.3333333333333335,1,0-4,2
+Organism
+Node,1.18,15,350.0-700
+Node,1.35,12,300.0-750
+Node,1.11,9,450.0-750
+Node,1.83,15,350.0-650
+Node,1.91,15,400.0-750
+Connector,3.3333333333333335,2,3-4,2
+Connector,3.3333333333333335,1,0-3,2
+Connector,3.3333333333333335,3,2-4,2
+Connector,3.3333333333333335,3,1-3,2
+Connector,3.3333333333333335,3,0-2,2
+Connector,3.3333333333333335,1,1-2,2
+Connector,3.3333333333333335,3,0-4,2
+Connector,3.3333333333333335,2,0-1,2
+Connector,3.3333333333333335,1,1-4,2
+Organism
+Node,1.09,9,450.0-750
+Node,1.6,12,350.0-700
+Node,1.01,18,400.0-700
+Node,1.58,18,450.0-650
+Node,1.46,9,300.0-750
+Connector,3.3333333333333335,2,2-3,2
+Connector,3.3333333333333335,1,3-4,2
+Connector,3.3333333333333335,2,0-3,2
+Connector,3.3333333333333335,2,2-4,2
+Connector,3.3333333333333335,2,1-4,2
+Connector,3.3333333333333335,1,0-1,2
+Connector,3.3333333333333335,3,0-2,2
+Connector,3.3333333333333335,3,1-3,2
+Connector,3.3333333333333335,3,0-4,2
+Organism
+Node,1.14,15,400.0-750
+Node,1.6,15,350.0-750
+Node,1.89,15,350.0-700
+Node,1.67,9,450.0-700
+Connector,3.3333333333333335,1,1-3,2
+Connector,3.3333333333333335,1,2-3,2
+Connector,3.3333333333333335,2,0-1,2
+Connector,3.3333333333333335,1,1-2,2
+Connector,3.3333333333333335,3,0-3,2
+Organism
+Node,1.25,18,450.0-650
+Node,1.24,18,450.0-700
+Node,1.24,12,450.0-750
+Connector,3.3333333333333335,1,0-2,2
+Connector,3.3333333333333335,1,0-1,2
+Connector,3.3333333333333335,3,1-2,2
+Organism
+Node,1.2,9,450.0-750
+Node,1.43,18,300.0-700
+Node,1.42,18,300.0-750
+Node,1.06,18,350.0-700
+Connector,3.3333333333333335,2,2-3,2
+Connector,3.3333333333333335,3,0-3,2
+Connector,3.3333333333333335,1,1-2,2
+Connector,3.3333333333333335,2,0-2,2
+Connector,3.3333333333333335,2,0-1,2
+Connector,3.3333333333333335,1,1-3,2
+Organism
+Node,2.0,12,300.0-700
+Node,1.76,18,400.0-700
+Node,1.79,12,350.0-650
+Connector,3.3333333333333335,1,0-2,2
+Connector,3.3333333333333335,3,0-1,2
+Connector,3.3333333333333335,3,1-2,2
+Organism
+Node,1.62,9,400.0-650
+Node,1.73,9,450.0-750
+Node,1.89,18,400.0-700
+Node,1.48,9,350.0-650
+Connector,3.3333333333333335,2,1-3,2
+Connector,3.3333333333333335,2,1-2,2
+Connector,3.3333333333333335,1,0-3,2
+Connector,3.3333333333333335,3,0-2,2
+Connector,3.3333333333333335,3,2-3,2
+Organism
+Node,1.19,18,450.0-700
+Node,1.21,12,300.0-750
+Node,1.58,9,350.0-650
+Node,1.6,18,450.0-650
+Node,1.95,9,400.0-700
+Connector,3.3333333333333335,3,0-2,2
+Connector,3.3333333333333335,1,1-2,2
+Connector,3.3333333333333335,2,0-4,2
+Connector,3.3333333333333335,3,3-4,2
+Connector,3.3333333333333335,1,2-3,2
+Connector,3.3333333333333335,2,1-3,2
+Connector,3.3333333333333335,2,0-3,2
+Connector,3.3333333333333335,1,1-4,2
+Organism
+Node,1.1,9,350.0-750
+Node,1.92,18,450.0-650
+Node,1.88,18,300.0-750
+Node,1.49,12,300.0-700
+Connector,3.3333333333333335,3,1-3,2
+Connector,3.3333333333333335,3,2-3,2
+Connector,3.3333333333333335,2,0-3,2
+Organism
+Node,1.04,18,350.0-700
+Node,1.66,9,400.0-650
+Node,1.71,15,300.0-700
+Node,1.75,15,350.0-650
+Node,1.9,12,400.0-700
+Connector,3.3333333333333335,3,2-3,2
+Connector,3.3333333333333335,3,0-4,2
+Connector,3.3333333333333335,1,1-4,2
+Connector,3.3333333333333335,3,3-4,2
+Organism
+Node,1.29,9,300.0-700
+Node,1.02,9,350.0-700
+Node,1.13,9,450.0-750
+Connector,3.3333333333333335,3,1-2,2
+Connector,3.3333333333333335,3,0-1,2
+Connector,3.3333333333333335,3,0-2,2
+Organism
+Node,1.23,9,350.0-750
+Node,1.95,12,350.0-650
+Node,1.43,12,450.0-650
+Node,1.01,15,400.0-650
+Node,1.53,18,300.0-700
+Connector,3.3333333333333335,3,0-1,2
+Connector,3.3333333333333335,1,2-3,2
+Connector,3.3333333333333335,3,3-4,2
+Connector,3.3333333333333335,1,0-2,2
+Connector,3.3333333333333335,3,0-3,2
+Connector,3.3333333333333335,2,1-2,2
+Connector,3.3333333333333335,3,2-4,2
+Organism
+Node,1.76,18,450.0-650
+Node,1.46,12,350.0-750
+Node,1.97,15,400.0-650
+Node,1.56,12,300.0-750
+Node,1.41,18,450.0-750
+Node,1.14,9,300.0-650
+Connector,3.3333333333333335,2,1-5,2
+Connector,3.3333333333333335,1,1-2,2
+Connector,3.3333333333333335,2,0-4,2
+Connector,3.3333333333333335,1,1-4,2
+Connector,3.3333333333333335,1,3-4,2
+Connector,3.3333333333333335,2,0-3,2
+Connector,3.3333333333333335,3,4-5,2
+Connector,3.3333333333333335,2,0-2,2
+Connector,3.3333333333333335,2,2-5,2
+Organism
+Node,1.59,12,300.0-650
+Node,1.27,15,400.0-650
+Node,1.23,12,300.0-750
+Node,1.9,18,450.0-650
+Node,1.15,12,450.0-700
+Node,1.39,18,450.0-750
+Connector,3.3333333333333335,3,1-2,2
+Connector,3.3333333333333335,3,2-4,2
+Connector,3.3333333333333335,1,0-2,2
+Connector,3.3333333333333335,1,0-4,2
+Connector,3.3333333333333335,3,4-5,2
+Connector,3.3333333333333335,1,1-5,2
+Connector,3.3333333333333335,2,3-4,2
+Connector,3.3333333333333335,3,2-3,2
+Connector,3.3333333333333335,1,0-5,2
+Connector,3.3333333333333335,3,3-5,2
+Organism
+Node,1.65,12,450.0-750
+Node,1.0,15,300.0-750
+Node,1.2,12,400.0-700
+Node,1.96,18,450.0-700
+Node,1.99,18,300.0-700
+Node,1.5,12,350.0-750
+Connector,3.3333333333333335,1,0-1,2
+Connector,3.3333333333333335,2,1-5,2
+Connector,3.3333333333333335,2,2-3,2
+Connector,3.3333333333333335,2,0-5,2
+Connector,3.3333333333333335,2,0-3,2
+Connector,3.3333333333333335,3,1-3,2
+Connector,3.3333333333333335,2,2-5,2
+Connector,3.3333333333333335,3,4-5,2
+Organism
+Node,1.38,12,450.0-700
+Node,1.47,18,400.0-700
+Node,1.94,18,350.0-750
+Node,1.18,15,450.0-750
+Node,1.07,18,300.0-650
+Connector,3.3333333333333335,3,2-3,2
+Connector,3.3333333333333335,1,3-4,2
+Connector,3.3333333333333335,3,1-4,2
+Connector,3.3333333333333335,1,0-1,2
+Connector,3.3333333333333335,2,1-3,2
+Connector,3.3333333333333335,1,0-2,2
+Connector,3.3333333333333335,3,2-4,2
+Organism
+Node,1.81,12,300.0-650
+Node,1.29,15,300.0-700
+Node,1.37,9,450.0-700
+Connector,3.3333333333333335,1,0-2,2
+Connector,3.3333333333333335,1,1-2,2
+Organism
+Node,1.34,15,300.0-650
+Node,1.07,9,400.0-750
+Node,1.97,18,300.0-700
+Node,1.33,15,350.0-650
+Connector,3.3333333333333335,2,0-1,2
+Connector,3.3333333333333335,2,2-3,2
+Connector,3.3333333333333335,2,1-2,2
+Connector,3.3333333333333335,3,0-3,2
+Organism
+Node,1.75,18,400.0-700
+Node,1.57,15,350.0-650
+Node,1.87,18,450.0-650
+Connector,3.3333333333333335,2,0-2,2
+Connector,3.3333333333333335,3,1-2,2
+Organism
+Node,1.56,9,450.0-650
+Node,1.06,15,300.0-650
+Node,1.99,12,350.0-750
+Node,1.06,9,350.0-700
+Node,1.01,12,450.0-700
+Node,1.47,9,300.0-750
+Connector,3.3333333333333335,3,0-5,2
+Connector,3.3333333333333335,3,1-5,2
+Connector,3.3333333333333335,2,4-5,2
+Connector,3.3333333333333335,2,2-5,2
+Connector,3.3333333333333335,1,2-3,2
+Connector,3.3333333333333335,2,1-4,2
+Connector,3.3333333333333335,1,3-4,2
+Connector,3.3333333333333335,1,0-1,2
+Connector,3.3333333333333335,3,0-3,2
+Connector,3.3333333333333335,3,1-3,2
+Connector,3.3333333333333335,3,3-5,2
+Organism
+Node,1.35,9,400.0-700
+Node,1.47,18,350.0-650
+Node,1.12,12,450.0-750
+Connector,3.3333333333333335,3,0-1,2
+Connector,3.3333333333333335,1,0-2,2
+Organism
+Node,1.73,9,300.0-750
+Node,1.26,12,400.0-700
+Node,1.15,12,400.0-750
+Connector,3.3333333333333335,2,0-1,2
+Connector,3.3333333333333335,1,0-2,2
+Organism
+Node,1.83,18,350.0-750
+Node,1.52,18,450.0-650
+Node,1.06,12,400.0-650
+Connector,3.3333333333333335,2,0-1,2
+Connector,3.3333333333333335,1,0-2,2
+Organism
+Node,1.38,9,350.0-650
+Node,1.44,15,350.0-750
+Node,1.81,12,300.0-650
+Node,1.37,9,400.0-750
+Connector,3.3333333333333335,1,0-3,2
+Connector,3.3333333333333335,1,1-2,2
+Connector,3.3333333333333335,2,2-3,2
+Organism
+Node,1.24,15,400.0-700
+Node,1.61,12,300.0-750
+Node,1.37,18,300.0-650
+Connector,3.3333333333333335,2,0-1,2
+Connector,3.3333333333333335,1,0-2,2
+Organism
+Node,1.62,15,350.0-650
+Node,1.65,9,300.0-750
+Node,1.72,9,450.0-700
+Connector,3.3333333333333335,2,0-1,2
+Connector,3.3333333333333335,3,0-2,2
+Organism
+Node,1.58,12,350.0-700
+Node,1.76,18,400.0-700
+Node,1.35,18,350.0-750
+Node,1.66,15,350.0-650
+Connector,3.3333333333333335,1,1-3,2
+Connector,3.3333333333333335,1,1-2,2
+Connector,3.3333333333333335,3,0-2,2
+Connector,3.3333333333333335,3,0-3,2
+Organism
+Node,1.34,9,400.0-700
+Node,1.62,15,450.0-700
+Node,2.0,12,300.0-650
+Node,1.18,18,450.0-750
+Connector,3.3333333333333335,1,0-2,2
+Connector,3.3333333333333335,3,1-3,2
+Connector,3.3333333333333335,3,1-2,2
+Connector,3.3333333333333335,3,2-3,2
+Organism
+Node,1.82,12,400.0-700
+Node,1.07,9,350.0-700
+Node,1.15,9,450.0-700
+Node,1.39,12,350.0-650
+Connector,3.3333333333333335,3,1-2,2
+Connector,3.3333333333333335,3,1-3,2
+Connector,3.3333333333333335,1,0-2,2
+Connector,3.3333333333333335,2,2-3,2
+Organism
+Node,1.2,18,450.0-700
+Node,1.96,12,350.0-750
+Node,1.62,15,350.0-650
+Connector,3.3333333333333335,3,0-2,2
+Connector,3.3333333333333335,1,1-2,2
+Organism
+Node,1.54,9,450.0-650
+Node,1.49,12,350.0-750
+Node,1.24,9,300.0-700
+Node,1.25,18,350.0-650
+Node,1.52,9,300.0-750
+Node,1.4,9,400.0-750
+Connector,3.3333333333333335,1,0-1,2
+Connector,3.3333333333333335,2,0-5,2
+Connector,3.3333333333333335,1,2-4,2
+Connector,3.3333333333333335,3,1-3,2
+Connector,3.3333333333333335,2,0-4,2
+Connector,3.3333333333333335,1,0-3,2
+Connector,3.3333333333333335,3,3-4,2
+Connector,3.3333333333333335,2,1-2,2
+Connector,3.3333333333333335,3,3-5,2
+Connector,3.3333333333333335,3,2-5,2
+Organism
+Node,1.9,12,350.0-650
+Node,1.57,18,400.0-650
+Node,1.29,15,300.0-650
+Node,1.08,18,400.0-750
+Node,1.95,15,300.0-750
+Node,1.6,15,450.0-650
+Connector,3.3333333333333335,2,1-3,2
+Connector,3.3333333333333335,2,0-5,2
+Connector,3.3333333333333335,1,0-2,2
+Connector,3.3333333333333335,2,3-4,2
+Connector,3.3333333333333335,2,1-2,2
+Connector,3.3333333333333335,3,0-3,2
+Connector,3.3333333333333335,3,2-5,2
+Connector,3.3333333333333335,2,1-5,2
+Connector,3.3333333333333335,3,1-4,2
+Connector,3.3333333333333335,3,2-4,2
+Connector,3.3333333333333335,3,4-5,2
+Organism
+Node,1.53,18,400.0-750
+Node,1.68,12,450.0-650
+Node,1.66,15,450.0-700
+Connector,3.3333333333333335,3,0-1,2
+Connector,3.3333333333333335,3,0-2,2
+Organism
+Node,1.79,12,450.0-750
+Node,1.66,18,350.0-700
+Node,1.34,18,350.0-750
+Node,1.38,9,300.0-650
+Node,1.57,15,300.0-700
+Connector,3.3333333333333335,1,1-4,2
+Connector,3.3333333333333335,3,0-3,2
+Connector,3.3333333333333335,1,0-1,2
+Connector,3.3333333333333335,3,0-4,2
+Connector,3.3333333333333335,1,1-3,2
+Connector,3.3333333333333335,3,1-2,2
+Connector,3.3333333333333335,1,2-3,2
+Connector,3.3333333333333335,1,2-4,2
+Organism
+Node,1.61,15,400.0-650
+Node,1.29,12,400.0-700
+Node,1.66,9,350.0-650
+Node,1.32,12,300.0-750
+Node,1.82,9,300.0-700
+Connector,3.3333333333333335,1,2-4,2
+Connector,3.3333333333333335,2,1-3,2
+Connector,3.3333333333333335,3,0-4,2
+Connector,3.3333333333333335,3,0-3,2
+Connector,3.3333333333333335,3,1-2,2
+Connector,3.3333333333333335,1,2-3,2
+Connector,3.3333333333333335,2,0-1,2
+Connector,3.3333333333333335,3,1-4,2
+Organism
+Node,1.77,12,300.0-650
+Node,1.07,9,450.0-750
+Node,1.97,12,450.0-650
+Node,1.34,9,300.0-700
+Connector,3.3333333333333335,3,1-3,2
+Connector,3.3333333333333335,1,0-2,2
+Connector,3.3333333333333335,1,0-1,2
+Connector,3.3333333333333335,1,2-3,2
+Organism
+Node,1.79,9,350.0-650
+Node,1.44,9,300.0-750
+Node,1.56,18,400.0-750
+Node,1.18,12,400.0-700
+Node,1.39,12,350.0-750
+Node,1.72,12,450.0-700
+Connector,3.3333333333333335,2,2-4,2
+Connector,3.3333333333333335,2,2-3,2
+Connector,3.3333333333333335,3,0-2,2
+Connector,3.3333333333333335,2,3-4,2
+Connector,3.3333333333333335,3,2-5,2
+Connector,3.3333333333333335,2,1-5,2
+Organism
+Node,1.91,9,400.0-650
+Node,1.82,18,300.0-650
+Node,1.85,9,300.0-750
+Connector,3.3333333333333335,2,0-1,2
+Connector,3.3333333333333335,2,0-2,2
+Organism
+Node,1.13,12,350.0-700
+Node,1.16,18,400.0-750
+Node,1.97,12,350.0-750
+Node,1.81,18,300.0-750
+Node,1.69,15,400.0-700
+Node,1.3,18,350.0-650
+Connector,3.3333333333333335,2,0-3,2
+Connector,3.3333333333333335,1,4-5,2
+Connector,3.3333333333333335,2,0-5,2
+Connector,3.3333333333333335,1,1-5,2
+Connector,3.3333333333333335,2,0-2,2
+Connector,3.3333333333333335,1,0-4,2
+Connector,3.3333333333333335,1,3-4,2
+Connector,3.3333333333333335,1,1-2,2
+Connector,3.3333333333333335,1,2-3,2
+Connector,3.3333333333333335,3,1-3,2
+Connector,3.3333333333333335,1,1-4,2
+Connector,3.3333333333333335,3,2-5,2
+Organism
+Node,1.06,18,400.0-700
+Node,1.47,12,400.0-650
+Node,1.24,12,450.0-750
+Connector,3.3333333333333335,3,1-2,2
+Connector,3.3333333333333335,1,0-1,2
+Connector,3.3333333333333335,3,0-2,2
+Organism
+Node,1.33,18,400.0-650
+Node,1.79,12,350.0-650
+Node,1.14,15,300.0-700
+Node,1.58,18,400.0-700
+Connector,3.3333333333333335,1,0-1,2
+Connector,3.3333333333333335,2,0-3,2
+Connector,3.3333333333333335,3,1-3,2
+Connector,3.3333333333333335,3,0-2,2
+Connector,3.3333333333333335,3,1-2,2
+Connector,3.3333333333333335,1,2-3,2
+Organism
+Node,1.45,9,350.0-750
+Node,1.99,9,450.0-750
+Node,2.0,12,400.0-650
+Node,1.46,12,450.0-700
+Node,1.44,9,350.0-650
+Connector,3.3333333333333335,1,2-4,2
+Connector,3.3333333333333335,1,2-3,2
+Connector,3.3333333333333335,2,0-3,2
+Connector,3.3333333333333335,1,1-4,2
+Connector,3.3333333333333335,1,3-4,2
+Organism
+Node,1.79,9,400.0-750
+Node,1.28,18,350.0-650
+Node,1.72,18,400.0-650
+Node,1.28,12,350.0-700
+Node,1.97,18,450.0-650
+Connector,3.3333333333333335,2,3-4,2
+Connector,3.3333333333333335,2,0-4,2
+Connector,3.3333333333333335,1,1-2,2
+Connector,3.3333333333333335,2,0-1,2
+Connector,3.3333333333333335,2,0-2,2
+Connector,3.3333333333333335,1,2-4,2
+Organism
+Node,1.47,12,300.0-750
+Node,1.74,15,300.0-650
+Node,1.07,15,450.0-650
+Connector,3.3333333333333335,3,1-2,2
+Connector,3.3333333333333335,1,0-1,2
+Connector,3.3333333333333335,1,0-2,2
+Organism
+Node,1.94,15,400.0-700
+Node,1.71,12,350.0-700
+Node,1.08,15,450.0-700
+Connector,3.3333333333333335,1,0-1,2
+Connector,3.3333333333333335,3,0-2,2
+Organism
+Node,1.32,12,400.0-750
+Node,1.19,9,400.0-650
+Node,1.24,18,300.0-700
+Node,2.0,18,300.0-750
+Connector,3.3333333333333335,2,0-3,2
+Connector,3.3333333333333335,3,0-1,2
+Connector,3.3333333333333335,3,2-3,2
+Connector,3.3333333333333335,1,1-3,2
+Organism
+Node,1.83,12,450.0-700
+Node,1.04,12,350.0-750
+Node,1.1,12,300.0-700
+Connector,3.3333333333333335,2,0-1,2
+Connector,3.3333333333333335,3,1-2,2
+Organism
+Node,1.82,15,450.0-700
+Node,1.51,15,350.0-650
+Node,1.09,15,350.0-750
+Connector,3.3333333333333335,3,0-1,2
+Connector,3.3333333333333335,3,0-2,2
+Organism
+Node,1.0,9,450.0-650
+Node,1.0,15,300.0-700
+Node,1.3,18,350.0-700
+Connector,3.3333333333333335,1,0-2,2
+Connector,3.3333333333333335,1,0-1,2
+Connector,3.3333333333333335,1,1-2,2
+Organism
+Node,1.68,15,400.0-700
+Node,1.54,15,450.0-650
+Node,1.74,12,450.0-750
+Connector,3.3333333333333335,3,0-2,2
+Connector,3.3333333333333335,2,1-2,2
+Organism
+Node,1.16,12,450.0-650
+Node,1.66,9,300.0-650
+Node,1.58,15,400.0-650
+Node,1.32,15,400.0-750
+Node,1.0,18,400.0-700
+Node,1.58,9,350.0-750
+Connector,3.3333333333333335,2,2-5,2
+Connector,3.3333333333333335,2,3-5,2
+Connector,3.3333333333333335,2,1-2,2
+Connector,3.3333333333333335,2,3-4,2
+Connector,3.3333333333333335,3,2-4,2
+Connector,3.3333333333333335,1,0-4,2
+Connector,3.3333333333333335,3,0-1,2
+Connector,3.3333333333333335,1,0-5,2
+Organism
+Node,1.61,9,350.0-750
+Node,1.01,18,450.0-750
+Node,1.84,9,450.0-700
+Node,1.91,18,400.0-750
+Connector,3.3333333333333335,1,1-3,2
+Connector,3.3333333333333335,2,0-3,2
+Connector,3.3333333333333335,2,0-2,2
+Connector,3.3333333333333335,2,1-2,2
+Connector,3.3333333333333335,1,2-3,2
+Organism
+Node,1.58,9,300.0-750
+Node,1.0,9,400.0-700
+Node,1.16,15,300.0-650
+Node,1.58,15,350.0-700
+Node,1.17,18,450.0-750
+Node,1.21,18,350.0-650
+Connector,3.3333333333333335,3,3-5,2
+Connector,3.3333333333333335,2,4-5,2
+Connector,3.3333333333333335,2,1-3,2
+Connector,3.3333333333333335,3,0-5,2
+Connector,3.3333333333333335,2,0-3,2
+Connector,3.3333333333333335,3,2-5,2
+Connector,3.3333333333333335,2,1-2,2
+Connector,3.3333333333333335,1,1-4,2
+Connector,3.3333333333333335,2,0-2,2
+Connector,3.3333333333333335,1,0-4,2
+Connector,3.3333333333333335,1,2-3,2
+Connector,3.3333333333333335,2,0-1,2
+Connector,3.3333333333333335,2,1-5,2
+Organism
+Node,1.12,9,350.0-700
+Node,1.76,9,450.0-650
+Node,1.49,15,350.0-750
+Node,1.05,18,400.0-750
+Node,1.23,15,300.0-700
+Connector,3.3333333333333335,2,1-3,2
+Connector,3.3333333333333335,3,1-2,2
+Connector,3.3333333333333335,2,0-4,2
+Connector,3.3333333333333335,3,2-3,2
+Connector,3.3333333333333335,1,3-4,2
+Organism
+Node,1.04,15,450.0-750
+Node,1.8,15,400.0-650
+Node,1.71,15,300.0-650
+Connector,3.3333333333333335,1,1-2,2
+Connector,3.3333333333333335,2,0-1,2
+Connector,3.3333333333333335,1,0-2,2
+Organism
+Node,1.07,15,400.0-750
+Node,1.61,15,450.0-650
+Node,1.78,18,300.0-650
+Connector,3.3333333333333335,2,1-2,2
+Connector,3.3333333333333335,1,0-1,2
+Connector,3.3333333333333335,3,0-2,2
+Organism
+Node,1.66,15,350.0-750
+Node,1.51,15,350.0-650
+Node,1.85,9,350.0-700
+Connector,3.3333333333333335,3,0-1,2
+Connector,3.3333333333333335,2,0-2,2
 Organism
 Generation
